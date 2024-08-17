@@ -1,5 +1,21 @@
+let observer;
 document.addEventListener('DOMContentLoaded', function(){
     fetchUserInfo()
+    fetchProducts(0);
+
+
+    //偵測滾動
+    observer = new IntersectionObserver(handleIntersection, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0
+    });
+
+    const sentinel = document.createElement('div');
+    sentinel.id = 'sentinel';
+    document.body.appendChild(sentinel);
+    observer.observe(sentinel);
+
 
     //按回首頁
     const goIndex = document.getElementById('go-index');
@@ -171,7 +187,9 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 
+let currentPage = 0;
 let fetching = false;
+
 //每次重新整理頁面，都檢查一次使用者的TOKEN
 function fetchUserInfo() {
     const token = localStorage.getItem('received_Token');
@@ -213,6 +231,92 @@ function fetchUserInfo() {
     });
 }
 
+function fetchProducts(page, keyword = '') {
+    if (fetching) return;
+    fetching = true;
+
+    fetch(`/api/products/?page=${page}&keyword=${encodeURIComponent(keyword)}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const gridContent = document.getElementById('inside-product-grid');
+            if (page === 0) {
+                gridContent.innerHTML = '';
+            }
+
+            data.data.forEach(attraction => {
+                const card = createProductCard(attraction);
+                gridContent.appendChild(card);
+            });
+
+            // Ensure the sentinel is re-created and appended if necessary
+            let sentinel = document.getElementById('sentinel');
+            if (!sentinel) {
+                sentinel = document.createElement('div');
+                sentinel.id = 'sentinel';
+            }
+            gridContent.appendChild(sentinel);
+
+            observer.observe(sentinel);
+
+            currentPage = data.nextPage;
+            fetching = false;
+        })
+        .catch(error => {
+            console.error('Error loading the products:', error);
+            fetching = false;
+        });
+}
+
+
+//產生每個商品的<div><class>，包括圖片、名稱、捷運站、分類，
+function createProductCard(product) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    //增加了每個商品的id以及偵測有沒有被click
+    card.id = product.product_id;
+    card.addEventListener('click', function(){
+            window.location.href = `/product/${product.product_id}`;
+    });
+
+    const image = document.createElement('img');
+    image.src = product.images[0];
+    image.alt = product.name;
+    image.className = 'product-image';
+
+    const name = document.createElement('div');
+    name.textContent = product.name;
+    name.className = 'product-name';
+
+    const price = document.createElement('div');
+    price.textContent = `${product.price} €/month`;
+    price.className = 'product-price';
+
+    const mrt = document.createElement('div');
+    mrt.textContent = product.mrt;
+    mrt.className = 'attraction-mrt';
+
+    card.appendChild(image);
+    card.appendChild(name);
+    card.appendChild(price);
+    card.appendChild(mrt);
+
+    return card;
+}
+
+//偵測滾動
+function handleIntersection(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && currentPage !== null) {
+            const keyword = document.getElementById('search-input').value;
+            fetchProducts(currentPage, keyword);
+        }
+    });
+}
 
 //render 登出系統
 function renderLogout(){
@@ -235,5 +339,3 @@ document.getElementById('logout').addEventListener('click', function(){
     //登出後重整頁面
     location.reload();
 })
-
-

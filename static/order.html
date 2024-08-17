@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Swap Space</title>
-  <link rel="stylesheet" href="/static/index.css">
+  <link rel="stylesheet" href="/static/order.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>    
+<body>
     <div id="all-container" class="wrapper">
         <!--Navigator-->
         <nav>
@@ -15,7 +15,10 @@
             <ul class="menu">
             <li class="menu-left" id="go-index">Swap Space</li>
             <div class="menu-right-container">
-                <li class="menu-right">Search</li>
+                <li class="menu-right">
+                    <input type="text" id="search-input" name="search" placeholder="輸入景點名稱查詢">
+                    <button type="submit" id="search-button"></button>
+                </li>
                 <li class="menu-right" id="start-booking">Cart</li>
                 <li class="menu-right">Favorite</li>
                 <li class="only-occupy-1space">
@@ -36,43 +39,74 @@
             <div class="t_m_1">About us</div>
         </div>
 
-        <!--Visual Center-->
-        <div class="visual_center">
-            <div class="v_c_container">
-            <div class="t_wrapper">            
-                <div class="t1">Refresh your home for a small monthly fee</div>
-                <div class="t2">Experience the freedom of transforming your home without the commitment of ownership.</div>
-            </div>
-            <div class="main_image"></div>
+        <div class="seperator_1"></div>
+
+        <!--購物車內容-->
+        <div class="grid-container" id="grid-container">
+            <!--問好-->
+            <div class="greeting" id="greeting"></div>
+            <div id="no-booking" class="no-booking"></div>
+            <div id="booking-found-1" class="booking-found">
+                <div class="first-part" id="cart-items">
+                </div>
             </div>
         </div>
 
-        <!--Products-->
-        <div class="p_t">Products</div>
-        <div class="grid-container" id="grid-container">            
-            <div class="grid-content" id="grid-content">
-                <div class="p1">p1</div>
-                <div class="p1">p2</div>
-                <div class="p1">p3</div>
-                <div class="p1">p4</div>
+        <div id="booking-found-2" class="booking-found">
+            <div class="seperator-2"></div>
+        
+            <div class="contact-info" id="contact-info">
+                <form id="order-form">
+                    <div class="extra-1">
+                    <div class="form-topic">Contact Info</div>
+                    <div class="contact-title">
+                        <label for="O-name">Name:</label>
+                        <input type="text" id="O-name" name="O-name" required>
+                    </div>
+                    <div class="contact-title">
+                        <label for="O-email">Email:</label>
+                        <input type="email" id="O-email" name="O-email" required>
+                    </div>
+                    <div class="contact-title">
+                        <label for="O-phone">Phone:</label>
+                        <input type="text" id="O-phone" name="O-phone" required>
+                    </div>
+                    <div class="contact-title" id="reminder">Reminder TBC</div>
+                    </div>
+                    <div class="seperator-2"></div>
+            
+                    <div class="extra-1">
+                    <div class="form-topic">Payment Info</div>
+                    <div class="contact-title">
+                        <label for="card-number">Card Number:</label>
+                        <input type="text" id="card-number" name="card-number" placeholder="**** **** **** ****" maxlength="19" required>
+                    </div>
+                    <div class="contact-title">
+                        <label for="exp-date">Expire time:</label>
+                        <input type="text" id="exp-date" name="exp-date" placeholder="MM/YY" maxlength="5" required>
+                    </div>
+                    <div class="contact-title">
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" maxlength="4" placeholder="CVV" required>
+                    </div>
+                    </div>
+            
+                    <div class="seperator-2"></div>
+            
+                    <div class="extra-2">
+                    <div class="total-price" id="total-price"></div>
+                    <button type="submit" id="O-button">Check out</button>
+                    </div>
+            
+                </form>
             </div>
         </div>
-        <div class="p_t">Shop By Room</div>
-        <div class="grid-container" id="grid-container">            
-            <div class="grid-content" id="grid-content">
-                <div class="p1">Living Room</div>
-                <div class="p1">Dining Room</div>
-                <div class="p1">Office</div>
-                <div class="p1">Bedroom</div>
-            </div>
-        </div>   
-
-        <div class="seperator_2"></div>
 
         <!--Footer-->
         <footer class="footer">
             Copyright © Swap Space
         </footer>
+
 
         <!-- 登入 Modal -->
         <div id="modal" class="modal">
@@ -120,10 +154,8 @@
                 </div>
             </div>
         </div>
+    </div>
 
-
-    </div>  
-
-  <script type="application/javascript" src="/static/index.js"></script>
+    <script type="application/javascript" src="/static/order.js"></script>
 </body>
 </html>

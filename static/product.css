@@ -126,70 +126,118 @@ nav {
     font-family: 'Noto Sans TC';
 }
 
-/*Visual Center*/
-.visual_center {
-    height: 550px;
-    background-color: #d9dcddab;
-    padding: 15px;
+/*第一大格-圖片加資訊*/
 
-}
-.v_c_container {
-    width: 1200px;
-    display: flex;
-    margin: auto;
-    padding: 10px;
-}
-.t_wrapper {
-    margin: auto;
-}
-.t1 {
-    color: #423e3e;
-    font-size: 40px;
-    font-family: 'Noto Sans TC';
-    padding-bottom: 15px;
-}
-.t2 {
-    color: #423e3e;
-    font-size: 20px;
-    font-family: 'Noto Sans TC';
-    padding-bottom: 30px;
-}
-.main_image {
-    background-image: url('visual_center.jpg');
-    height: 520px;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-/*product*/
-.p_t {
+.main-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
-    color: #423e3e;
-    font-family: 'Noto Sans TC';
-}
-.grid-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-    flex-grow: 1;
 }
 
-.grid-content{
-    width: 1200px;
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 242px;
-    column-gap: 30px;
-    row-gap: 30px;
-    padding: 15px;
+    width:1200px;
+    height: 400px;
+    grid-template-columns: 540px 600px;
+    column-gap: 30px; 
+    padding: 0 15px;
 }
-.p1 {
-    background-color: rgba(233, 238, 240, 0.274);
+
+.image-container {
+    position: relative;
+    /*讓不在grid裡面的內容都看不到*/
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
 }
+
+.image-list-wrapper {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;/*好像沒屁用*/
+}
+
+.image-list {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.5s ease-in-out; /*跟JS搭配作slide show*/
+}
+
+.image-list img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+
+
+
+
+/*左右點的按鍵*/
+.scroll-button {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+
+    background-color: transparent;
+    
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 36px 36px;
+    border: none;
+    z-index: 1;
+
+    top: 50%;
+    opacity: 75%;
+
+}
+
+.scroll-button.left {
+    background-image: url('arrow_left.png');
+    left: 10px;
+}
+
+.scroll-button.right {
+    background-image: url('arrow_right.png');
+    right: 10px;
+}
+
+/*圖片的圈圈*/
+.allCircles {
+    position: absolute;
+    bottom: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;    
+}
+
+.circle {
+    width: 12px;
+    height: 12px;
+    opacity: 50%;
+
+    border-radius: 50%;
+    background-color: #FFFFFF;
+
+    display: inline-block;
+    margin-left: 6px;
+    margin-right: 6px;
+
+}
+
+.circle.active {
+    background-color: black;
+}
+
+
 
 /*footer*/
 .footer {

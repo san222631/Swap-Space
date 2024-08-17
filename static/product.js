@@ -1,5 +1,35 @@
-document.addEventListener('DOMContentLoaded', function(){
+//全域變數，給"開始預訂行程"用的
+let productData = null;
+let observer;
+document.addEventListener('DOMContentLoaded', async() => {
     fetchUserInfo()
+
+    //拿url後面的id並開始使用資料
+    const pathname = window.location.pathname;
+    const specialId = pathname.split('/').pop();
+    console.log('特別的號碼:', specialId)
+
+    try {
+        //等fetch call拿到promise以後才做下一步動作
+        const response = await fetch(`/api/product/${specialId}`);
+        //如果response有問題
+        if (!response.ok) {
+            throw new Error(`/api/product/id送過來的response有錯誤: ${response.statusText}`);
+        }
+
+        //把收到的response變成json格式
+        const data = await response.json();
+        //檢查json
+        console.log(data);
+        //存起來給"開始預訂行程"用
+        productData = data;
+
+        addDetails(data);
+
+    } catch (error) {
+        console.error('收到response前有錯誤:', error);
+        document.getElementById('check').textContent = '加載細節失敗';
+    }
 
     //按回首頁
     const goIndex = document.getElementById('go-index');
@@ -171,7 +201,9 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 
+let currentPage = 0;
 let fetching = false;
+
 //每次重新整理頁面，都檢查一次使用者的TOKEN
 function fetchUserInfo() {
     const token = localStorage.getItem('received_Token');
@@ -213,6 +245,154 @@ function fetchUserInfo() {
     });
 }
 
+//加入各種資料
+function addDetails(details) {
+    if (fetching) return;
+    fetching = true;
+
+    const imageList = document.getElementById('image-list');   
+
+    details.data.images.forEach(image => {
+        const picture = document.createElement('img');
+        picture.src = image
+        picture.className = 'picture';
+        picture.alt = details.data.name;
+        imageList.appendChild(picture);
+    });
+
+    //一開始先幫每張圖片加入圈圈，然後把第一張的class變成active
+    const circleList = document.getElementById('allCircles');
+    details.data.images.forEach((_, index) => {
+        const circle = document.createElement('div');
+        circle.className = 'circle';
+        //circle的class本來是.circle，現在變.circle.active
+        if (index === 0) circle.classList.add('active');
+        circleList.appendChild(circle);
+    })
+
+    //圖片slide show的關鍵
+    setupCarousel();
+
+    //加入不同的內容
+    const name = document.getElementById('name');
+    name.textContent = details.data.name;
+
+    const description = document.getElementById('description');
+    description.textContent = details.data.description;
+
+    const price = document.getElementById('cost');
+    price.textContent = `${details.data.price} €/month`;
+
+    const dimension = document.getElementById('dimension');
+    dimension.textContent = `Size: ${details.data.dimension}`;
+
+    const prduct_code = document.getElementById('product_id');
+    prduct_code.textContent = `Product Code: ${details.data.product_id}`
+    
+}
+
+//圖片slide show旋轉木馬的關鍵
+function setupCarousel() {
+    //選擇所有的圖片+確認總共有幾張
+    const imageList = document.getElementById('image-list');
+    const allImages = imageList.querySelectorAll('img');
+    const numberImages = allImages.length;
+    //選擇所有的circle elements
+    const allCircles = document.querySelectorAll('.circle');
+    //從第1張圖片開始, index=0
+    let currentIndex = 0;
+
+
+    //操縱css裡面.image-list的transform
+    //在X軸上translate移動
+    //移動圖片的同時，也讓圈圈的class轉換，用圖片的index確認是哪一個圈圈要變active
+    function showImage(index) {
+        imageList.style.transform = `translateX( -${index *100}%)`;
+        allCircles.forEach((eachCircle, i) => {
+            eachCircle.classList.toggle('active', i === index);
+        })
+    };
+
+    document.getElementById('scroll-left').addEventListener(
+        'click', function() {
+            currentIndex = (currentIndex - 1 + numberImages) % numberImages;
+            showImage(currentIndex);
+        }
+    );
+
+    document.getElementById('scroll-right').addEventListener(
+        'click', function() {
+        currentIndex = (currentIndex + 1) % numberImages;
+        showImage(currentIndex);
+        }
+    );
+
+    showImage(currentIndex);
+};
+
+//加入購物車
+document.getElementById('reserve').addEventListener('click', async function(event){
+    event.preventDefault();
+    const check_status = await fetchUserInfo();
+    let token = null;
+
+    //已登入的會員
+    if (check_status) {
+        const token = localStorage.getItem('received_Token');
+    } 
+
+    if (!productData){
+        throw new Error('Not an existing product');
+    }
+
+    const requestBody = {
+        "productId": productData.data.product_id,
+        "quantity": document.getElementById('order-amount').value,
+        "price": productData.data.price
+    };
+
+    const headers = {
+        'Content-Type': 'application/json'
+    };
+
+    if (token) {
+        headers['Authorization'] = `Bearer ${token}`;
+    }
+
+    try {
+        const response = await fetch('/api/shop/cart', {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(requestBody),
+            credentials: 'include' // Important for handling cookies, including session_id
+        });
+    
+        if (!response.ok) {
+            throw new Error(`/api/shop/cart的response有錯誤: ${response.statusText}`);
+        };
+
+        const data = await response.json();
+        if (data.ok) {
+            //window.location.href = '/booking';
+            console.log("新增到購物車了!", data)
+        } else {
+            throw new Error('新增商品失敗');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+});
+
+
+//預定行程的按鈕
+document.getElementById('start-booking').addEventListener('click', async function(){
+    const check_status = await fetchUserInfo();
+    if (check_status) {
+        window.location.href = '/booking';
+    } else {
+        showLoginModal();
+    }
+});
 
 //render 登出系統
 function renderLogout(){
@@ -235,5 +415,3 @@ document.getElementById('logout').addEventListener('click', function(){
     //登出後重整頁面
     location.reload();
 })
-
-

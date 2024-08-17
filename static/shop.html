@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Swap Space</title>
-  <link rel="stylesheet" href="/static/index.css">
+  <link rel="stylesheet" href="/static/shop.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>    
+<body>
     <div id="all-container" class="wrapper">
         <!--Navigator-->
         <nav>
@@ -15,7 +15,10 @@
             <ul class="menu">
             <li class="menu-left" id="go-index">Swap Space</li>
             <div class="menu-right-container">
-                <li class="menu-right">Search</li>
+                <li class="menu-right">
+                    <input type="text" id="search-input" name="search" placeholder="輸入景點名稱查詢">
+                    <button type="submit" id="search-button"></button>
+                </li>
                 <li class="menu-right" id="start-booking">Cart</li>
                 <li class="menu-right">Favorite</li>
                 <li class="only-occupy-1space">
@@ -36,43 +39,52 @@
             <div class="t_m_1">About us</div>
         </div>
 
-        <!--Visual Center-->
-        <div class="visual_center">
-            <div class="v_c_container">
-            <div class="t_wrapper">            
-                <div class="t1">Refresh your home for a small monthly fee</div>
-                <div class="t2">Experience the freedom of transforming your home without the commitment of ownership.</div>
+        <div class="seperator_1"></div>
+
+        <!--grid of category and product-->
+        <div class="cat_product_container">
+            <div class="CAT_grid">
+                <div>Categories</div>
+                <div class="CAT">
+                    <input type="radio" id="all-products" name="category" value="All Products" checked>
+                    <label for="all-products">All Products</label>
+                </div>
+                <div class="CAT">
+                    <input type="radio" id="dining-room" name="category" value="Dining Room">
+                    <label for="dining-room">Dining Room</label>
+                </div>
+                <div class="CAT">
+                    <input type="radio" id="living-room" name="category" value="Living Room">
+                    <label for="living-room">Living Room</label>
+                </div>
+                <div class="CAT">
+                    <input type="radio" id="office" name="category" value="Office">
+                    <label for="office">Office</label>
+                </div>
+                <div class="CAT">
+                    <input type="radio" id="bedroom" name="category" value="Bedroom">
+                    <label for="bedroom">Bedroom</label>
+                </div>
+                <div class="CAT">
+                    <input type="radio" id="accessories" name="category" value="Accessories">
+                    <label for="accessories">Accessories</label>
+                </div>
+                <div class="CAT">
+                    <input type="radio" id="outdoor" name="category" value="Outdoor">
+                    <label for="outdoor">Outdoor</label>
+                </div>
             </div>
-            <div class="main_image"></div>
+            <div class="product-grid" id="product-grid">
+                <div class="inside-product-grid" id="inside-product-grid">
+                </div>                                
             </div>
         </div>
-
-        <!--Products-->
-        <div class="p_t">Products</div>
-        <div class="grid-container" id="grid-container">            
-            <div class="grid-content" id="grid-content">
-                <div class="p1">p1</div>
-                <div class="p1">p2</div>
-                <div class="p1">p3</div>
-                <div class="p1">p4</div>
-            </div>
-        </div>
-        <div class="p_t">Shop By Room</div>
-        <div class="grid-container" id="grid-container">            
-            <div class="grid-content" id="grid-content">
-                <div class="p1">Living Room</div>
-                <div class="p1">Dining Room</div>
-                <div class="p1">Office</div>
-                <div class="p1">Bedroom</div>
-            </div>
-        </div>   
-
-        <div class="seperator_2"></div>
 
         <!--Footer-->
         <footer class="footer">
             Copyright © Swap Space
         </footer>
+
 
         <!-- 登入 Modal -->
         <div id="modal" class="modal">
@@ -120,10 +132,8 @@
                 </div>
             </div>
         </div>
+    </div>
 
-
-    </div>  
-
-  <script type="application/javascript" src="/static/index.js"></script>
+    <script type="application/javascript" src="/static/shop.js"></script>
 </body>
 </html>

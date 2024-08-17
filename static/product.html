@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Swap Space</title>
-  <link rel="stylesheet" href="/static/index.css">
+  <link rel="stylesheet" href="/static/product.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>    
@@ -15,7 +15,6 @@
             <ul class="menu">
             <li class="menu-left" id="go-index">Swap Space</li>
             <div class="menu-right-container">
-                <li class="menu-right">Search</li>
                 <li class="menu-right" id="start-booking">Cart</li>
                 <li class="menu-right">Favorite</li>
                 <li class="only-occupy-1space">
@@ -36,36 +35,54 @@
             <div class="t_m_1">About us</div>
         </div>
 
-        <!--Visual Center-->
-        <div class="visual_center">
-            <div class="v_c_container">
-            <div class="t_wrapper">            
-                <div class="t1">Refresh your home for a small monthly fee</div>
-                <div class="t2">Experience the freedom of transforming your home without the commitment of ownership.</div>
+        <!--Products-->
+        <div class="main-section" id="main-section">
+
+            <div class="grid-container" id="grid-container">
+        
+                <!--左邊的grid-->
+                <div class="image-container">
+                    <button class="scroll-button left" id="scroll-left"></button>
+                    <div class="image-list-wrapper" id="image-list-wrapper">
+                    <div class="image-list" id="image-list"></div>
+                    </div>
+                    <button class="scroll-button right" id="scroll-right"></button>
+                    <!--下面的圈圈-->
+                    <div class="allCircles" id="allCircles"></div>
+                </div>
+            
+                <!--右邊的grid-->
+                <div class="profile" id="profile">
+                    <div class="name" id="name"></div>
+                    <div class="description" id="description"></div>
+                    <!--顯示費用-->
+                    <div class="cost" id="cost"></div>
+                    <div>Tax included. Shipping calculated at checkout</div>
+                    <div class="seperator_2"></div>
+                    <!--訂購細節-->
+                    <form class="booking-form" id="booking-form">
+                    <div class="reserve-box">
+                        <!--選擇數量-->
+                        <div class="amount">
+                            <label for="order-amount">Amount:</label>
+                            <input type="number" id="order-amount" name="amount" value="1" min="1" step="1">
+                        </div>
+                        <button type="submit" id="reserve">Add to Cart</button>
+                    </div>
+                    </form>
+
+                    <div class="seperator_2"></div>
+                    <!--尺寸跟商品編號-->
+                    <div class="dimension" id="dimension"></div>
+                    <div class="product_id" id="product_id"></div>
+            
+                </div>
+        
             </div>
-            <div class="main_image"></div>
-            </div>
+        
         </div>
 
-        <!--Products-->
-        <div class="p_t">Products</div>
-        <div class="grid-container" id="grid-container">            
-            <div class="grid-content" id="grid-content">
-                <div class="p1">p1</div>
-                <div class="p1">p2</div>
-                <div class="p1">p3</div>
-                <div class="p1">p4</div>
-            </div>
-        </div>
-        <div class="p_t">Shop By Room</div>
-        <div class="grid-container" id="grid-container">            
-            <div class="grid-content" id="grid-content">
-                <div class="p1">Living Room</div>
-                <div class="p1">Dining Room</div>
-                <div class="p1">Office</div>
-                <div class="p1">Bedroom</div>
-            </div>
-        </div>   
+  
 
         <div class="seperator_2"></div>
 
@@ -73,6 +90,7 @@
         <footer class="footer">
             Copyright © Swap Space
         </footer>
+
 
         <!-- 登入 Modal -->
         <div id="modal" class="modal">
@@ -124,6 +142,6 @@
 
     </div>  
 
-  <script type="application/javascript" src="/static/index.js"></script>
+  <script type="application/javascript" src="/static/product.js"></script>
 </body>
 </html>

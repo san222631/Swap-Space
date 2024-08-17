@@ -126,70 +126,178 @@ nav {
     font-family: 'Noto Sans TC';
 }
 
-/*Visual Center*/
-.visual_center {
-    height: 550px;
-    background-color: #d9dcddab;
-    padding: 15px;
 
-}
-.v_c_container {
-    width: 1200px;
-    display: flex;
-    margin: auto;
-    padding: 10px;
-}
-.t_wrapper {
-    margin: auto;
-}
-.t1 {
-    color: #423e3e;
-    font-size: 40px;
-    font-family: 'Noto Sans TC';
-    padding-bottom: 15px;
-}
-.t2 {
-    color: #423e3e;
-    font-size: 20px;
-    font-family: 'Noto Sans TC';
-    padding-bottom: 30px;
-}
-.main_image {
-    background-image: url('visual_center.jpg');
-    height: 520px;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
+/*   第一部分   */
+.grid-container {
+    margin: 0 auto;
+    flex: 1;
+    height: 100%;
 }
 
-/*product*/
-.p_t {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    color: #423e3e;
-    font-family: 'Noto Sans TC';
+.greeting {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #666666;
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 30px;
 }
-.grid-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-    flex-grow: 1;
-}
+.booking-found {
+    display: none;
 
-.grid-content{
-    width: 1200px;
+}
+.first-part {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 242px;
+    width: 980px;
+    height: 100%;
+    grid-template-columns: repeat(1, 1fr);
     column-gap: 30px;
-    row-gap: 30px;
-    padding: 15px;
+    margin: 0 auto;
 }
-.p1 {
-    background-color: rgba(233, 238, 240, 0.274);
+
+.no-booking {
+    display: none;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #666666;
+    width: 1000px;
+    margin: 0 auto;
 }
+
+.no-booking.visible {
+    display: block;
+}
+.booking-found.visible {
+    display: grid;
+}
+
+
+/*放圖片*/
+.image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.first-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+/*放右邊grid的文字*/
+.profile {
+    position: relative;
+}
+.name {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #448899;
+    margin-bottom: 20px;
+}
+.info-title {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #666666;
+    margin-bottom: 10px;
+}
+.delete-booking {
+    background-image: url('delete.png');
+    width: 30px;
+    height: 30px;
+    /*position: absolute;*/
+    right: 0;
+    top: -5px;
+}
+
+/*填全部個人資料+信用卡*/
+.contact-info {
+    margin: 0 auto;
+    width: 1200px;
+
+}
+.extra-1 {
+    width: 980px;
+    margin: 0 auto;
+}
+.seperator-2 {
+    height: 1px;
+    background-color: #E8E8E8;
+    width: 1200px;
+    margin: auto; /*讓element自動置中，兩邊的空間平分*/
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.form-topic {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #666666;
+    margin-bottom: 20px;
+}
+.contact-title {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #666666;
+}
+.contact-title input {
+    height: 38px;
+    width: 200px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+
+    border-width: 1px;
+    border-color: #E8E8E8;
+    padding-left: 10px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+}
+
+/*確認訂購並付款*/
+.extra-2 {
+    width: 980px;
+    height: 100px;
+    margin: 0 auto;
+    text-align: right;
+}
+.total-price {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666666;
+    margin-bottom: 20px;
+}
+.extra-2 button {
+    width: 173px;
+    height: 36px;
+    border-radius: 5px;
+    background-color: #448899;
+    border: none;
+    padding: 10px 20px 10px 20px;
+
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+}
+
+
 
 /*footer*/
 .footer {
