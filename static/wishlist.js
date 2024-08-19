@@ -23,29 +23,30 @@ document.addEventListener('DOMContentLoaded', async() => {
         const gridContainer = document.getElementById('grid-container');
         if (data.length > 0) {
             data.forEach(product => {
-                const productCard = createProductCard(product);
-                gridContainer.appendChild(productCard);
+                console.log(product)
             });
         } else {
             gridContainer.innerHTML = '<p>No products in your wishlist.</p>';
+        } 
+
+        if (userInfo) {
+            //加入會換名字的問候語
+            console.log(userInfo)
+            const greeting = document.getElementById('greeting');
+            greeting.textContent = `您好，${userInfo.name}，最愛清單內容如下:`;
+            fetchBookingDetails(data);
+        } else {
+            //window.location.href = '/';
+            const greeting = document.getElementById('greeting');
+            greeting.textContent = `您好，guest，最愛清單內容如下:`;
+            fetchBookingDetails(data);
         }
     })
     .catch(error => {
         console.error('Error fetching wishlist:', error);
     });
 
-    if (userInfo) {
-        //加入會換名字的問候語
-        console.log(userInfo)
-        const greeting = document.getElementById('greeting');
-        greeting.textContent = `您好，${userInfo.name}，最愛清單內容如下:`;
-        fetchBookingDetails();
-    } else {
-        //window.location.href = '/';
-        const greeting = document.getElementById('greeting');
-        greeting.textContent = `您好，guest，最愛清單內容如下:`;
-        fetchBookingDetails();
-    }
+
 
     //按回首頁
     const goIndex = document.getElementById('go-index');
@@ -233,13 +234,21 @@ let fetching = false;
 async function fetchBookingDetails() {
     const token = localStorage.getItem('received_Token');
     const sessionId = sessionStorage.getItem('session_id');
+
+    const headers = {
+        'Content-Type': 'application/json'
+    };
+
+    if (token) {
+        headers['Authorization'] = token ? `Bearer ${token}` : '';
+    } else if (sessionId) {
+        headers['X-Session-ID'] = sessionId;
+    }
+
     try {
         const response = await fetch('/api/wishlist', {
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
+            headers: headers
         });
         console.log(response)
         if (!response.ok) {
@@ -286,7 +295,7 @@ function addBooking(data_booking) {
 
     // 迭代每個購物車中的商品，並將其加入到HTML
     data_booking.forEach(item => {
-        const product = item.product;
+        const product = item;
 
         // 創建商品的容器
         const productContainer = document.createElement('div');
@@ -301,18 +310,18 @@ function addBooking(data_booking) {
 
         // 加入名稱
         const nameElement = document.createElement('h3');
-        nameElement.textContent = product.name;
+        nameElement.textContent = product.Name;
         productContainer.appendChild(nameElement);
 
         // 加入描述
         const descriptionElement = document.createElement('p');
-        descriptionElement.textContent = product.description;
+        descriptionElement.textContent = product.Description;
         descriptionElement.className = 'product-description';
         productContainer.appendChild(descriptionElement);
 
         // 加入價格
         const priceElement = document.createElement('p');
-        priceElement.textContent = `Price: ${product.price} EURO`;
+        priceElement.textContent = `Price: ${product.Price} EURO`;
         priceElement.className = 'product-price';
         productContainer.appendChild(priceElement);
 
