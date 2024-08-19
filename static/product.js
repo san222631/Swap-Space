@@ -1,6 +1,7 @@
 //全域變數，給"開始預訂行程"用的
 let productData = null;
 let observer;
+let currentPage = 0;
 document.addEventListener('DOMContentLoaded', async() => {
     fetchUserInfo()
 
@@ -48,6 +49,22 @@ document.addEventListener('DOMContentLoaded', async() => {
     //尚未加使用者驗證
     document.getElementById('start-booking').addEventListener('click', function(){
         window.location.href = '/shop/cart';
+    });
+
+    //搜尋關鍵字
+    document.getElementById('search-button').addEventListener('click', function () {
+        const keyword = document.getElementById('search-input').value;
+        if (keyword) {
+            sessionStorage.setItem('searchKeyword', keyword);
+            window.location.href = `/shop`;
+        } else {
+            alert("Please enter a keyword to search");
+        }
+    });
+
+    // Add event listener for the "Favorite" button
+    document.getElementById('go-to-wishlist').addEventListener('click', function() {
+        window.location.href = '/shop/wishlist';
     });
 
     //點擊Member，看會員彈出視窗
@@ -201,9 +218,8 @@ document.addEventListener('DOMContentLoaded', async() => {
 })
 
 
-let currentPage = 0;
-let fetching = false;
 
+let fetching = false;
 //每次重新整理頁面，都檢查一次使用者的TOKEN
 function fetchUserInfo() {
     const token = localStorage.getItem('received_Token');
@@ -335,6 +351,7 @@ document.getElementById('reserve').addEventListener('click', async function(even
     event.preventDefault();
     const check_status = await fetchUserInfo();
     let token = null;
+    let sessionId = sessionStorage.getItem('session_id');
 
     //已登入的會員
     if (check_status) {
@@ -359,12 +376,15 @@ document.getElementById('reserve').addEventListener('click', async function(even
         headers['Authorization'] = `Bearer ${token}`;
     }
 
+    if (sessionId) {
+        headers['X-Session-ID'] = sessionId;  // Custom header for session_id
+    }
+
     try {
         const response = await fetch('/api/shop/cart', {
             method: 'POST',
             headers: headers,
             body: JSON.stringify(requestBody),
-            credentials: 'include' // Important for handling cookies, including session_id
         });
     
         if (!response.ok) {
@@ -374,6 +394,9 @@ document.getElementById('reserve').addEventListener('click', async function(even
         const data = await response.json();
         if (data.ok) {
             //window.location.href = '/booking';
+            if (data.session_id) {
+                sessionStorage.setItem('session_id', data.session_id)
+            }
             console.log("新增到購物車了!", data)
         } else {
             throw new Error('新增商品失敗');
@@ -415,3 +438,51 @@ document.getElementById('logout').addEventListener('click', function(){
     //登出後重整頁面
     location.reload();
 })
+
+//加入最愛清單
+function addToWishlist() {    
+    // Extract the product_id from the URL
+    const url = window.location.href;
+    const productId = url.split('/').pop();
+
+    // Debugging: log the extracted productId
+    console.log("Extracted product ID:", productId);
+
+    // Retrieve the session_id from sessionStorage
+    const sessionId = sessionStorage.getItem('session_id');
+
+    // Set up headers
+    const headers = {
+        'Content-Type': 'application/json',
+    };
+
+    // If sessionId exists, include it in the headers
+    if (sessionId) {
+        headers['X-Session-ID'] = sessionId;
+    }
+
+    // Debugging: log the sessionId
+    console.log("Session ID:", sessionId);
+
+    fetch('/api/shop/wishlist/add', {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({ product_id: productId }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === "Product added to wishlist") {
+            alert('Product added to your wishlist!');
+        } else if (data.message === "Product is already in wishlist") {
+            alert('Product is already in your wishlist!');
+        }
+
+        // If a new session_id is returned, save it to sessionStorage
+        if (data.session_id) {
+            sessionStorage.setItem('session_id', data.session_id);
+        }
+    })
+    .catch(error => {
+        console.error('Error adding product to wishlist:', error);
+    });
+}

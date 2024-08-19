@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Swap Space</title>
-  <link rel="stylesheet" href="/static/index.css">
+  <link rel="stylesheet" href="/static/wishlist.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>    
+<body>
     <div id="all-container" class="wrapper">
         <!--Navigator-->
         <nav>
@@ -36,43 +36,28 @@
             <div class="t_m_1">How it works</div>
         </div>
 
-        <!--Visual Center-->
-        <div class="visual_center">
-            <div class="v_c_container">
-            <div class="t_wrapper">            
-                <div class="t1">Refresh your home for a small monthly fee</div>
-                <div class="t2">Experience the freedom of transforming your home without the commitment of ownership.</div>
-            </div>
-            <div class="main_image"></div>
+        <div class="seperator_1"></div>
+
+        <!--最愛清單內容-->
+        <div class="grid-container" id="grid-container">
+            <!--問好-->
+            <div class="greeting" id="greeting"></div>
+            <div id="no-booking" class="no-booking"></div>
+            <div id="booking-found-1" class="booking-found">
+                <div class="first-part" id="cart-items">
+                </div>
             </div>
         </div>
 
-        <!--Products-->
-        <div class="p_t">Products</div>
-        <div class="grid-container" id="grid-container">            
-            <div class="grid-content" id="grid-content">
-                <div class="p1">p1</div>
-                <div class="p1">p2</div>
-                <div class="p1">p3</div>
-                <div class="p1">p4</div>
-            </div>
+        <div id="booking-found-2" class="booking-found">
+            <div class="seperator-2"></div>
         </div>
-        <div class="p_t">Shop By Room</div>
-        <div class="grid-container" id="grid-container">            
-            <div class="grid-content" id="grid-content">
-                <div class="p1">Living Room</div>
-                <div class="p1">Dining Room</div>
-                <div class="p1">Office</div>
-                <div class="p1">Bedroom</div>
-            </div>
-        </div>   
-
-        <div class="seperator_2"></div>
 
         <!--Footer-->
         <footer class="footer">
             Copyright © Swap Space
         </footer>
+
 
         <!-- 登入 Modal -->
         <div id="modal" class="modal">
@@ -120,10 +105,8 @@
                 </div>
             </div>
         </div>
+    </div>
 
-
-    </div>  
-
-  <script type="application/javascript" src="/static/index.js"></script>
+    <script type="application/javascript" src="/static/wishlist.js"></script>
 </body>
 </html>

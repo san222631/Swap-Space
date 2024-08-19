@@ -15,6 +15,9 @@ from datetime import datetime, timedelta, timezone
 import traceback
 import uuid
 
+from decimal import Decimal
+from datetime import datetime
+
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -24,7 +27,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 async def index(request: Request):
 	return FileResponse("./static/index.html", media_type="text/html")
 @app.get("/shop", include_in_schema=False)
-async def product(request: Request):
+async def shop(request: Request):
 	return FileResponse("./static/shop.html", media_type="text/html")
 @app.get("/product/{productId}", include_in_schema=False)
 async def product(request: Request, productId: str):
@@ -32,6 +35,9 @@ async def product(request: Request, productId: str):
 @app.get("/shop/cart", include_in_schema=False)
 async def shopping(request: Request):
 	return FileResponse("./static/order.html", media_type="text/html")
+@app.get("/shop/wishlist", include_in_schema=False)
+async def wishlist(request: Request):
+	return FileResponse("./static/wishlist.html", media_type="text/html")
 
 DB_CONFIG = {
 	'host': 'localhost',
@@ -58,9 +64,9 @@ def fetch_data(page: int, keyword: Optional[str]):
 
 		params = []
 		if keyword:
-			query += " WHERE furnitures.Name LIKE %s OR furnitures.Description LIKE %s"
+			query += " WHERE furnitures.Name LIKE %s"
 			like_keyword = f'%{keyword}%'
-			params.extend([like_keyword, like_keyword])
+			params.extend([like_keyword])
 
 		query += " GROUP BY furnitures.id LIMIT %s, 20"
 		params.append(page * 20)
@@ -77,7 +83,7 @@ def fetch_data(page: int, keyword: Optional[str]):
 				"message":"伺服器內部錯誤"
 				})  
 	finally:
-		if cursor is not None:
+		if cursor is not None:  
 			cursor.close()
 		if conn is not None:
 			conn.close()
@@ -267,7 +273,7 @@ ALGORITHM = "HS256"
 #檢查使用者信箱+密碼，確認有的話給一個JWT
 @app.put("/api/user/auth", response_model=Token)
 #"user_info"是一個request body parameter，名字我可自訂
-async def login(user_info: UserInfo):
+async def login(user_info: UserInfo, response: Response):
     conn = None
     cursor = None
     #進資料庫檢查有沒有這個帳號密碼
@@ -386,23 +392,17 @@ class BookingInfo(BaseModel):
     price: float
 
 @app.post("/api/shop/cart")
-async def save_booking_in_mysql(request: Request, booking_info: BookingInfo):
+async def save_booking_in_mysql(request: Request, booking_info: BookingInfo, response: Response):
     #檢查是否有token
     token = request.headers.get('Authorization')
+    session_id = request.headers.get("X-Session-ID")
     conn = None
     cursor = None
     #沒登入的人
-    if not token or not token.startswith("Bearer "):
-        session_id = request.cookies.get("session_id")
+    if not token or not token.startswith("Bearer "):        
         if not session_id:
             session_id = str(uuid.uuid4())  # Generate a new session_id
-            response = JSONResponse(
-                status_code=200,
-                content={"ok": True, "session_id": session_id}
-            )
-            response.set_cookie(key="session_id", value=session_id)
-        else:
-            response = JSONResponse(status_code=200, content={"ok": True})
+
         try:
             conn = mysql.connector.connect(**DB_CONFIG)
             cursor = conn.cursor(dictionary=True)
@@ -436,7 +436,7 @@ async def save_booking_in_mysql(request: Request, booking_info: BookingInfo):
                     booking_price,
                 ))
             conn.commit()
-            return response
+            return JSONResponse(content={"ok": True, "session_id": session_id})
         except mysql.connector.Error as err:
             return JSONResponse(
                 status_code=400,
@@ -612,8 +612,8 @@ async def delete_booking(request: Request):
 async def check_order(request: Request):
     #檢查是否有token，此get非彼@app.get
     token = request.headers.get('Authorization')
+    session_id = request.headers.get("X-Session-ID")
     user_id = None
-    session_id = None
     print(token)
 
     if token and token != "Bearer null":
@@ -631,13 +631,14 @@ async def check_order(request: Request):
                     "message": "未登入系統，拒絕存取，token不合常理"
                 }
             )
-    else:
-        session_id = request.cookies.get("session_id")
-        if not session_id:
-            return JSONResponse(
-                status_code=200,
-                content=["沒有session_id也沒有購物車內容"]
-            )
+    elif not session_id:
+        return JSONResponse(
+            status_code=200,
+            content={
+                "error": True, 
+                "message": "沒有session_id也沒有購物車內容"
+            }
+        )
     
     #token正確的話，開始取資料
     conn = None
@@ -701,7 +702,7 @@ async def check_order(request: Request):
             status_code=400,
             content = {
                 "error": True,
-                "message": "建立失敗，輸入不正確或其他原因"
+                "message": "建立失敗，輸入不正確或其他原因" + str(err)
             }
         )
     except Exception as e:
@@ -710,7 +711,7 @@ async def check_order(request: Request):
             status_code=500, 
             content={
                 "error": True,
-                "message": "伺服器內部錯誤"
+                "message": "伺服器內部錯誤" + str(e)
                 }
         )
     finally:
@@ -720,3 +721,191 @@ async def check_order(request: Request):
             conn.close()
 
 
+#把使用者喜歡的加入wishlist資料庫
+class WishInfo(BaseModel):
+    product_id: str
+
+@app.post("/api/shop/wishlist/add")
+async def add_to_wishlist(request: Request, wishlist: WishInfo):
+    product_id = wishlist.product_id
+    print(product_id)
+    #檢查是否有token或session
+    token = request.headers.get('Authorization')
+    conn = None
+    cursor = None
+    response = None
+    #沒登入的人
+    if not token or not token.startswith("Bearer "):
+        #檢查是否有session_id
+        session_id = request.headers.get("X-Session-ID")
+        print(session_id)
+        #如果沒有session_id
+        if not session_id:
+            session_id = str(uuid.uuid4())  # Generate a new session_id
+            conn = mysql.connector.connect(**DB_CONFIG)
+            cursor = conn.cursor(dictionary=True)
+            cursor.execute("INSERT INTO wishlist (session_id, product_id) VALUES (%s, %s)", (session_id, product_id))
+            conn.commit()
+            conn.close()
+            cursor.close()
+            response = JSONResponse(
+                status_code=200,
+                content={"ok": True, "session_id": session_id, "message": "Product added to wishlist"}
+            )
+            return response
+        #如果有session_id
+        else:
+            conn = mysql.connector.connect(**DB_CONFIG)
+            cursor = conn.cursor(dictionary=True)
+            #檢查是否重複加
+            cursor.execute("SELECT * FROM wishlist WHERE product_id = %s AND session_id = %s", (product_id, session_id))
+            double_entry = cursor.fetchone()
+            print(double_entry)
+            if double_entry:
+                response = JSONResponse(
+                status_code=200,
+                content={"error": True, "message": "Product is already in wishlist"}
+                )
+                return response
+            cursor.execute("INSERT INTO wishlist (session_id, product_id) VALUES (%s, %s)", (session_id, product_id))
+            conn.commit()
+            conn.close()
+            cursor.close()
+            response = JSONResponse(
+                status_code=200,
+                content={"ok": True, "message": "Product added to wishlist"}
+            )
+            return response
+
+    # 有登入的使用者
+    extracted_token = token[len("Bearer "):]
+    try:
+        payload = jwt.decode(extracted_token, SECRET_KEY, algorithms=[ALGORITHM])
+    except PyJWTError:
+        return JSONResponse(
+            status_code = 403,
+            content = {
+                "error": True,
+                "message": "未登入系統，拒絕存取"
+            }
+        )
+
+    conn = None
+    cursor = None
+    try:
+        conn = mysql.connector.connect(**DB_CONFIG)
+        cursor = conn.cursor(dictionary=True)
+        wish_user_id = payload.get("id")
+
+        #看看是否已經有同樣商品存在wishlist
+        cursor.execute("SELECT * FROM wishlist WHERE user_id = %s AND product_id LIKE %s", (wish_user_id, product_id))
+        already_there = cursor.fetchone()
+        if already_there:
+            return JSONResponse(
+                status_code=200,
+                content={"error": True, "message": "Product is already in wishlist"}
+                )
+        else:
+            cursor.execute("INSERT INTO wishlist (user_id, product_id) VALUES (%s, %s)", (wish_user_id, product_id))
+        conn.commit()
+        return JSONResponse(
+            status_code= 200,
+            content = {
+                "ok": True,
+                "message": "Product added to wishlist"
+            }
+        )
+    except mysql.connector.Error as err:
+        return JSONResponse(
+            status_code=400,
+            content = {
+                "error": True,
+                "message": "建立失敗，輸入不正確或其他原因"
+            }
+        )
+    except Exception as e:
+        return JSONResponse(
+            status_code=500,
+            content={
+                "error": True,
+                "message": "伺服器內部錯誤"
+            }
+        )
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
+
+#點最愛清單時，導向最愛清單頁面
+@app.get("/api/wishlist")
+async def get_wishlist(request: Request):
+    # Extract token and session_id from headers
+    token = request.headers.get('Authorization')
+    session_id = request.headers.get('X-Session-ID')
+
+    user_id = None
+
+    # If token is present, decode the JWT to get the user_id
+    if token and token != "Bearer null":
+        extracted_token = token[len("Bearer "):]
+        print("extracted token:", extracted_token)
+        try:
+            payload = jwt.decode(extracted_token, SECRET_KEY, algorithms=[ALGORITHM])
+            user_id = payload.get("id")
+        except jwt.PyJWTError:
+            raise HTTPException(status_code=403, detail="Invalid token")
+
+    if not user_id and not session_id:
+        raise HTTPException(status_code=400, detail="No user_id or session_id provided")
+
+    conn = None
+    cursor = None
+
+    try:
+        conn = mysql.connector.connect(**DB_CONFIG)
+        cursor = conn.cursor(dictionary=True)
+
+        if user_id:
+            # Query to fetch wishlist items for a logged-in user
+            query = """
+            SELECT furnitures.* FROM furnitures
+            JOIN wishlist ON furnitures.Product_id = wishlist.product_id
+            WHERE wishlist.user_id = %s
+            """
+            cursor.execute(query, (user_id,))
+        else:
+            # Query to fetch wishlist items for a guest user with a session_id
+            query = """
+            SELECT furnitures.* FROM furnitures
+            JOIN wishlist ON furnitures.Product_id = wishlist.product_id
+            WHERE wishlist.session_id = %s
+            """
+            cursor.execute(query, (session_id,))
+
+        wishlist_items = cursor.fetchall()
+
+        # Convert any Decimal fields to float
+        wishlist_items = [serialize_item(item) for item in wishlist_items]
+
+        return JSONResponse(status_code=200, content=wishlist_items)
+
+    except mysql.connector.Error as err:
+        return JSONResponse(
+            status_code=500,
+            content={"error": True, "message": "Database query failed"}
+        )
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
+
+def serialize_item(item):
+    """Convert all Decimal and datetime fields in a dictionary to JSON-serializable formats."""
+    for key, value in item.items():
+        if isinstance(value, Decimal):
+            item[key] = float(value)
+        elif isinstance(value, datetime):
+            item[key] = value.isoformat()  # Convert datetime to ISO 8601 string
+    return item

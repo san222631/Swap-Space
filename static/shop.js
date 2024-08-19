@@ -1,8 +1,22 @@
 let observer;
+let currentPage = 0;
+let keyword = '';
 document.addEventListener('DOMContentLoaded', function(){
+    const urlParams = new URLSearchParams(window.location.search);
+    keyword = sessionStorage.getItem('searchKeyword') || '';
     fetchUserInfo()
-    fetchProducts(0);
-
+    if (keyword) {
+        document.getElementById('search-input').value = decodeURIComponent(keyword);
+        fetchProducts(currentPage, keyword)
+            .then(() => {
+                sessionStorage.removeItem('searchKeyword');
+            })
+            .catch(error => {
+                console.error('Error during fetchProducts call:', error);                
+            });
+    } else {
+        fetchProducts(currentPage);
+    }    
 
     //偵測滾動
     observer = new IntersectionObserver(handleIntersection, {
@@ -34,6 +48,17 @@ document.addEventListener('DOMContentLoaded', function(){
     //尚未加使用者驗證
     document.getElementById('start-booking').addEventListener('click', function(){
         window.location.href = '/shop/cart';
+    });
+
+    //搜尋關鍵字
+    document.getElementById('search-button').addEventListener('click', function () {
+        const keyword = document.getElementById('search-input').value;
+        if (keyword) {
+            searchProducts(keyword);
+            fetchUserInfo()
+        } else {
+            alert("Please enter a keyword to search");
+        }
     });
 
     //點擊Member，看會員彈出視窗
@@ -187,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 
-let currentPage = 0;
+
 let fetching = false;
 
 //每次重新整理頁面，都檢查一次使用者的TOKEN
@@ -232,13 +257,17 @@ function fetchUserInfo() {
 }
 
 function fetchProducts(page, keyword = '') {
-    if (fetching) return;
+    if (fetching) return Promise.resolve();
     fetching = true;
-
-    fetch(`/api/products/?page=${page}&keyword=${encodeURIComponent(keyword)}`)
+    console.log(`Fetching products for page ${page} with keyword '${keyword}'`); //EXTRA
+    return fetch(`/api/products/?page=${page}&keyword=${encodeURIComponent(keyword)}`)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                if (response.status == 404) {
+                    throw new Error('No related furniture found');
+                } else {
+                    throw new Error('Network response was not ok');
+                }                
             }
             return response.json();
         })
@@ -268,7 +297,11 @@ function fetchProducts(page, keyword = '') {
         })
         .catch(error => {
             console.error('Error loading the products:', error);
+            const gridContent = document.getElementById('inside-product-grid');
+            gridContent.innerHTML = '<p>No related furnitures.</p>';
+            sessionStorage.removeItem('searchKeyword');
             fetching = false;
+            throw error;
         });
 }
 
@@ -339,3 +372,9 @@ document.getElementById('logout').addEventListener('click', function(){
     //登出後重整頁面
     location.reload();
 })
+
+//用關鍵字找景點
+function searchProducts(keyword) {
+    currentPage = 0;
+    fetchProducts(currentPage, keyword);
+}

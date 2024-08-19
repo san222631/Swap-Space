@@ -1,17 +1,49 @@
 let currentPage = 0;
 document.addEventListener('DOMContentLoaded', async() => {
     const userInfo = await fetchUserInfo();
+    let token = localStorage.getItem('received_Token');
+    let sessionId = sessionStorage.getItem('session_id');
+
+    const headers = {
+        'Content-Type': 'application/json'
+    };
+
+    if (token) {
+        headers['Authorization'] = token ? `Bearer ${token}` : '';
+    } else if (sessionId) {
+        headers['X-Session-ID'] = sessionId;
+    }
+
+    fetch('/api/wishlist', {
+        method: 'GET',
+        headers: headers,        
+    })
+    .then(response => response.json())
+    .then(data => {
+        const gridContainer = document.getElementById('grid-container');
+        if (data.length > 0) {
+            data.forEach(product => {
+                const productCard = createProductCard(product);
+                gridContainer.appendChild(productCard);
+            });
+        } else {
+            gridContainer.innerHTML = '<p>No products in your wishlist.</p>';
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching wishlist:', error);
+    });
 
     if (userInfo) {
         //加入會換名字的問候語
         console.log(userInfo)
         const greeting = document.getElementById('greeting');
-        greeting.textContent = `您好，${userInfo.name}，購物車內容如下:`;
+        greeting.textContent = `您好，${userInfo.name}，最愛清單內容如下:`;
         fetchBookingDetails();
     } else {
         //window.location.href = '/';
         const greeting = document.getElementById('greeting');
-        greeting.textContent = `您好，guest，購物車內容如下:`;
+        greeting.textContent = `您好，guest，最愛清單內容如下:`;
         fetchBookingDetails();
     }
 
@@ -200,37 +232,24 @@ let fetching = false;
 //去資料庫拿特定user的購物車的資料
 async function fetchBookingDetails() {
     const token = localStorage.getItem('received_Token');
-    let sessionId = sessionStorage.getItem('session_id');
-
-    // Setup headers for the fetch request
-    const headers = {
-        'Content-Type': 'application/json',
-    };
-
-    // Add the Authorization header if the user is logged in
-    if (token) {
-        headers['Authorization'] = `Bearer ${token}`;
-    }
-
-    // Add the X-Session-ID header if a session_id exists in sessionStorage
-    if (sessionId) {
-        headers['X-Session-ID'] = sessionId;
-    }
-
+    const sessionId = sessionStorage.getItem('session_id');
     try {
-        const response = await fetch(`/api/shop/cart`, {
+        const response = await fetch('/api/wishlist', {
             method: 'GET',
-            headers: headers
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
         });
         console.log(response)
         if (!response.ok) {
-            throw new Error(`/api/booking的response有錯誤: ${response.statusText}`);
+            throw new Error(`/api/wishlist的response有錯誤: ${response.statusText}`);
         }
 
         const data = await response.json();
-        //加入各種booking細節或是出現"目前沒有預定行程"
+        //加入各種細節或是出現"目前沒有最愛清單"
         console.log(data)
-        if (data && data.length > 0) {
+        if (data.length > 0) {
             addBooking(data);            
         } else {
             //沒有預定行程在資料庫，因此隱藏預定行程，顯示無行程
@@ -240,14 +259,14 @@ async function fetchBookingDetails() {
             bookingFound1.classList.remove('visible');
             bookingFound2.classList.remove('visible');
             noBooking.classList.add('visible');
-            document.getElementById('no-booking').textContent = '目前沒有任何待預定的行程';
+            document.getElementById('no-booking').textContent = '目前沒有任何最愛清單';
         }
         
     } catch (error) {
-        console.error('收到response前有錯誤:', error);
+        console.error('收到最愛清單的response前有錯誤:', error);
     }
 }
-
+    
 //在HTML加入各種資料
 function addBooking(data_booking) {
     if (fetching) return;
@@ -297,12 +316,6 @@ function addBooking(data_booking) {
         priceElement.className = 'product-price';
         productContainer.appendChild(priceElement);
 
-        // 加入數量
-        const quantityElement = document.createElement('p');
-        quantityElement.textContent = `Amount: ${product.quantity}`;
-        quantityElement.className = 'product-quantity';
-        productContainer.appendChild(quantityElement);
-
         // 刪除按鈕
         const deleteButton = document.createElement('div');
         deleteButton.id = 'delete-booking';
@@ -311,21 +324,13 @@ function addBooking(data_booking) {
 
         // 將商品容器加入到購物車項目容器中
         cartItemsContainer.appendChild(productContainer);
-
-        //加入刪除按鈕
-        deleteButton.addEventListener('click', async function(){
-            deleteBooking(product.product_id);
-        });
     });
 
- 
-    
-
-    // 計算並顯示總價
-    const totalPriceElement = document.getElementById('total-price');
-    const totalPrice = data_booking.reduce((sum, item) => sum + (item.product.price * item.product.quantity), 0);
-    console.log(totalPrice)
-    totalPriceElement.textContent = `Total: ${totalPrice} EURO`;
+    //加入刪除按鈕
+    const delete_button = document.getElementById('delete-booking');
+    delete_button.addEventListener('click', async function(){
+        deleteBooking();
+    });  
 }
 
 //刪除booking資料庫

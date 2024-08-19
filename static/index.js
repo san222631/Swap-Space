@@ -20,6 +20,17 @@ document.addEventListener('DOMContentLoaded', function(){
         window.location.href = '/shop/cart';
     });
 
+    //搜尋關鍵字
+    document.getElementById('search-button').addEventListener('click', function () {
+        const keyword = document.getElementById('search-input').value;
+        if (keyword) {
+            sessionStorage.setItem('searchKeyword', keyword);
+            window.location.href = `/shop`;
+        } else {
+            alert("Please enter a keyword to search");
+        }
+    });
+
     //點擊Member，看會員彈出視窗
     //處理登入
     const modal = document.getElementById('modal');
@@ -235,5 +246,6 @@ document.getElementById('logout').addEventListener('click', function(){
     //登出後重整頁面
     location.reload();
 })
+
 
 
