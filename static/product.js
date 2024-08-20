@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         productData = data;
 
         addDetails(data);
-
+  
     } catch (error) {
         console.error('收到response前有錯誤:', error);
         document.getElementById('check').textContent = '加載細節失敗';

@@ -743,6 +743,158 @@ async def check_order(request: Request):
             conn.close()
 
 
+#更新 購物車數量
+class UpdateInfo(BaseModel):
+    productId: str
+    quantity: int
+
+@app.put("/api/shop/cart")
+async def update_cart(request: Request, update_info: UpdateInfo, response: Response):
+    #檢查是否有token
+    token = request.headers.get('Authorization')
+    session_id = request.headers.get("X-Session-ID")
+    conn = None
+    cursor = None
+    #沒登入的人
+    if not token or not token.startswith("Bearer "):        
+        if not session_id:
+            session_id = str(uuid.uuid4())  # Generate a new session_id
+
+        try:
+            conn = mysql.connector.connect(**DB_CONFIG)
+            cursor = conn.cursor(dictionary=True)
+            booking_product_id = update_info.productId
+            booking_quantity = update_info.quantity 
+            booking_price = update_info.price            
+ 
+            cursor.execute("SELECT * FROM shopping_cart WHERE session_id = %s AND product_id LIKE %s", (session_id, booking_product_id))
+            to_update = cursor.fetchone()
+            if to_update:
+                update_query = """
+                UPDATE shopping_cart
+                SET quantity = %s, updated_at = NOW()
+                WHERE session_id = %s AND product_id LIKE %s
+                """
+                cursor.execute(update_query, (
+                    booking_quantity,
+                    session_id,
+                    booking_product_id,
+                ))
+            else:
+                query = """
+                INSERT INTO shopping_cart (session_id, product_id, quantity, price, added_at, updated_at)
+                VALUES
+                (%s, %s, %s, %s, NOW(), NOW())
+                """
+                cursor.execute(query, (
+                    session_id,
+                    booking_product_id,
+                    booking_quantity,
+                    booking_price,
+                ))
+            conn.commit()
+            return JSONResponse(content={"ok": True, "session_id": session_id})
+        except mysql.connector.Error as err:
+            return JSONResponse(
+                status_code=400,
+                content={
+                    "error": True,
+                    "message": "Failed to save booking. Please check your input."
+                }
+            )
+        except Exception as e:
+            return JSONResponse(
+                status_code=500,
+                content={
+                    "error": True,
+                    "message": "Internal server error"
+                }
+            )
+        finally:
+            if cursor:
+                cursor.close()
+            if conn:
+                conn.close()
+
+    # 有登入的使用者
+    extracted_token = token[len("Bearer "):]
+    try:
+        payload = jwt.decode(extracted_token, SECRET_KEY, algorithms=[ALGORITHM])
+    except PyJWTError:
+        return JSONResponse(
+            status_code = 403,
+            content = {
+                "error": True,
+                "message": "未登入系統，拒絕存取"
+            }
+        )
+
+    conn = None
+    cursor = None
+    try:
+        conn = mysql.connector.connect(**DB_CONFIG)
+        cursor = conn.cursor(dictionary=True)
+        booking_user_id = payload.get("id")
+        booking_product_id = update_info.productId
+        booking_quantity = update_info.quantity 
+
+        #看看是否已經member_id存在booking table
+        cursor.execute("SELECT * FROM shopping_cart WHERE user_id = %s AND product_id = %s", (booking_user_id, booking_product_id))
+        to_update = cursor.fetchone()
+
+        if to_update:            
+            new_total_price = to_update["price"] * booking_quantity
+            print(new_total_price)
+            update_query = """
+            UPDATE shopping_cart
+            SET quantity = %s, total_price = %s
+            WHERE user_id = %s AND product_id = %s
+            """
+            cursor.execute(update_query, (
+                booking_quantity,
+                new_total_price,
+                booking_user_id,
+                booking_product_id
+                )
+            )
+        else:
+            return JSONResponse(
+                status_code=400,
+                content={"error": True, "message": "No data found in database"}
+            )
+        conn.commit()
+        return JSONResponse(
+            status_code= 200,
+            content = {
+                "ok": True,
+                "message": "Cart updated!"
+            }
+        )
+    except mysql.connector.Error as err:
+        return JSONResponse(
+            status_code=400,
+            content = {
+                "error": True,
+                "message": "更新失敗，輸入不正確或其他原因",
+                "details": str(err)
+            }
+        )
+    except Exception as e:
+        return JSONResponse(
+            status_code=500,
+            content={
+                "error": True,
+                "message": "伺服器內部錯誤",
+                "details": str(e)
+            }
+        )
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
+
+
 #把使用者喜歡的加入wishlist資料庫
 class WishInfo(BaseModel):
     product_id: str

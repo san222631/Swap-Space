@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         const greeting = document.getElementById('greeting');
         greeting.textContent = `您好，guest，購物車內容如下:`;
         fetchBookingDetails();
-    }
+    }  
 
     //按回首頁
     const goIndex = document.getElementById('go-index');
@@ -261,7 +261,7 @@ async function fetchBookingDetails() {
             bookingFound1.classList.remove('visible');
             bookingFound2.classList.remove('visible');
             noBooking.classList.add('visible');
-            document.getElementById('no-booking').textContent = '目前沒有任何待預定的行程';
+            document.getElementById('no-booking').textContent = '目前沒有任何商品';
         }
         
     } catch (error) {
@@ -316,13 +316,25 @@ function addBooking(data_booking) {
         const priceElement = document.createElement('p');
         priceElement.textContent = `Price: ${product.price} EURO`;
         priceElement.className = 'product-price';
+        priceElement.dataset.product_price = product.price;
         productContainer.appendChild(priceElement);
 
         // 加入數量
-        const quantityElement = document.createElement('p');
-        quantityElement.textContent = `Amount: ${product.quantity}`;
+        const quantityElement = document.createElement('input');
+        quantityElement.type = 'number';
+        quantityElement.id = `order-amount-${product.id}`;
+        quantityElement.name = 'amount';
+        //quantityElement.textContent = `Amount: ${product.quantity}`;
+        quantityElement.value = product.quantity;
+        quantityElement.min = 1;
         quantityElement.className = 'product-quantity';
         productContainer.appendChild(quantityElement);
+
+        //送出新的數量
+        const updateButton = document.createElement('div');
+        updateButton.id = `update-button-${product.id}`;
+        updateButton.className = 'update-button';
+        productContainer.appendChild(updateButton);
 
         // 刪除按鈕
         const deleteButton = document.createElement('div');
@@ -335,13 +347,24 @@ function addBooking(data_booking) {
         cartItemsContainer.appendChild(productContainer);
 
         //加入刪除按鈕
-        deleteButton.addEventListener('click', async function(){
+        deleteButton.addEventListener('click', function(){
             deleteBooking(product.id);
         });
-    });
 
- 
-    
+        //更新數量
+        updateButton.addEventListener('click', function () {
+            const newQuantity = parseInt(quantityElement.value, 10);
+            
+            if (newQuantity < 1) {
+                alert("Quantity cannot be less than 1");
+                quantityElement.value = product.quantity; // Reset to previous value if input is invalid
+                return;
+            }
+        
+            // Call a function to update the quantity in the backend
+            updateCartQuantity(product.id, newQuantity);
+        });
+    }); 
 
     // 計算並顯示總價
     const totalPriceElement = document.getElementById('total-price');
@@ -445,3 +468,38 @@ document.getElementById('logout').addEventListener('click', function(){
     //登出後重整頁面
     location.reload();
 })
+
+//更新購物車數量
+async function updateCartQuantity(productId, newQuantity) {
+    const token = localStorage.getItem('received_Token');
+
+    try {
+        const response = await fetch(`/api/shop/cart`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                productId: productId,
+                quantity: newQuantity,
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`/api/shop/cart的response有錯誤: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        if (data.ok) {
+            console.log('Quantity updated successfully');
+            await fetchBookingDetails();
+            // Optionally, refresh the cart or update the UI to reflect changes
+        } else {
+            throw new Error('Failed to update quantity');
+        }
+    } catch (error) {
+        console.error('Error updating quantity:', error);
+        alert('Error updating quantity');
+    }
+}

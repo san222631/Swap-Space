@@ -220,6 +220,11 @@ nav {
     right: 0;
     top: -5px;
 }
+.update-button {
+    background-image: url('refresh.png');
+    width: 30px;
+    height: 30px;
+}
   
 /*填全部個人資料+信用卡*/
 .contact-info {
