@@ -1,6 +1,6 @@
 let currentPage = 0;
 document.addEventListener('DOMContentLoaded', async() => {
-    const userInfo = await fetchUserInfo();
+    const userInfo = await fetchUserInfo();    
 
     if (userInfo) {
         //加入會換名字的問候語
@@ -43,6 +43,11 @@ document.addEventListener('DOMContentLoaded', async() => {
         } else {
             alert("Please enter a keyword to search");
         }
+    });
+
+    //進入最愛清單
+    document.getElementById('go-to-wishlist').addEventListener('click', function() {
+        window.location.href = '/wishlist';
     });
 
     //點擊Member，看會員彈出視窗
@@ -96,24 +101,38 @@ document.addEventListener('DOMContentLoaded', async() => {
         });
         })
         .then(data => {
-        if (data.token){
-            localStorage.setItem('received_Token', data.token);
-            console.log(data);
-            modal.style.display = 'none';
-            errorMessage.textContent = '';
-            renderLogout()
-        } else {
-            throw new Error('無效的token response');
-        }
+            if (data.token){
+                // Remove the session_id from session storage
+                sessionStorage.removeItem('session_id');
+                localStorage.setItem('received_Token', data.token);
+                console.log(data);
+                modal.style.display = 'none';
+                errorMessage.textContent = '';
+                renderLogout()
+                if (userInfo) {
+                    //加入會換名字的問候語
+                    console.log(userInfo)
+                    const greeting = document.getElementById('greeting');
+                    greeting.textContent = `您好，${userInfo.name}，購物車內容如下:`;
+                    fetchBookingDetails();
+                } else {
+                    //window.location.href = '/';
+                    const greeting = document.getElementById('greeting');
+                    greeting.textContent = `您好，guest，購物車內容如下:`;
+                    fetchBookingDetails();
+                }
+            } else {
+                throw new Error('無效的token response');
+            }
         })
         .catch(error => {
-        if (error.data) {
-            errorMessage.textContent = error.data.message;
-            console.error(error.data); // Log the entire detail object
-        } else {
-            errorMessage.textContent = error.message;
-            console.error('Error是:', error.message || error); 
-        }
+            if (error.data) {
+                errorMessage.textContent = error.data.message;
+                console.error(error.data); // Log the entire detail object
+            } else {
+                errorMessage.textContent = error.message;
+                console.error('Error是:', error.message || error); 
+            }
         });
     });
 
@@ -176,6 +195,8 @@ document.addEventListener('DOMContentLoaded', async() => {
         })
         .then(data => {
             if (data.ok){
+                // Remove the session_id from session storage
+                sessionStorage.removeItem('session_id');
                 console.log(data);
                 R_errorMessage.textContent = '註冊成功';
             } else {
@@ -224,7 +245,7 @@ async function fetchBookingDetails() {
         });
         console.log(response)
         if (!response.ok) {
-            throw new Error(`/api/booking的response有錯誤: ${response.statusText}`);
+            throw new Error(`/api/shop/cart的response有錯誤: ${response.statusText}`);
         }
 
         const data = await response.json();
@@ -250,9 +271,6 @@ async function fetchBookingDetails() {
 
 //在HTML加入各種資料
 function addBooking(data_booking) {
-    if (fetching) return;
-    fetching = true;
-
     //有預定行程在資料庫，因此顯示預定行程
     const bookingFound1 = document.getElementById('booking-found-1');
     const bookingFound2 = document.getElementById('booking-found-2');
@@ -274,16 +292,19 @@ function addBooking(data_booking) {
         productContainer.className = 'product-container';
 
         // 加入圖片
-        //const imageElement = document.createElement('img');
-        //imageElement.src = product.image;
-        //imageElement.alt = product.name;
-        //imageElement.className = 'product-image';
-        //productContainer.appendChild(imageElement);
+        const imageElement = document.createElement('img');
+        imageElement.src = product.image;
+        imageElement.alt = product.name;
+        imageElement.className = 'product-image';
+        productContainer.appendChild(imageElement);
 
         // 加入名稱
         const nameElement = document.createElement('h3');
         nameElement.textContent = product.name;
         productContainer.appendChild(nameElement);
+        nameElement.addEventListener('click', function(){
+            window.location.href = `/product/${product.id}`;
+        });
 
         // 加入描述
         const descriptionElement = document.createElement('p');
@@ -306,7 +327,8 @@ function addBooking(data_booking) {
         // 刪除按鈕
         const deleteButton = document.createElement('div');
         deleteButton.id = 'delete-booking';
-        deleteButton.className = 'delet-booking';
+        deleteButton.className = 'delete-booking';
+        deleteButton.dataset.product_id = product.id;
         productContainer.appendChild(deleteButton);
 
         // 將商品容器加入到購物車項目容器中
@@ -314,7 +336,7 @@ function addBooking(data_booking) {
 
         //加入刪除按鈕
         deleteButton.addEventListener('click', async function(){
-            deleteBooking(product.product_id);
+            deleteBooking(product.id);
         });
     });
 
@@ -325,11 +347,11 @@ function addBooking(data_booking) {
     const totalPriceElement = document.getElementById('total-price');
     const totalPrice = data_booking.reduce((sum, item) => sum + (item.product.price * item.product.quantity), 0);
     console.log(totalPrice)
-    totalPriceElement.textContent = `Total: ${totalPrice} EURO`;
+    totalPriceElement.textContent = `Total: ${totalPrice} EURO / MONTH`;
 }
 
 //刪除booking資料庫
-async function deleteBooking() {
+async function deleteBooking(productId) {
     const token = localStorage.getItem('received_Token');
 
     try {
@@ -338,10 +360,11 @@ async function deleteBooking() {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
-            }
+            },
+            body:JSON.stringify({ product_id: productId})
         });
         if (!response.ok) {
-            throw new Error(`/api/booking的response有錯誤: ${response.statusText}`);
+            throw new Error(`/api/shop/cart的response有錯誤: ${response.statusText}`);
         }
 
         const data = await response.json();

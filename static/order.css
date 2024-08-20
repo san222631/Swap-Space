@@ -189,6 +189,10 @@ nav {
     bottom: 0;
     position: absolute;
 }
+.product-image {
+    height: 100px;
+    width: 100px;
+}
 
 /*放右邊grid的文字*/
 .profile {
@@ -216,7 +220,7 @@ nav {
     right: 0;
     top: -5px;
 }
-
+  
 /*填全部個人資料+信用卡*/
 .contact-info {
     margin: 0 auto;

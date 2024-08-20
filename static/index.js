@@ -31,6 +31,11 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     });
 
+    //進入最愛清單
+    document.getElementById('go-to-wishlist').addEventListener('click', function() {
+        window.location.href = '/wishlist';
+    });
+
     //點擊Member，看會員彈出視窗
     //處理登入
     const modal = document.getElementById('modal');
@@ -71,35 +76,38 @@ document.addEventListener('DOMContentLoaded', function(){
         body: JSON.stringify({ email: email, password: password })
         })
         .then(response => {
-        return response.json()
-        .then(data => {
-            if (!response.ok) {
-                const error = new Error('HTTP error');
-                error.data = data;
-                throw error;
-            }
-            return data;
-        });
+            return response.json()
+            .then(data => {
+                if (!response.ok) {
+                    const error = new Error('HTTP error');
+                    error.data = data;
+                    throw error;
+                }
+                return data;
+            });
         })
         .then(data => {
-        if (data.token){
-            localStorage.setItem('received_Token', data.token);
-            console.log(data);
-            modal.style.display = 'none';
-            errorMessage.textContent = '';
-            renderLogout()
-        } else {
-            throw new Error('無效的token response');
-        }
+            if (data.token){
+                // Remove the session_id from session storage
+                sessionStorage.removeItem('session_id');
+
+                localStorage.setItem('received_Token', data.token);
+                console.log(data);
+                modal.style.display = 'none';
+                errorMessage.textContent = '';
+                renderLogout()
+            } else {
+                throw new Error('無效的token response');
+            }
         })
         .catch(error => {
-        if (error.data) {
-            errorMessage.textContent = error.data.message;
-            console.error(error.data); // Log the entire detail object
-        } else {
-            errorMessage.textContent = error.message;
-            console.error('Error是:', error.message || error); 
-        }
+            if (error.data) {
+                errorMessage.textContent = error.data.message;
+                console.error(error.data); // Log the entire detail object
+            } else {
+                errorMessage.textContent = error.message;
+                console.error('Error是:', error.message || error); 
+            }
         });
     });
 
@@ -147,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 'Content-type': 'application/json'
             },
             body: JSON.stringify({name: R_name, email: R_email, password: R_password})
-        })
+        })  
         .then(response => {  
             console.log(response)
             return response.json()
@@ -162,6 +170,9 @@ document.addEventListener('DOMContentLoaded', function(){
         })
         .then(data => {
             if (data.ok){
+                // Remove the session_id from session storage
+                sessionStorage.removeItem('session_id');
+
                 console.log(data);
                 R_errorMessage.textContent = '註冊成功';
             } else {

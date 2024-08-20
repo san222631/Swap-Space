@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async() => {
     const pathname = window.location.pathname;
     const specialId = pathname.split('/').pop();
     console.log('特別的號碼:', specialId)
-
+   
     try {
         //等fetch call拿到promise以後才做下一步動作
         const response = await fetch(`/api/product/${specialId}`);
@@ -62,9 +62,9 @@ document.addEventListener('DOMContentLoaded', async() => {
         }
     });
 
-    // Add event listener for the "Favorite" button
+    //進入最愛清單
     document.getElementById('go-to-wishlist').addEventListener('click', function() {
-        window.location.href = '/shop/wishlist';
+        window.location.href = '/wishlist';
     });
 
     //點擊Member，看會員彈出視窗
@@ -118,24 +118,26 @@ document.addEventListener('DOMContentLoaded', async() => {
         });
         })
         .then(data => {
-        if (data.token){
-            localStorage.setItem('received_Token', data.token);
-            console.log(data);
-            modal.style.display = 'none';
-            errorMessage.textContent = '';
-            renderLogout()
-        } else {
-            throw new Error('無效的token response');
-        }
+            if (data.token){
+                // Remove the session_id from session storage
+                sessionStorage.removeItem('session_id');
+                localStorage.setItem('received_Token', data.token);
+                console.log(data);
+                modal.style.display = 'none';
+                errorMessage.textContent = '';
+                renderLogout()
+            } else {
+                throw new Error('無效的token response');
+            }
         })
         .catch(error => {
-        if (error.data) {
-            errorMessage.textContent = error.data.message;
-            console.error(error.data); // Log the entire detail object
-        } else {
-            errorMessage.textContent = error.message;
-            console.error('Error是:', error.message || error); 
-        }
+            if (error.data) {
+                errorMessage.textContent = error.data.message;
+                console.error(error.data); // Log the entire detail object
+            } else {
+                errorMessage.textContent = error.message;
+                console.error('Error是:', error.message || error); 
+            }
         });
     });
 
@@ -198,6 +200,8 @@ document.addEventListener('DOMContentLoaded', async() => {
         })
         .then(data => {
             if (data.ok){
+                // Remove the session_id from session storage
+                sessionStorage.removeItem('session_id');
                 console.log(data);
                 R_errorMessage.textContent = '註冊成功';
             } else {
@@ -355,7 +359,7 @@ document.getElementById('reserve').addEventListener('click', async function(even
 
     //已登入的會員
     if (check_status) {
-        const token = localStorage.getItem('received_Token');
+        token = localStorage.getItem('received_Token');
     } 
 
     if (!productData){
@@ -394,6 +398,7 @@ document.getElementById('reserve').addEventListener('click', async function(even
         const data = await response.json();
         if (data.ok) {
             //window.location.href = '/booking';
+            alert('Product added to your shopping cart!');
             if (data.session_id) {
                 sessionStorage.setItem('session_id', data.session_id)
             }
@@ -403,17 +408,6 @@ document.getElementById('reserve').addEventListener('click', async function(even
         }
     } catch (error) {
         console.error('Error:', error);
-    }
-});
-
-
-//預定行程的按鈕
-document.getElementById('start-booking').addEventListener('click', async function(){
-    const check_status = await fetchUserInfo();
-    if (check_status) {
-        window.location.href = '/booking';
-    } else {
-        showLoginModal();
     }
 });
 
@@ -450,21 +444,20 @@ function addToWishlist() {
 
     // Retrieve the session_id from sessionStorage
     const sessionId = sessionStorage.getItem('session_id');
+    const token = localStorage.getItem('received_Token');
 
     // Set up headers
     const headers = {
         'Content-Type': 'application/json',
     };
 
-    // If sessionId exists, include it in the headers
-    if (sessionId) {
+    if (token) {
+        headers['Authorization'] = token ? `Bearer ${token}` : '';
+    } else if (sessionId) {
         headers['X-Session-ID'] = sessionId;
     }
 
-    // Debugging: log the sessionId
-    console.log("Session ID:", sessionId);
-
-    fetch('/api/shop/wishlist/add', {
+    fetch('/api/wishlist/add', {
         method: 'POST',
         headers: headers,
         body: JSON.stringify({ product_id: productId }),
