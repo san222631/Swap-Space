@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function(){
         window.location.href = '/';
     });
 
+    //會員中心看訂單
+    document.getElementById('member').addEventListener('click', function(){
+        window.location.href = '/member';
+    })
 
     //點擊products，想看所有商品
     //尚未加使用者驗證
@@ -15,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
     //點擊Cart，想看購物車
-    //尚未加使用者驗證
+    //尚未加使用者驗證 
     document.getElementById('start-booking').addEventListener('click', function(){
         window.location.href = '/shop/cart';
     });

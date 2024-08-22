@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', async() => {
         window.location.href = '/';
     });
 
+    //會員中心看訂單
+    document.getElementById('member').addEventListener('click', function(){
+        window.location.href = '/member';
+    })
 
     //點擊products，想看所有商品
     //尚未加使用者驗證

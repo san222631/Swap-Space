@@ -1,206 +1,15 @@
-let currentPage = 0;
-document.addEventListener('DOMContentLoaded', async() => {
-    //連上TAPPAY
-    const APP_IP = '151825';
-    const APP_KEY = 'app_Idf5nklHD5lm9I0kpTtnzc3DLDv9EEFnmQUpj205kr5LAvufIEAdeE0iOzKS';
-    const SERVER_TYPE = 'sandbox';
-
-    TPDirect.setupSDK(APP_IP, APP_KEY, SERVER_TYPE);
-    TPDirect.card.setup({
-        fields: {
-            number: {
-                element: '#card-number',
-                placeholder: '**** **** **** ****'
-            },
-            expirationDate: {
-                element: '#card-expiration-date',
-                placeholder: 'MM / YY'
-            },
-            ccv: {
-                element: '#card-ccv',
-                placeholder: 'ccv'
-            }
-        },
-        styles: {
-            'input': {
-                'color': 'gray'
-            },
-            ':focus': {
-                'color': 'black'
-            },
-            '.valid': {
-                'color': 'green'
-            },
-            '.invalid': {
-                'color': 'red'
-            },
-            '@media screen and (max-width: 400px)': {
-                'input': {
-                    'color': 'orange'
-                }
-            }
-        },
-        isMaskCreditCardNumber: true,
-        maskCreditCardNumberRange: {
-            beginIndex: 6,
-            endIndex: 11
-        }
-    });
-
-    // Enable or disable the submit button based on the card form's state
-    TPDirect.card.onUpdate(function (update) {
-        const submitButton = document.getElementById('O-button');
-
-        if (update.canGetPrime) {
-            // Enable the submit button
-            submitButton.removeAttribute('disabled');
-        } else {
-            // Disable the submit button
-            submitButton.setAttribute('disabled', true);
-        }
-
-        // Optionally, handle card type
-        if (update.cardType === 'visa') {
-            // Handle card type visa.
-        }
-
-        // Handle the status of each field
-        const fields = ['number', 'expiry', 'ccv'];
-        fields.forEach(field => {
-            const fieldStatus = update.status[field];
-            const fieldElement = document.getElementById(`card-${field}`);
-            if (fieldStatus === 2) {
-                setFieldToError(fieldElement);
-            } else if (fieldStatus === 0) {
-                setFieldToSuccess(fieldElement);
-            } else {
-                setFieldToNormal(fieldElement);
-            }
-        });
-    });
-
-    function setFieldToNormal(field) {
-        const fieldElement = document.getElementById(field);
-        if (fieldElement) {
-            fieldElement.style.borderColor = "";
-        }
-    }
-    
-    function setFieldToSuccess(field) {
-        const fieldElement = document.getElementById(field);
-        if (fieldElement) {
-            fieldElement.style.borderColor = "green";
-        }
-    }
-    
-    function setFieldToError(field) {
-        const fieldElement = document.getElementById(field);
-        if (fieldElement) {
-            fieldElement.style.borderColor = "red";
-        }
-    }
-
-    //會員輸入的訂購資訊
-    const bookingInfo = await fetchBookingDetails();
-    console.log(bookingInfo)
-    //測試是否有錯!!!!!!!!!!!!!!!!!!!
-    if (!bookingInfo) {
-        console.error('Booking details are missing');
-        // Handle the case where bookingInfo is missing
-    } else {
-        console.log('收到response了:', bookingInfo);
-    }
-
-
-    // Handle form submission
-    document.getElementById('order-form').addEventListener('submit', onSubmit);
-    
-    // Define the onSubmit function
-    function onSubmit(event) {
-        event.preventDefault(); // Prevent the form from submitting normally
-
-        // Calculate total price within the onSubmit function
-        const totalPrice = bookingInfo.reduce((sum, item) => sum + (item.product.price * item.product.quantity), 0);
-
-        // Get the start date value
-        const startDate = document.getElementById('start-date').value;
-
-        // Check if the start date is filled
-        if (!startDate) {
-            alert('Please select a start date.');
-            return; // Stop the form submission
-        }
-
-        // Get the TapPay Fields status
-        const tappayStatus = TPDirect.card.getTappayFieldsStatus();
-
-        if (tappayStatus.canGetPrime) {
-            // Get prime
-            TPDirect.card.getPrime((result) => {
-                if (result.status !== 0) {
-                    console.log('Failed to get prime: ' + result.msg);
-                    return;
-                }
-
-                console.log('Get prime success, prime: ' + result.card.prime);
-
-                // Send prime to your server
-                const token = localStorage.getItem('received_Token');
-                fetch('/api/orders', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
-                    },
-                    body: JSON.stringify({
-                        prime: result.card.prime,
-                        order: bookingInfo,
-                        contact: {
-                            name: document.getElementById('O-name').value,
-                            email: document.getElementById('O-email').value,
-                            phone: document.getElementById('O-phone').value
-                        },
-                        subscription: {
-                            total_price: totalPrice,
-                            subscription_period: document.getElementById('subscription-period').value,
-                            start_date: startDate,
-                            end_date: document.getElementById('end-date').value,
-                        }
-                    })
-                }).then(response => {
-                    return response.json();
-                }).then(data => {
-                    if (data.data.payment.status == 0) {
-                        alert('付款成功');
-                        window.location.href = `/member`;
-                    } else {
-                        alert('付款失敗: ' + data.data.payment.message);
-                        window.location.href = `/member`;
-                    }
-                }).catch(error => {
-                    console.error('Error:', error);
-                    alert('付款失敗');
-                });
-            });
-        } else {
-            alert('Please complete the card information correctly.');
-        }
-    }
-    
+document.addEventListener('DOMContentLoaded', async() => {    
     //其他資料
     const userInfo = await fetchUserInfo();    
 
     if (userInfo) {
-        //加入會換名字的問候語
+        //加入會換名字跟訂單編號的感謝語
         console.log(userInfo)
         const greeting = document.getElementById('greeting');
-        greeting.textContent = `您好，${userInfo.name}，購物車內容如下:`;
-        fetchBookingDetails();
+        greeting.textContent = `您好，${userInfo.name}，您目前的訂單:`;
+        fetchOrderDetails();
     } else {
         window.location.href = '/';
-        //const greeting = document.getElementById('greeting');
-        //greeting.textContent = `您好，guest，購物車內容如下:`;
-        //fetchBookingDetails();
     }  
 
     //按回首頁
@@ -406,37 +215,13 @@ document.addEventListener('DOMContentLoaded', async() => {
         });
     })
 
-    //開始跟結束日期
-    const subscriptionPeriod = document.getElementById("subscription-period");
-    const startDate = document.getElementById("start-date");
-    const endDate = document.getElementById("end-date");
-
-    function updateEndDate() {
-        const periodMonths = parseInt(subscriptionPeriod.value);
-        const startDateValue = new Date(startDate.value);
-
-        if (!isNaN(startDateValue) && !isNaN(periodMonths)) {
-            const endDateValue = new Date(startDateValue);
-            endDateValue.setMonth(endDateValue.getMonth() + periodMonths);
-            
-            // Format the date as YYYY-MM-DD
-            const year = endDateValue.getFullYear();
-            const month = String(endDateValue.getMonth() + 1).padStart(2, '0'); // Month is zero-based
-            const day = String(endDateValue.getDate()).padStart(2, '0');
-            endDate.value = `${year}-${month}-${day}`;
-        }
-    }
-
-    startDate.addEventListener("change", updateEndDate);
-    subscriptionPeriod.addEventListener("change", updateEndDate);
 })
 
 
 let fetching = false;
 //去資料庫拿特定user的購物車的資料
-async function fetchBookingDetails() {
+async function fetchOrderDetails() {
     const token = localStorage.getItem('received_Token');
-    let sessionId = sessionStorage.getItem('session_id');
 
     // Setup headers for the fetch request
     const headers = {
@@ -448,27 +233,22 @@ async function fetchBookingDetails() {
         headers['Authorization'] = `Bearer ${token}`;
     }
 
-    // Add the X-Session-ID header if a session_id exists in sessionStorage
-    if (sessionId) {
-        headers['X-Session-ID'] = sessionId;
-    }
-
     try {
-        const response = await fetch(`/api/shop/cart`, {
+        const response = await fetch(`/api/orders`, {
             method: 'GET',
             headers: headers
         });
         console.log(response)
         if (!response.ok) {
-            throw new Error(`/api/shop/cart的response有錯誤: ${response.statusText}`);
+            throw new Error(`/api/orders的response有錯誤: ${response.statusText}`);
         }
 
         const data = await response.json();
         //加入各種booking細節或是出現"目前沒有預定行程"
         console.log(data)
         if (data && data.length > 0) {
-            addBooking(data);
-            console.log('/api/shop/cart收到的response:', data);
+            addOrders(data);
+            console.log('/api/orders收到的response:', data);
             return data
         } else {
             //沒有預定行程在資料庫，因此隱藏預定行程，顯示無行程
@@ -478,7 +258,7 @@ async function fetchBookingDetails() {
             bookingFound1.classList.remove('visible');
             bookingFound2.classList.remove('visible');
             noBooking.classList.add('visible');
-            document.getElementById('no-booking').textContent = '目前沒有任何商品';
+            document.getElementById('no-booking').textContent = '目前沒有任何訂單';
             return null;
         }
         
@@ -489,7 +269,7 @@ async function fetchBookingDetails() {
 }
 
 //在HTML加入各種資料
-function addBooking(data_booking) {
+function addOrders(data_booking) {
     //有預定行程在資料庫，因此顯示預定行程
     const bookingFound1 = document.getElementById('booking-found-1');
     const bookingFound2 = document.getElementById('booking-found-2');
@@ -504,62 +284,67 @@ function addBooking(data_booking) {
 
     // 迭代每個購物車中的商品，並將其加入到HTML
     data_booking.forEach(item => {
-        const product = item.product;
+        const product = item;
 
         // 創建商品的容器
         const productContainer = document.createElement('div');
         productContainer.className = 'product-container';
 
         // 加入圖片
-        const imageElement = document.createElement('img');
-        imageElement.src = product.image;
-        imageElement.alt = product.name;
-        imageElement.className = 'product-image';
-        productContainer.appendChild(imageElement);
+        //const imageElement = document.createElement('img');
+        //imageElement.src = product.image;
+        //imageElement.alt = product.name;
+        //imageElement.className = 'product-image';
+        //productContainer.appendChild(imageElement);
 
         // 加入名稱
         const nameElement = document.createElement('h3');
-        nameElement.textContent = product.name;
+        nameElement.textContent = `Order number: ${product.order_number}`;
         productContainer.appendChild(nameElement);
-        nameElement.addEventListener('click', function(){
-            window.location.href = `/product/${product.id}`;
-        });
+        //nameElement.addEventListener('click', function(){
+        //    window.location.href = `/product/${product.id}`;
+        //});
 
-        // 加入描述
+        // 加入訂購時間
         const descriptionElement = document.createElement('p');
-        descriptionElement.textContent = product.description;
-        descriptionElement.className = 'product-description';
+        descriptionElement.textContent = `Order date: ${product.order_date}`;
+        descriptionElement.className = 'order-date';
         productContainer.appendChild(descriptionElement);
+
+        // 加入訂閱多久
+        const sub_period = document.createElement('p');
+        sub_period.textContent = `Period: ${product.subscription_period} months`;
+        sub_period.className = 'sub_period';
+        productContainer.appendChild(sub_period);
+
+        // 加入起始日期
+        const start_date = document.createElement('p');
+        start_date.textContent = `Start from: ${product.start_date}`;
+        start_date.className = 'start_date';
+        productContainer.appendChild(start_date);
+        const end_date = document.createElement('p');
+        end_date.textContent = `End in: ${product.end_date}`;
+        end_date.className = 'end_date';
+        productContainer.appendChild(end_date);
 
         // 加入價格
         const priceElement = document.createElement('p');
-        priceElement.textContent = `Price: ${product.price} €/month`;
+        priceElement.textContent = `Price: ${product.total_price} €/month`;
         priceElement.className = 'product-price';
-        priceElement.dataset.product_price = product.price;
+        priceElement.dataset.product_price = product.total_price;
         productContainer.appendChild(priceElement);
 
-        // 加入數量
-        const quantityElement = document.createElement('input');
-        quantityElement.type = 'number';
-        quantityElement.id = `order-amount-${product.id}`;
-        quantityElement.name = 'amount';
-        //quantityElement.textContent = `Amount: ${product.quantity}`;
-        quantityElement.value = product.quantity;
-        quantityElement.min = 1;
-        quantityElement.className = 'product-quantity';
-        productContainer.appendChild(quantityElement);
-
-        //送出新的數量
-        const updateButton = document.createElement('div');
-        updateButton.id = `update-button-${product.id}`;
-        updateButton.className = 'update-button';
-        productContainer.appendChild(updateButton);
+        // 加入付款狀態
+        const pay_or_not = document.createElement('p');
+        pay_or_not.textContent = `Order status: ${product.order_status}`;
+        pay_or_not.className = 'pay_or_not';
+        productContainer.appendChild(pay_or_not);
 
         // 刪除按鈕
         const deleteButton = document.createElement('div');
         deleteButton.id = 'delete-booking';
         deleteButton.className = 'delete-booking';
-        deleteButton.dataset.product_id = product.id;
+        deleteButton.dataset.product_id = product.order_number;
         productContainer.appendChild(deleteButton);
 
         // 將商品容器加入到購物車項目容器中
@@ -567,59 +352,9 @@ function addBooking(data_booking) {
 
         //加入刪除按鈕
         deleteButton.addEventListener('click', function(){
-            deleteBooking(product.id);
-        });
-
-        //更新數量
-        updateButton.addEventListener('click', function () {
-            const newQuantity = parseInt(quantityElement.value, 10);
-            
-            if (newQuantity < 1) {
-                alert("Quantity cannot be less than 1");
-                quantityElement.value = product.quantity; // Reset to previous value if input is invalid
-                return;
-            }
-        
-            // Call a function to update the quantity in the backend
-            updateCartQuantity(product.id, newQuantity);
+            deleteBooking(product.order_number);
         });
     }); 
-
-    // 計算並顯示總價
-    const totalPriceElement = document.getElementById('total-price');
-    const totalPrice = data_booking.reduce((sum, item) => sum + (item.product.price * item.product.quantity), 0);
-    console.log(totalPrice)
-    totalPriceElement.textContent = `Recurring price/month: ${totalPrice} €`;
-}
-
-//刪除booking資料庫
-async function deleteBooking(productId) {
-    const token = localStorage.getItem('received_Token');
-
-    try {
-        const response = await fetch(`/api/shop/cart`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body:JSON.stringify({ product_id: productId})
-        });
-        if (!response.ok) {
-            throw new Error(`/api/shop/cart的response有錯誤: ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        if (data.ok) {
-            //刪除成功的話，refresh page載入資料
-            await fetchBookingDetails();
-        } else {
-            throw new Error('刪除行程失敗');
-        }
-    } catch (error) {
-        console.error('刪除行程時發生錯誤:', error);
-        alert('刪除行程時發生錯誤');
-    }
 }
 
 //每次重新整理頁面，都檢查一次使用者的TOKEN
@@ -688,37 +423,3 @@ document.getElementById('logout').addEventListener('click', function(){
     location.reload();
 })
 
-//更新購物車數量
-async function updateCartQuantity(productId, newQuantity) {
-    const token = localStorage.getItem('received_Token');
-
-    try {
-        const response = await fetch(`/api/shop/cart`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({
-                productId: productId,
-                quantity: newQuantity,
-            })
-        });
-
-        if (!response.ok) {
-            throw new Error(`/api/shop/cart的response有錯誤: ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        if (data.ok) {
-            console.log('Quantity updated successfully');
-            await fetchBookingDetails();
-            // Optionally, refresh the cart or update the UI to reflect changes
-        } else {
-            throw new Error('Failed to update quantity');
-        }
-    } catch (error) {
-        console.error('Error updating quantity:', error);
-        alert('Error updating quantity');
-    }
-}
