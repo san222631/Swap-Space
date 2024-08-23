@@ -1,11 +1,25 @@
 let observer;
 let currentPage = 0;
 let keyword = '';
+let categoryMode = false;  // Track if we are in category mode
+
 document.addEventListener('DOMContentLoaded', function(){
     const urlParams = new URLSearchParams(window.location.search);
     keyword = sessionStorage.getItem('searchKeyword') || '';
+    const selectedCategory = sessionStorage.getItem('selectedCategory') || '';
+
     fetchUserInfo()
-    if (keyword) {
+
+    if (selectedCategory) {
+        sessionStorage.removeItem('selectedCategory'); // Clear the category from sessionStorage
+        categoryMode = true;
+        currentPage = 0;
+
+        // Set the corresponding radio button
+        document.querySelector(`input[name="category"][value="${selectedCategory}"]`).checked = true;
+
+        fetchCategoryData(currentPage, selectedCategory);
+    } else if (keyword) {
         document.getElementById('search-input').value = decodeURIComponent(keyword);
         fetchProducts(currentPage, keyword)
             .then(() => {
@@ -30,6 +44,10 @@ document.addEventListener('DOMContentLoaded', function(){
     document.body.appendChild(sentinel);
     observer.observe(sentinel);
 
+    // Category click handler
+    document.querySelectorAll('input[name="category"]').forEach(input => {
+        input.addEventListener('change', fetchCategoryDataOnClick);
+    });
 
     //按回首頁
     const goIndex = document.getElementById('go-index');
@@ -360,8 +378,12 @@ function createProductCard(product) {
 function handleIntersection(entries, observer) {
     entries.forEach(entry => {
         if (entry.isIntersecting && currentPage !== null) {
-            const keyword = document.getElementById('search-input').value;
-            fetchProducts(currentPage, keyword);
+            if (categoryMode) {
+                fetchCategoryData(currentPage);
+            } else {
+                const keyword = document.getElementById('search-input').value;
+                fetchProducts(currentPage, keyword);
+            }
         }
     });
 }
@@ -392,4 +414,71 @@ document.getElementById('logout').addEventListener('click', function(){
 function searchProducts(keyword) {
     currentPage = 0;
     fetchProducts(currentPage, keyword);
+}
+
+//點進目錄
+function fetchCategoryData(page, selectedCategory = '') {
+    if (fetching) return Promise.resolve();
+    fetching = true;
+
+    const category = selectedCategory || document.querySelector('input[name="category"]:checked').value;
+
+    return fetch(`/api/category?page=${page}&keyword=${encodeURIComponent(category)}`)
+        .then(response => {
+            if (!response.ok) {
+                if (response.status == 404) {
+                    throw new Error('No related furniture found');
+                } else {
+                    throw new Error('Network response was not ok');
+                }                
+            }
+            return response.json()
+        })
+        .then(data => {
+            // Handle the data here, e.g., update the product list on the page
+            console.log(data);
+            const gridContent = document.getElementById('inside-product-grid');
+            if (page === 0) {
+                gridContent.innerHTML = '';
+            }
+
+            data.data.forEach(attraction => {
+                const card = createProductCard(attraction);
+                gridContent.appendChild(card);
+            });
+
+            // Ensure the sentinel is re-created and appended if necessary
+            let sentinel = document.getElementById('sentinel');
+            if (!sentinel) {
+                sentinel = document.createElement('div');
+                sentinel.id = 'sentinel';
+            }
+            gridContent.appendChild(sentinel);
+
+            observer.observe(sentinel);
+
+            currentPage = data.nextPage;
+            fetching = false;
+        })
+        .catch(error => {
+            console.error('Error loading the products:', error);
+            const gridContent = document.getElementById('inside-product-grid');
+            gridContent.innerHTML = '<p>No related furnitures.</p>';
+            fetching = false;
+            throw error;
+        });
+}
+
+// Triggered when a user selects a category
+function fetchCategoryDataOnClick() {
+    const selectedCategory = document.querySelector('input[name="category"]:checked').value;
+    if (selectedCategory.toLowerCase() === 'all products') {
+        categoryMode = false;  // Disable category mode
+        currentPage = 0;  // Reset to the first page
+        fetchProducts(currentPage);  // Fetch all products
+    } else {
+        categoryMode = true;  // Enable category mode
+        currentPage = 0;  // Reset to the first page
+        fetchCategoryData(currentPage);
+    }
 }

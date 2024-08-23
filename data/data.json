@@ -17,6 +17,12 @@
             "/web/image/product.image/24002/image_128/Oscar%20hanging%20rack%20-%20with%20garment%20rail?unique=8793c3f",
             "/web/image/product.image/24003/image_128/Oscar%20hanging%20rack%20-%20with%20garment%20rail?unique=8793c3f",
             "/web/image/product.image/24004/image_128/Oscar%20hanging%20rack%20-%20with%20garment%20rail?unique=8793c3f"
+        ],
+        "category": [
+            "living",
+            "office",
+            "bedroom",
+            "accessories"
         ]
     },
     {
@@ -38,6 +44,9 @@
             "/web/image/product.image/23863/image_128/Jack%20outdoor%20sofa%20frame%20-%20aluminium%20-%202%20seater?unique=4b3f833",
             "/web/image/product.image/23864/image_128/Jack%20outdoor%20sofa%20frame%20-%20aluminium%20-%202%20seater?unique=4b3f833",
             "/web/image/product.image/23865/image_128/Jack%20outdoor%20sofa%20frame%20-%20aluminium%20-%202%20seater?unique=4b3f833"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -55,6 +64,9 @@
             "/web/image/product.image/23858/image_128/Jack%20outdoor%20footstool%20frame%20-%20aluminium?unique=057387a",
             "/web/image/product.image/23859/image_128/Jack%20outdoor%20footstool%20frame%20-%20aluminium?unique=057387a",
             "/web/image/product.image/23860/image_128/Jack%20outdoor%20footstool%20frame%20-%20aluminium?unique=057387a"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -80,6 +92,9 @@
             "/web/image/product.image/23855/image_128/Jack%20outdoor%20lounge%20chair%20frame%20-%20aluminium?unique=fbe57ec",
             "/web/image/product.image/23856/image_128/Jack%20outdoor%20lounge%20chair%20frame%20-%20aluminium?unique=fbe57ec",
             "/web/image/product.image/23857/image_128/Jack%20outdoor%20lounge%20chair%20frame%20-%20aluminium?unique=323ff91"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -104,6 +119,10 @@
             "/web/image/product.image/28157/image_128/Geometric%20rack?unique=cdf3bc3",
             "/web/image/product.image/28158/image_128/Geometric%20rack?unique=cdf3bc3",
             "/web/image/product.image/28159/image_128/Geometric%20rack?unique=cdf3bc3"
+        ],
+        "category": [
+            "living",
+            "office"
         ]
     },
     {
@@ -120,6 +139,9 @@
             "/web/image/product.product/13214/image_128/%5B21261%5D%20Jack%20outdoor%20cushion%20set%20-%202%20seater%20%28Mocha%29?unique=afd6551",
             "/web/image/product.image/7540/image_128/Jack%20outdoor%20cushion%20set%20-%202%20seater?unique=8ea28e7",
             "/web/image/product.image/7541/image_128/Jack%20outdoor%20cushion%20set%20-%202%20seater?unique=df4225a"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -136,6 +158,9 @@
             "/web/image/product.product/13214/image_128/%5B21261%5D%20Jack%20outdoor%20cushion%20set%20-%202%20seater%20%28Mocha%29?unique=afd6551",
             "/web/image/product.image/7540/image_128/Jack%20outdoor%20cushion%20set%20-%202%20seater?unique=8ea28e7",
             "/web/image/product.image/7541/image_128/Jack%20outdoor%20cushion%20set%20-%202%20seater?unique=df4225a"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -150,6 +175,9 @@
             "/web/image/product.image/7465/image_1024/Jack%20outdoor%20footstool%20cushion%20set?unique=67033f7",
             "/web/image/product.product/13199/image_128/%5B21235%5D%20Jack%20outdoor%20footstool%20cushion%20set%20%28Mocha%29?unique=a9430e8",
             "/web/image/product.image/7465/image_128/Jack%20outdoor%20footstool%20cushion%20set?unique=67033f7"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -164,6 +192,9 @@
             "/web/image/product.image/7465/image_1024/Jack%20outdoor%20footstool%20cushion%20set?unique=67033f7",
             "/web/image/product.product/13199/image_128/%5B21235%5D%20Jack%20outdoor%20footstool%20cushion%20set%20%28Mocha%29?unique=a9430e8",
             "/web/image/product.image/7465/image_128/Jack%20outdoor%20footstool%20cushion%20set?unique=67033f7"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -180,6 +211,9 @@
             "/web/image/product.product/13189/image_128/%5B21255%5D%20Jack%20outdoor%20cushion%20set%20-%20lounge%20chair%20%28Mocha%29?unique=a9430e8",
             "/web/image/product.image/7443/image_128/Jack%20outdoor%20lounge%20chair%20cushion%20set?unique=63a1f13",
             "/web/image/product.image/7444/image_128/Jack%20outdoor%20lounge%20chair%20cushion%20set?unique=63a1f13"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -196,6 +230,9 @@
             "/web/image/product.product/13189/image_128/%5B21255%5D%20Jack%20outdoor%20cushion%20set%20-%20lounge%20chair%20%28Mocha%29?unique=a9430e8",
             "/web/image/product.image/7443/image_128/Jack%20outdoor%20lounge%20chair%20cushion%20set?unique=63a1f13",
             "/web/image/product.image/7444/image_128/Jack%20outdoor%20lounge%20chair%20cushion%20set?unique=63a1f13"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -217,6 +254,9 @@
             "/web/image/product.image/14124/image_128/Mellow%20sofa%20-%20footstool%20-%20removable%20cover?unique=83c6b76",
             "/web/image/product.image/14125/image_128/Mellow%20sofa%20-%20footstool%20-%20removable%20cover?unique=83c6b76",
             "/web/image/product.image/14126/image_128/Mellow%20sofa%20-%20footstool%20-%20removable%20cover?unique=adf4731"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -248,6 +288,9 @@
             "/web/image/product.image/14121/image_128/Mellow%20sofa%20-%20corner%20-%20removable%20cover?unique=1615775",
             "/web/image/product.image/14122/image_128/Mellow%20sofa%20-%20corner%20-%20removable%20cover?unique=1615775",
             "/web/image/product.image/14123/image_128/Mellow%20sofa%20-%20corner%20-%20removable%20cover?unique=1615775"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -283,6 +326,9 @@
             "/web/image/product.image/14115/image_128/Mellow%20sofa%20-%20end%20seater%20left%20and%20right%20-%20removable%20cover?unique=2137a8c",
             "/web/image/product.image/14116/image_128/Mellow%20sofa%20-%20end%20seater%20left%20and%20right%20-%20removable%20cover?unique=2137a8c",
             "/web/image/product.image/14117/image_128/Mellow%20sofa%20-%20end%20seater%20left%20and%20right%20-%20removable%20cover?unique=02f8ed6"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -312,6 +358,9 @@
             "/web/image/product.image/14100/image_128/Mellow%20sofa%20-%201%20seater%20-%20removable%20cover?unique=e3ade88",
             "/web/image/product.image/14101/image_128/Mellow%20sofa%20-%201%20seater%20-%20removable%20cover?unique=e3ade88",
             "/web/image/product.image/14102/image_128/Mellow%20sofa%20-%201%20seater%20-%20removable%20cover?unique=8d2afe5"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -336,6 +385,9 @@
             "/web/image/product.image/604/image_128/N701%20sofa%20-%203%20seater%20?unique=ad93ce5",
             "/web/image/product.image/605/image_128/N701%20sofa%20-%203%20seater%20?unique=ad93ce5",
             "/web/image/product.image/606/image_128/N701%20sofa%20-%203%20seater%20?unique=ad93ce5"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -360,6 +412,9 @@
             "/web/image/product.image/604/image_128/N701%20sofa%20-%203%20seater%20?unique=ad93ce5",
             "/web/image/product.image/605/image_128/N701%20sofa%20-%203%20seater%20?unique=ad93ce5",
             "/web/image/product.image/606/image_128/N701%20sofa%20-%203%20seater%20?unique=ad93ce5"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -384,6 +439,9 @@
             "/web/image/product.image/604/image_128/N701%20sofa%20-%203%20seater%20?unique=ad93ce5",
             "/web/image/product.image/605/image_128/N701%20sofa%20-%203%20seater%20?unique=ad93ce5",
             "/web/image/product.image/606/image_128/N701%20sofa%20-%203%20seater%20?unique=ad93ce5"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -408,6 +466,9 @@
             "/web/image/product.image/604/image_128/N701%20sofa%20-%203%20seater%20?unique=ad93ce5",
             "/web/image/product.image/605/image_128/N701%20sofa%20-%203%20seater%20?unique=ad93ce5",
             "/web/image/product.image/606/image_128/N701%20sofa%20-%203%20seater%20?unique=ad93ce5"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -432,6 +493,9 @@
             "/web/image/product.image/593/image_128/N701%20sofa%20-%202%20seater%20?unique=2390dce",
             "/web/image/product.image/594/image_128/N701%20sofa%20-%202%20seater%20?unique=2390dce",
             "/web/image/product.image/595/image_128/N701%20sofa%20-%202%20seater%20?unique=2390dce"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -456,6 +520,9 @@
             "/web/image/product.image/593/image_128/N701%20sofa%20-%202%20seater%20?unique=2390dce",
             "/web/image/product.image/594/image_128/N701%20sofa%20-%202%20seater%20?unique=2390dce",
             "/web/image/product.image/595/image_128/N701%20sofa%20-%202%20seater%20?unique=2390dce"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -480,6 +547,9 @@
             "/web/image/product.image/593/image_128/N701%20sofa%20-%202%20seater%20?unique=2390dce",
             "/web/image/product.image/594/image_128/N701%20sofa%20-%202%20seater%20?unique=2390dce",
             "/web/image/product.image/595/image_128/N701%20sofa%20-%202%20seater%20?unique=2390dce"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -504,6 +574,9 @@
             "/web/image/product.image/593/image_128/N701%20sofa%20-%202%20seater%20?unique=2390dce",
             "/web/image/product.image/594/image_128/N701%20sofa%20-%202%20seater%20?unique=2390dce",
             "/web/image/product.image/595/image_128/N701%20sofa%20-%202%20seater%20?unique=2390dce"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -532,6 +605,9 @@
             "/web/image/product.image/572/image_128/N701%20sofa%20-%201%20seater%20?unique=94702de",
             "/web/image/product.image/573/image_128/N701%20sofa%20-%201%20seater%20?unique=94702de",
             "/web/image/product.image/574/image_128/N701%20sofa%20-%201%20seater%20?unique=94702de"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -560,6 +636,9 @@
             "/web/image/product.image/572/image_128/N701%20sofa%20-%201%20seater%20?unique=94702de",
             "/web/image/product.image/573/image_128/N701%20sofa%20-%201%20seater%20?unique=94702de",
             "/web/image/product.image/574/image_128/N701%20sofa%20-%201%20seater%20?unique=94702de"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -588,6 +667,9 @@
             "/web/image/product.image/572/image_128/N701%20sofa%20-%201%20seater%20?unique=94702de",
             "/web/image/product.image/573/image_128/N701%20sofa%20-%201%20seater%20?unique=94702de",
             "/web/image/product.image/574/image_128/N701%20sofa%20-%201%20seater%20?unique=94702de"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -616,6 +698,9 @@
             "/web/image/product.image/572/image_128/N701%20sofa%20-%201%20seater%20?unique=94702de",
             "/web/image/product.image/573/image_128/N701%20sofa%20-%201%20seater%20?unique=94702de",
             "/web/image/product.image/574/image_128/N701%20sofa%20-%201%20seater%20?unique=94702de"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -634,6 +719,9 @@
             "/web/image/product.image/555/image_128/N701%20sofa%20-%20footstool%20?unique=af5ab1e",
             "/web/image/product.image/556/image_128/N701%20sofa%20-%20footstool%20?unique=af5ab1e",
             "/web/image/product.image/557/image_128/N701%20sofa%20-%20footstool%20?unique=af5ab1e"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -652,6 +740,9 @@
             "/web/image/product.image/555/image_128/N701%20sofa%20-%20footstool%20?unique=af5ab1e",
             "/web/image/product.image/556/image_128/N701%20sofa%20-%20footstool%20?unique=af5ab1e",
             "/web/image/product.image/557/image_128/N701%20sofa%20-%20footstool%20?unique=af5ab1e"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -670,6 +761,9 @@
             "/web/image/product.image/555/image_128/N701%20sofa%20-%20footstool%20?unique=af5ab1e",
             "/web/image/product.image/556/image_128/N701%20sofa%20-%20footstool%20?unique=af5ab1e",
             "/web/image/product.image/557/image_128/N701%20sofa%20-%20footstool%20?unique=af5ab1e"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -688,6 +782,9 @@
             "/web/image/product.image/555/image_128/N701%20sofa%20-%20footstool%20?unique=af5ab1e",
             "/web/image/product.image/556/image_128/N701%20sofa%20-%20footstool%20?unique=af5ab1e",
             "/web/image/product.image/557/image_128/N701%20sofa%20-%20footstool%20?unique=af5ab1e"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -710,6 +807,9 @@
             "/web/image/product.image/545/image_128/N701%20sofa%20-%20corner?unique=0d96f80",
             "/web/image/product.image/546/image_128/N701%20sofa%20-%20corner?unique=0d96f80",
             "/web/image/product.image/547/image_128/N701%20sofa%20-%20corner?unique=0d96f80"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -732,6 +832,9 @@
             "/web/image/product.image/545/image_128/N701%20sofa%20-%20corner?unique=0d96f80",
             "/web/image/product.image/546/image_128/N701%20sofa%20-%20corner?unique=0d96f80",
             "/web/image/product.image/547/image_128/N701%20sofa%20-%20corner?unique=0d96f80"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -754,6 +857,9 @@
             "/web/image/product.image/545/image_128/N701%20sofa%20-%20corner?unique=0d96f80",
             "/web/image/product.image/546/image_128/N701%20sofa%20-%20corner?unique=0d96f80",
             "/web/image/product.image/547/image_128/N701%20sofa%20-%20corner?unique=0d96f80"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -776,6 +882,9 @@
             "/web/image/product.image/545/image_128/N701%20sofa%20-%20corner?unique=0d96f80",
             "/web/image/product.image/546/image_128/N701%20sofa%20-%20corner?unique=0d96f80",
             "/web/image/product.image/547/image_128/N701%20sofa%20-%20corner?unique=0d96f80"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -794,6 +903,9 @@
             "/web/image/product.image/530/image_128/N701%20sofa%20-%20round%20corner?unique=27df2fe",
             "/web/image/product.image/531/image_128/N701%20sofa%20-%20round%20corner?unique=0f132cf",
             "/web/image/product.image/532/image_128/N701%20sofa%20-%20round%20corner?unique=0f132cf"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -812,6 +924,9 @@
             "/web/image/product.image/530/image_128/N701%20sofa%20-%20round%20corner?unique=27df2fe",
             "/web/image/product.image/531/image_128/N701%20sofa%20-%20round%20corner?unique=0f132cf",
             "/web/image/product.image/532/image_128/N701%20sofa%20-%20round%20corner?unique=0f132cf"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -830,6 +945,9 @@
             "/web/image/product.image/530/image_128/N701%20sofa%20-%20round%20corner?unique=27df2fe",
             "/web/image/product.image/531/image_128/N701%20sofa%20-%20round%20corner?unique=0f132cf",
             "/web/image/product.image/532/image_128/N701%20sofa%20-%20round%20corner?unique=0f132cf"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -848,6 +966,9 @@
             "/web/image/product.image/530/image_128/N701%20sofa%20-%20round%20corner?unique=27df2fe",
             "/web/image/product.image/531/image_128/N701%20sofa%20-%20round%20corner?unique=0f132cf",
             "/web/image/product.image/532/image_128/N701%20sofa%20-%20round%20corner?unique=0f132cf"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -880,6 +1001,9 @@
             "/web/image/product.image/693/image_128/Oak%20Bok%20dining%20chair?unique=2778885",
             "/web/image/product.image/2450/image_128/Oak%20Bok%20dining%20chair?unique=2778885",
             "/web/image/product.image/2447/image_128/Oak%20Bok%20dining%20chair?unique=5096ad2"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -906,6 +1030,9 @@
             "/web/image/product.image/744/image_128/DC%20dining%20chair?unique=d754beb",
             "/web/image/product.image/745/image_128/DC%20dining%20chair?unique=3526d0e",
             "/web/image/product.image/2079/image_128/DC%20dining%20chair?unique=c559c75"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -932,6 +1059,9 @@
             "/web/image/product.image/744/image_128/DC%20dining%20chair?unique=d754beb",
             "/web/image/product.image/745/image_128/DC%20dining%20chair?unique=3526d0e",
             "/web/image/product.image/2079/image_128/DC%20dining%20chair?unique=c559c75"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -958,6 +1088,9 @@
             "/web/image/product.image/744/image_128/DC%20dining%20chair?unique=d754beb",
             "/web/image/product.image/745/image_128/DC%20dining%20chair?unique=3526d0e",
             "/web/image/product.image/2079/image_128/DC%20dining%20chair?unique=c559c75"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -989,6 +1122,9 @@
             "/web/image/product.image/726/image_128/Oak%20Bok%20black%20dining%20chair?unique=945f1d6",
             "/web/image/product.image/727/image_128/Oak%20Bok%20black%20dining%20chair?unique=945f1d6",
             "/web/image/product.image/2083/image_128/Oak%20Bok%20black%20dining%20chair?unique=561b91d"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1020,6 +1156,9 @@
             "/web/image/product.image/726/image_128/Oak%20Bok%20black%20dining%20chair?unique=945f1d6",
             "/web/image/product.image/727/image_128/Oak%20Bok%20black%20dining%20chair?unique=945f1d6",
             "/web/image/product.image/2083/image_128/Oak%20Bok%20black%20dining%20chair?unique=561b91d"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1051,6 +1190,9 @@
             "/web/image/product.image/726/image_128/Oak%20Bok%20black%20dining%20chair?unique=945f1d6",
             "/web/image/product.image/727/image_128/Oak%20Bok%20black%20dining%20chair?unique=945f1d6",
             "/web/image/product.image/2083/image_128/Oak%20Bok%20black%20dining%20chair?unique=561b91d"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1073,6 +1215,9 @@
             "/web/image/product.image/9270/image_128/PI%20dining%20table?unique=eda0ad3",
             "/web/image/product.image/9271/image_128/PI%20dining%20table?unique=51777dc",
             "/web/image/product.image/9272/image_128/PI%20dining%20table?unique=51777dc"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1094,6 +1239,9 @@
             "/web/image/product.image/9281/image_128/PI%20floor%20mirror?unique=c615822",
             "/web/image/product.image/9282/image_128/PI%20floor%20mirror?unique=c615822",
             "/web/image/product.image/9283/image_128/PI%20floor%20mirror?unique=c615822"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -1121,6 +1269,9 @@
             "/web/image/product.image/708/image_128/Casale%20dining%20chair?unique=7f60cf9",
             "/web/image/product.image/709/image_128/Casale%20dining%20chair?unique=7f60cf9",
             "/web/image/product.image/2453/image_128/Casale%20dining%20chair?unique=7f60cf9"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1189,6 +1340,9 @@
             "/web/image/product.image/14777/image_128/PI%20bench?unique=596ac12",
             "/web/image/product.image/14778/image_128/PI%20bench?unique=596ac12",
             "/web/image/product.image/14779/image_128/PI%20bench?unique=596ac12"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1207,6 +1361,9 @@
             "/web/image/product.image/1817/image_128/Oak%20Torsion%20square%20dining%20table%20?unique=cc9a40f",
             "/web/image/product.image/1819/image_128/Oak%20Torsion%20square%20dining%20table%20?unique=d364f80",
             "/web/image/product.image/1818/image_128/Oak%20Torsion%20square%20dining%20table%20?unique=d364f80"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1225,6 +1382,9 @@
             "/web/image/product.image/1817/image_128/Oak%20Torsion%20square%20dining%20table%20?unique=cc9a40f",
             "/web/image/product.image/1819/image_128/Oak%20Torsion%20square%20dining%20table%20?unique=d364f80",
             "/web/image/product.image/1818/image_128/Oak%20Torsion%20square%20dining%20table%20?unique=d364f80"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1252,6 +1412,9 @@
             "/web/image/product.image/1446/image_128/Osso%20stool?unique=ce60007",
             "/web/image/product.image/1448/image_128/Osso%20stool?unique=ce60007",
             "/web/image/product.image/2992/image_128/Osso%20stool?unique=ce60007"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1279,6 +1442,9 @@
             "/web/image/product.image/1446/image_128/Osso%20stool?unique=ce60007",
             "/web/image/product.image/1448/image_128/Osso%20stool?unique=ce60007",
             "/web/image/product.image/2992/image_128/Osso%20stool?unique=ce60007"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1303,6 +1469,9 @@
             "/web/image/product.image/2994/image_128/Osso%20bar%20stool?unique=c2e9396",
             "/web/image/product.image/1456/image_128/Osso%20bar%20stool?unique=c2e9396",
             "/web/image/product.image/1459/image_128/Osso%20bar%20stool?unique=c2e9396"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1327,6 +1496,9 @@
             "/web/image/product.image/2994/image_128/Osso%20bar%20stool?unique=c2e9396",
             "/web/image/product.image/1456/image_128/Osso%20bar%20stool?unique=c2e9396",
             "/web/image/product.image/1459/image_128/Osso%20bar%20stool?unique=c2e9396"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1351,6 +1523,9 @@
             "/web/image/product.image/2786/image_128/Oak%20Osso%20counter%20stool%20-%20contract%20grade?unique=e08acd1",
             "/web/image/product.image/2787/image_128/Oak%20Osso%20counter%20stool%20-%20contract%20grade?unique=e08acd1",
             "/web/image/product.image/2788/image_128/Oak%20Osso%20counter%20stool%20-%20contract%20grade?unique=e08acd1"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1375,6 +1550,9 @@
             "/web/image/product.image/2780/image_128/Oak%20Osso%20black%20counter%20stool?unique=d3d4526",
             "/web/image/product.image/2781/image_128/Oak%20Osso%20black%20counter%20stool?unique=d3d4526",
             "/web/image/product.image/2782/image_128/Oak%20Osso%20black%20counter%20stool?unique=d3d4526"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1400,6 +1578,9 @@
             "/web/image/product.image/14693/image_128/Teak%20Osso%20stool?unique=3b343e6",
             "/web/image/product.image/14694/image_128/Teak%20Osso%20stool?unique=3b343e6",
             "/web/image/product.image/14695/image_128/Teak%20Osso%20stool?unique=3b343e6"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1423,6 +1604,9 @@
             "/web/image/product.image/14699/image_128/Teak%20Osso%20counter%20stool?unique=e71b761",
             "/web/image/product.image/14700/image_128/Teak%20Osso%20counter%20stool?unique=e71b761",
             "/web/image/product.image/14701/image_128/Teak%20Osso%20counter%20stool?unique=e71b761"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1445,6 +1629,9 @@
             "/web/image/product.image/14704/image_128/Teak%20Osso%20bar%20stool?unique=2094aaf",
             "/web/image/product.image/14705/image_128/Teak%20Osso%20bar%20stool?unique=2094aaf",
             "/web/image/product.image/14706/image_128/Teak%20Osso%20bar%20stool?unique=2094aaf"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1472,6 +1659,9 @@
             "/web/image/product.image/1409/image_128/N4%20bar%20stool%20?unique=43b3062",
             "/web/image/product.image/1410/image_128/N4%20bar%20stool%20?unique=43b3062",
             "/web/image/product.image/2470/image_128/N4%20bar%20stool%20?unique=43b3062"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1493,6 +1683,9 @@
             "/web/image/product.image/1736/image_128/Ex%201%20dining%20chair%20-%20contract%20grade?unique=df86d01",
             "/web/image/product.image/1737/image_128/Ex%201%20dining%20chair%20-%20contract%20grade?unique=df86d01",
             "/web/image/product.image/2462/image_128/Ex%201%20dining%20chair%20-%20contract%20grade?unique=df86d01"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1508,6 +1701,10 @@
             "/web/image/product.product/3720/image_128/%5B50771%5D%20M%20rack%20%28Oak%2C%20Oiled%2C%20104x30x219cm%29?unique=a9430e8",
             "/web/image/product.image/2632/image_128/M%20rack?unique=34cf50c",
             "/web/image/product.image/1641/image_128/M%20rack?unique=cfe8f0e"
+        ],
+        "category": [
+            "living",
+            "office"
         ]
     },
     {
@@ -1531,6 +1728,9 @@
             "/web/image/product.image/660/image_128/Office%20Chair%206070%20SB%2C%20%20soft%20wheels%2C%20armrests?unique=32baabb",
             "/web/image/product.image/661/image_128/Office%20Chair%206070%20SB%2C%20%20soft%20wheels%2C%20armrests?unique=32baabb",
             "/web/image/product.image/2073/image_128/Office%20chair%206070%20SB%2C%20%20soft%20wheels%2C%20armrests?unique=e6f31e2"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -1554,6 +1754,9 @@
             "/web/image/product.image/660/image_128/Office%20Chair%206070%20SB%2C%20%20soft%20wheels%2C%20armrests?unique=32baabb",
             "/web/image/product.image/661/image_128/Office%20Chair%206070%20SB%2C%20%20soft%20wheels%2C%20armrests?unique=32baabb",
             "/web/image/product.image/2073/image_128/Office%20chair%206070%20SB%2C%20%20soft%20wheels%2C%20armrests?unique=e6f31e2"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -1580,6 +1783,9 @@
             "/web/image/product.image/2999/image_128/DC%20bar%20stool%20?unique=acf4a9b",
             "/web/image/product.image/3000/image_128/DC%20bar%20stool%20?unique=acf4a9b",
             "/web/image/product.image/3001/image_128/DC%20bar%20stool%20?unique=acf4a9b"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1594,6 +1800,9 @@
             "/web/image/product.image/6686/image_1024/DC%20bar%20stool%20-%20no%20backrest?unique=46e38b5",
             "/web/image/product.product/4008/image_128/%5B60084%2A%5D%20DC%20bar%20stool%20-%20no%20backrest?unique=a9430e8",
             "/web/image/product.image/6686/image_128/DC%20bar%20stool%20-%20no%20backrest?unique=46e38b5"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1613,6 +1822,9 @@
             "/web/image/product.image/123/image_128/Oak%20Black%20Torsion%20dining%20table?unique=e288b5b",
             "/web/image/product.image/126/image_128/Oak%20Black%20Torsion%20dining%20table?unique=e288b5b",
             "/web/image/product.image/127/image_128/Oak%20Black%20Torsion%20dining%20table?unique=e288b5b"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1633,6 +1845,9 @@
             "/web/image/product.image/408/image_128/N701%20side%20table?unique=a9f4f49",
             "/web/image/product.image/409/image_128/N701%20side%20table?unique=a9f4f49",
             "/web/image/product.image/410/image_128/N701%20side%20table?unique=a9f4f49"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -1654,6 +1869,9 @@
             "/web/image/product.image/132/image_128/Oak%20Torsion%20dining%20table?unique=cd6a316",
             "/web/image/product.image/133/image_128/Oak%20Torsion%20dining%20table?unique=cd6a316",
             "/web/image/product.image/147/image_128/Oak%20Torsion%20dining%20table?unique=02cf20a"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -1676,6 +1894,9 @@
             "/web/image/product.image/1368/image_128/DC%20lounge%20chair?unique=df1413a",
             "/web/image/product.image/1369/image_128/DC%20lounge%20chair?unique=a8d6251",
             "/web/image/product.image/2117/image_128/DC%20lounge%20chair?unique=55c5403"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -1698,6 +1919,9 @@
             "/web/image/product.image/1368/image_128/DC%20lounge%20chair?unique=df1413a",
             "/web/image/product.image/1369/image_128/DC%20lounge%20chair?unique=a8d6251",
             "/web/image/product.image/2117/image_128/DC%20lounge%20chair?unique=55c5403"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -1720,6 +1944,9 @@
             "/web/image/product.image/1368/image_128/DC%20lounge%20chair?unique=df1413a",
             "/web/image/product.image/1369/image_128/DC%20lounge%20chair?unique=a8d6251",
             "/web/image/product.image/2117/image_128/DC%20lounge%20chair?unique=55c5403"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -1744,6 +1971,9 @@
             "/web/image/product.image/2379/image_128/Metal%20frame%20-%20for%20Bok%20adjustable%20desk?unique=fd8a38f",
             "/web/image/product.image/2380/image_128/Metal%20frame%20-%20for%20Bok%20adjustable%20desk?unique=fd8a38f",
             "/web/image/product.image/2381/image_128/Metal%20frame%20-%20for%20Bok%20adjustable%20desk?unique=fd8a38f"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -1768,6 +1998,9 @@
             "/web/image/product.image/2379/image_128/Metal%20frame%20-%20for%20Bok%20adjustable%20desk?unique=fd8a38f",
             "/web/image/product.image/2380/image_128/Metal%20frame%20-%20for%20Bok%20adjustable%20desk?unique=fd8a38f",
             "/web/image/product.image/2381/image_128/Metal%20frame%20-%20for%20Bok%20adjustable%20desk?unique=fd8a38f"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -1789,6 +2022,9 @@
             "/web/image/product.image/1940/image_128/Spindle%20bed?unique=ad046c3",
             "/web/image/product.image/1941/image_128/Spindle%20bed?unique=ad046c3",
             "/web/image/product.image/1942/image_128/Spindle%20bed?unique=ad046c3"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -1810,6 +2046,9 @@
             "/web/image/product.image/1940/image_128/Spindle%20bed?unique=ad046c3",
             "/web/image/product.image/1941/image_128/Spindle%20bed?unique=ad046c3",
             "/web/image/product.image/1942/image_128/Spindle%20bed?unique=ad046c3"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -1831,6 +2070,9 @@
             "/web/image/product.image/1940/image_128/Spindle%20bed?unique=ad046c3",
             "/web/image/product.image/1941/image_128/Spindle%20bed?unique=ad046c3",
             "/web/image/product.image/1942/image_128/Spindle%20bed?unique=ad046c3"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -1858,6 +2100,9 @@
             "/web/image/product.image/14845/image_128/Spindle%20single%20bed?unique=50d6c6a",
             "/web/image/product.image/14846/image_128/Spindle%20single%20bed?unique=50d6c6a",
             "/web/image/product.image/14847/image_128/Spindle%20single%20bed?unique=50d6c6a"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -1886,6 +2131,9 @@
             "/web/image/product.image/14680/image_128/Oak%20PI%20side%20table?unique=6fb6da8",
             "/web/image/product.image/14681/image_128/Oak%20PI%20side%20table?unique=6fb6da8",
             "/web/image/product.image/14682/image_128/Oak%20PI%20side%20table?unique=6fb6da8"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -1909,6 +2157,9 @@
             "/web/image/product.image/3467/image_128/Mahogany%20PI%20side%20table?unique=fed4a46",
             "/web/image/product.image/3468/image_128/Mahogany%20PI%20side%20table?unique=fed4a46",
             "/web/image/product.product/5484/image_128/%5B35005%5D%20Mahogany%20PI%20side%20table%20%28Dark%20brown%29?unique=a9430e8"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -1932,6 +2183,9 @@
             "/web/image/product.image/14686/image_128/Oak%20PI%20coffee%20table?unique=ffd6f45",
             "/web/image/product.image/14687/image_128/Oak%20PI%20coffee%20table?unique=ffd6f45",
             "/web/image/product.image/14688/image_128/Oak%20PI%20coffee%20table?unique=ffd6f45"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -1958,6 +2212,10 @@
             "/web/image/product.image/14557/image_128/PI%20coat%20stand?unique=6549ef2",
             "/web/image/product.image/14558/image_128/PI%20coat%20stand?unique=67c0a6b",
             "/web/image/product.image/14559/image_128/PI%20coat%20stand?unique=656ecdf"
+        ],
+        "category": [
+            "bedroom",
+            "accessories"
         ]
     },
     {
@@ -1989,6 +2247,9 @@
             "/web/image/product.image/14614/image_128/PI%20sideboard%20-%204%20doors?unique=d3ec421",
             "/web/image/product.image/14615/image_128/PI%20sideboard%20-%204%20doors?unique=d3ec421",
             "/web/image/product.image/14616/image_128/PI%20sideboard%20-%204%20doors?unique=d3ec421"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -2020,6 +2281,9 @@
             "/web/image/product.image/14604/image_128/PI%20sideboard%20-%203%20doors?unique=70f1e81",
             "/web/image/product.image/14605/image_128/PI%20sideboard%20-%203%20doors?unique=70f1e81",
             "/web/image/product.image/14606/image_128/PI%20sideboard%20-%203%20doors?unique=70f1e81"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -2049,6 +2313,9 @@
             "/web/image/product.image/14589/image_128/PI%20sideboard%20-%202%20doors?unique=b830b23",
             "/web/image/product.image/14590/image_128/PI%20sideboard%20-%202%20doors?unique=b830b23",
             "/web/image/product.image/14591/image_128/PI%20sideboard%20-%202%20doors?unique=b830b23"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -2076,6 +2343,9 @@
             "/web/image/product.image/14575/image_128/Jack%20sofa%20cushion%20set%20-%202%20seater?unique=c51f051",
             "/web/image/product.image/14576/image_128/Jack%20sofa%20cushion%20set%20-%202%20seater?unique=c51f051",
             "/web/image/product.image/14577/image_128/Jack%20sofa%20cushion%20set%20-%202%20seater?unique=c51f051"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2105,6 +2375,9 @@
             "/web/image/product.image/14572/image_128/Jack%20sofa%20frame%20-%202%20seater?unique=2bb60ae",
             "/web/image/product.image/14573/image_128/Jack%20sofa%20frame%20-%202%20seater?unique=2bb60ae",
             "/web/image/product.image/14574/image_128/Jack%20sofa%20frame%20-%202%20seater?unique=2bb60ae"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2120,6 +2393,9 @@
             "/web/image/product.product/5992/image_128/%5B21081%5D%20Jack%20lounge%20chair%20cushion%20set%20%28Black%20Leather%29?unique=a9430e8",
             "/web/image/product.image/6792/image_128/Cushion%20set%20Rosewood%20Jack%20lounge%20chair?unique=40d467a",
             "/web/image/product.image/9311/image_128/Jack%20lounge%20chair%20cushion%20set?unique=649fcb7"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2135,6 +2411,9 @@
             "/web/image/product.product/5992/image_128/%5B21081%5D%20Jack%20lounge%20chair%20cushion%20set%20%28Black%20Leather%29?unique=a9430e8",
             "/web/image/product.image/6792/image_128/Cushion%20set%20Rosewood%20Jack%20lounge%20chair?unique=40d467a",
             "/web/image/product.image/9311/image_128/Jack%20lounge%20chair%20cushion%20set?unique=649fcb7"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2162,6 +2441,9 @@
             "/web/image/product.image/9307/image_128/Jack%20lounge%20chair%20frame?unique=cd901fb",
             "/web/image/product.image/9308/image_128/Jack%20lounge%20chair%20frame?unique=cd901fb",
             "/web/image/product.image/9309/image_128/Jack%20lounge%20chair%20frame?unique=cd901fb"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2180,6 +2462,9 @@
             "/web/image/product.image/1140/image_128/Nomad%20cushion?unique=1a5e717",
             "/web/image/product.image/1141/image_128/Nomad%20cushion?unique=1a5e717",
             "/web/image/product.image/1142/image_128/Nomad%20cushion?unique=1a5e717"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -2198,6 +2483,9 @@
             "/web/image/product.image/1140/image_128/Nomad%20cushion?unique=1a5e717",
             "/web/image/product.image/1141/image_128/Nomad%20cushion?unique=1a5e717",
             "/web/image/product.image/1142/image_128/Nomad%20cushion?unique=1a5e717"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -2216,6 +2504,9 @@
             "/web/image/product.image/1140/image_128/Nomad%20cushion?unique=1a5e717",
             "/web/image/product.image/1141/image_128/Nomad%20cushion?unique=1a5e717",
             "/web/image/product.image/1142/image_128/Nomad%20cushion?unique=1a5e717"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -2234,6 +2525,9 @@
             "/web/image/product.image/1140/image_128/Nomad%20cushion?unique=1a5e717",
             "/web/image/product.image/1141/image_128/Nomad%20cushion?unique=1a5e717",
             "/web/image/product.image/1142/image_128/Nomad%20cushion?unique=1a5e717"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -2252,6 +2546,9 @@
             "/web/image/product.image/1134/image_128/Chevron%20cushion%20-Lumbar?unique=e4d3ebd",
             "/web/image/product.image/1135/image_128/Chevron%20cushion%20-Lumbar?unique=e4d3ebd",
             "/web/image/product.image/1136/image_128/Chevron%20cushion%20-Lumbar?unique=e4d3ebd"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -2273,6 +2570,9 @@
             "/web/image/product.image/2323/image_128/Air%20bed?unique=b87be16",
             "/web/image/product.image/2324/image_128/Air%20bed?unique=b87be16",
             "/web/image/product.image/2325/image_128/Air%20bed?unique=b87be16"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -2293,6 +2593,9 @@
             "/web/image/product.image/2699/image_128/Air%20bedside%20table?unique=afbe408",
             "/web/image/product.image/1748/image_128/Air%20bedside%20table?unique=d658b2f",
             "/web/image/product.image/1850/image_128/Air%20bedside%20table?unique=d658b2f"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -2313,6 +2616,9 @@
             "/web/image/product.image/2356/image_128/Oak%20Thin%20black%20coffee%20table?unique=6c74183",
             "/web/image/product.image/2357/image_128/Oak%20Thin%20black%20coffee%20table?unique=6c74183",
             "/web/image/product.image/2358/image_128/Oak%20Thin%20black%20coffee%20table?unique=6c74183"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2330,6 +2636,9 @@
             "/web/image/product.image/230/image_128/Oak%20Bok%20dining%20table%20?unique=b63b13c",
             "/web/image/product.image/231/image_128/Oak%20Bok%20dining%20table%20?unique=b63b13c",
             "/web/image/product.image/232/image_128/Oak%20Bok%20dining%20table%20?unique=b63b13c"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -2348,6 +2657,9 @@
             "/web/image/product.image/2930/image_128/Floor%20mirror?unique=27c9537",
             "/web/image/product.image/2931/image_128/Floor%20mirror?unique=27c9537",
             "/web/image/product.image/1796/image_128/Floor%20mirror?unique=27c9537"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -2366,6 +2678,9 @@
             "/web/image/product.image/2930/image_128/Floor%20mirror?unique=27c9537",
             "/web/image/product.image/2931/image_128/Floor%20mirror?unique=27c9537",
             "/web/image/product.image/1796/image_128/Floor%20mirror?unique=27c9537"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -2384,6 +2699,9 @@
             "/web/image/product.image/375/image_128/Oscar%20desk?unique=2b6215c",
             "/web/image/product.image/386/image_128/Oscar%20desk?unique=010709c",
             "/web/image/product.image/2643/image_128/Oscar%20desk?unique=e30ecaf"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -2402,6 +2720,9 @@
             "/web/image/product.image/1551/image_128/Gate%20floor%20mirror?unique=9631293",
             "/web/image/product.image/1552/image_128/Gate%20floor%20mirror?unique=9631293",
             "/web/image/product.image/1553/image_128/Gate%20floor%20mirror?unique=9631293"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -2429,6 +2750,9 @@
             "/web/image/product.image/441/image_128/Geometric%20side%20table?unique=8a0064d",
             "/web/image/product.image/442/image_128/Geometric%20side%20table?unique=8a0064d",
             "/web/image/product.image/443/image_128/Geometric%20side%20table?unique=8a0064d"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2456,6 +2780,9 @@
             "/web/image/product.image/441/image_128/Geometric%20side%20table?unique=8a0064d",
             "/web/image/product.image/442/image_128/Geometric%20side%20table?unique=8a0064d",
             "/web/image/product.image/443/image_128/Geometric%20side%20table?unique=8a0064d"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2483,6 +2810,9 @@
             "/web/image/product.image/441/image_128/Geometric%20side%20table?unique=8a0064d",
             "/web/image/product.image/442/image_128/Geometric%20side%20table?unique=8a0064d",
             "/web/image/product.image/443/image_128/Geometric%20side%20table?unique=8a0064d"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2506,6 +2836,9 @@
             "/web/image/product.image/9242/image_128/Oblic%20side%20table%20?unique=77b602a",
             "/web/image/product.image/9243/image_128/Oblic%20side%20table%20?unique=77b602a",
             "/web/image/product.image/9244/image_128/Oblic%20side%20table%20?unique=ef62d66"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2528,6 +2861,9 @@
             "/web/image/product.image/194/image_128/Oak%20Mikado%20oval%20dining%20table?unique=29ba0ee",
             "/web/image/product.image/195/image_128/Oak%20Mikado%20oval%20dining%20table?unique=29ba0ee",
             "/web/image/product.image/196/image_128/Oak%20Mikado%20oval%20dining%20table?unique=29ba0ee"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -2552,6 +2888,9 @@
             "/web/image/product.image/399/image_128/Mikado%20meeting%20table?unique=ebc71e0",
             "/web/image/product.image/400/image_128/Mikado%20meeting%20table?unique=ebc71e0",
             "/web/image/product.image/401/image_128/Mikado%20meeting%20table?unique=ebc71e0"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -2579,6 +2918,9 @@
             "/web/image/product.image/2265/image_128/Barrow%20lounge%20chair?unique=777cf40",
             "/web/image/product.image/2266/image_128/Barrow%20lounge%20chair?unique=777cf40",
             "/web/image/product.image/2267/image_128/Barrow%20lounge%20chair?unique=89f5d04"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2606,6 +2948,9 @@
             "/web/image/product.image/2265/image_128/Barrow%20lounge%20chair?unique=777cf40",
             "/web/image/product.image/2266/image_128/Barrow%20lounge%20chair?unique=777cf40",
             "/web/image/product.image/2267/image_128/Barrow%20lounge%20chair?unique=89f5d04"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2633,6 +2978,9 @@
             "/web/image/product.image/2265/image_128/Barrow%20lounge%20chair?unique=777cf40",
             "/web/image/product.image/2266/image_128/Barrow%20lounge%20chair?unique=777cf40",
             "/web/image/product.image/2267/image_128/Barrow%20lounge%20chair?unique=89f5d04"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2660,6 +3008,9 @@
             "/web/image/product.image/2265/image_128/Barrow%20lounge%20chair?unique=777cf40",
             "/web/image/product.image/2266/image_128/Barrow%20lounge%20chair?unique=777cf40",
             "/web/image/product.image/2267/image_128/Barrow%20lounge%20chair?unique=89f5d04"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2683,6 +3034,9 @@
             "/web/image/product.image/2681/image_128/Nordic%20II%20bed?unique=a1fa580",
             "/web/image/product.image/2682/image_128/Nordic%20II%20bed?unique=a1fa580",
             "/web/image/product.image/2683/image_128/Nordic%20II%20bed?unique=a1fa580"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -2702,6 +3056,9 @@
             "/web/image/product.image/1418/image_128/Nordic%20II%20bedside%20table?unique=ccb3020",
             "/web/image/product.image/1419/image_128/Nordic%20II%20bedside%20table?unique=d448493",
             "/web/image/product.image/2708/image_128/Nordic%20II%20bedside%20table?unique=c744ba2"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -2721,6 +3078,9 @@
             "/web/image/product.image/4432/image_128/Barrow%20pouf?unique=bf22da6",
             "/web/image/product.image/4433/image_128/Barrow%20pouf?unique=bf22da6",
             "/web/image/product.image/4434/image_128/Barrow%20pouf?unique=bf22da6"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2740,6 +3100,9 @@
             "/web/image/product.image/4432/image_128/Barrow%20pouf?unique=bf22da6",
             "/web/image/product.image/4433/image_128/Barrow%20pouf?unique=bf22da6",
             "/web/image/product.image/4434/image_128/Barrow%20pouf?unique=bf22da6"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2759,6 +3122,9 @@
             "/web/image/product.image/4432/image_128/Barrow%20pouf?unique=bf22da6",
             "/web/image/product.image/4433/image_128/Barrow%20pouf?unique=bf22da6",
             "/web/image/product.image/4434/image_128/Barrow%20pouf?unique=bf22da6"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2778,6 +3144,9 @@
             "/web/image/product.image/4432/image_128/Barrow%20pouf?unique=bf22da6",
             "/web/image/product.image/4433/image_128/Barrow%20pouf?unique=bf22da6",
             "/web/image/product.image/4434/image_128/Barrow%20pouf?unique=bf22da6"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2797,6 +3166,9 @@
             "/web/image/product.image/4448/image_128/Barrow%20pouf?unique=5224363",
             "/web/image/product.image/4449/image_128/Barrow%20pouf?unique=5224363",
             "/web/image/product.image/4450/image_128/Barrow%20pouf?unique=5224363"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2816,6 +3188,9 @@
             "/web/image/product.image/4448/image_128/Barrow%20pouf?unique=5224363",
             "/web/image/product.image/4449/image_128/Barrow%20pouf?unique=5224363",
             "/web/image/product.image/4450/image_128/Barrow%20pouf?unique=5224363"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2835,6 +3210,9 @@
             "/web/image/product.image/4448/image_128/Barrow%20pouf?unique=5224363",
             "/web/image/product.image/4449/image_128/Barrow%20pouf?unique=5224363",
             "/web/image/product.image/4450/image_128/Barrow%20pouf?unique=5224363"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2854,6 +3232,9 @@
             "/web/image/product.image/4448/image_128/Barrow%20pouf?unique=5224363",
             "/web/image/product.image/4449/image_128/Barrow%20pouf?unique=5224363",
             "/web/image/product.image/4450/image_128/Barrow%20pouf?unique=5224363"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2877,6 +3258,9 @@
             "/web/image/product.image/4986/image_128/Barrow%20sofa?unique=b8bd1db",
             "/web/image/product.image/4987/image_128/Barrow%20sofa?unique=4757a78",
             "/web/image/product.image/4988/image_128/Barrow%20sofa?unique=4757a78"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2903,6 +3287,9 @@
             "/web/image/product.image/520/image_128/Bok%20side%20table?unique=802ff12",
             "/web/image/product.image/521/image_128/Bok%20side%20table?unique=802ff12",
             "/web/image/product.image/522/image_128/Bok%20side%20table?unique=802ff12"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2929,6 +3316,9 @@
             "/web/image/product.image/520/image_128/Bok%20side%20table?unique=802ff12",
             "/web/image/product.image/521/image_128/Bok%20side%20table?unique=802ff12",
             "/web/image/product.image/522/image_128/Bok%20side%20table?unique=802ff12"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -2955,6 +3345,9 @@
             "/web/image/product.image/3006/image_128/DC%20counter%20stool%20?unique=43d1740",
             "/web/image/product.image/3007/image_128/DC%20counter%20stool%20?unique=43d1740",
             "/web/image/product.image/3008/image_128/DC%20counter%20stool%20?unique=43d1740"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -2971,6 +3364,9 @@
             "/web/image/product.product/3843/image_128/%5B60082%2A%5D%20DC%20counter%20stool%20-%20no%20backrest?unique=a9430e8",
             "/web/image/product.image/1470/image_128/DC%20counter%20stool%20-%20no%20backrest?unique=28f44f7",
             "/web/image/product.image/1471/image_128/DC%20counter%20stool%20-%20no%20backrest?unique=65bfd05"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -2988,6 +3384,10 @@
             "/web/image/product.image/3475/image_128/Donut%20outdoor%20pouf?unique=aac5dbd",
             "/web/image/product.image/3476/image_128/Donut%20outdoor%20pouf?unique=aac5dbd",
             "/web/image/product.image/3477/image_128/Donut%20outdoor%20pouf?unique=5206f0f"
+        ],
+        "category": [
+            "living",
+            "outdoor"
         ]
     },
     {
@@ -3005,6 +3405,10 @@
             "/web/image/product.image/3475/image_128/Donut%20outdoor%20pouf?unique=aac5dbd",
             "/web/image/product.image/3476/image_128/Donut%20outdoor%20pouf?unique=aac5dbd",
             "/web/image/product.image/3477/image_128/Donut%20outdoor%20pouf?unique=5206f0f"
+        ],
+        "category": [
+            "living",
+            "outdoor"
         ]
     },
     {
@@ -3022,6 +3426,10 @@
             "/web/image/product.image/3475/image_128/Donut%20outdoor%20pouf?unique=aac5dbd",
             "/web/image/product.image/3476/image_128/Donut%20outdoor%20pouf?unique=aac5dbd",
             "/web/image/product.image/3477/image_128/Donut%20outdoor%20pouf?unique=5206f0f"
+        ],
+        "category": [
+            "living",
+            "outdoor"
         ]
     },
     {
@@ -3051,6 +3459,9 @@
             "/web/image/product.image/9217/image_128/Eye%20lounge%20chair?unique=8baa430",
             "/web/image/product.image/9218/image_128/Eye%20lounge%20chair?unique=8baa430",
             "/web/image/product.image/9219/image_128/Eye%20lounge%20chair?unique=8baa430"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -3071,6 +3482,9 @@
             "/web/image/product.image/1324/image_128/Mikado%20coffee%20table?unique=e4f5551",
             "/web/image/product.image/1325/image_128/Mikado%20coffee%20table?unique=e4f5551",
             "/web/image/product.image/1326/image_128/Mikado%20coffee%20table?unique=e4f5551"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -3091,6 +3505,9 @@
             "/web/image/product.image/505/image_128/Mikado%20side%20table?unique=57bac07",
             "/web/image/product.image/506/image_128/Mikado%20side%20table?unique=57bac07",
             "/web/image/product.image/507/image_128/Mikado%20side%20table?unique=57bac07"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -3112,6 +3529,9 @@
             "/web/image/product.image/1333/image_128/N2%20lounge%20chair%20?unique=820d419",
             "/web/image/product.image/1334/image_128/N2%20lounge%20chair%20?unique=820d419",
             "/web/image/product.image/1335/image_128/N2%20lounge%20chair%20?unique=820d419"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -3138,6 +3558,9 @@
             "/web/image/product.image/3013/image_128/N3%20kitchen%20counter%20stool?unique=0a3f187",
             "/web/image/product.image/3014/image_128/N3%20kitchen%20counter%20stool?unique=0a3f187",
             "/web/image/product.image/1406/image_128/N3%20kitchen%20counter%20stool?unique=16bd39e"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -3160,6 +3583,9 @@
             "/web/image/product.image/239/image_128/Oak%20Bok%20extendable%20dining%20table%20?unique=8a1eda0",
             "/web/image/product.image/240/image_128/Oak%20Bok%20extendable%20dining%20table%20?unique=8a1eda0",
             "/web/image/product.image/9205/image_128/Oak%20Bok%20extendable%20dining%20table%20?unique=4dcae00"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -3193,6 +3619,9 @@
             "/web/image/product.image/262/image_128/Oak%20Bok%20round%20extendable%20dining%20table?unique=354a70a",
             "/web/image/product.image/263/image_128/Oak%20Bok%20round%20extendable%20dining%20table?unique=354a70a",
             "/web/image/product.image/2086/image_128/Oak%20Bok%20round%20extendable%20dining%20table?unique=354a70a"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -3212,6 +3641,9 @@
             "/web/image/product.image/2319/image_128/Infinity%20mattress?unique=24ff055",
             "/web/image/product.image/2321/image_128/Infinity%20mattress?unique=24ff055",
             "/web/image/product.image/2320/image_128/Infinity%20mattress?unique=24ff055"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -3232,6 +3664,9 @@
             "/web/image/product.image/14837/image_128/Infinity%20mattress?unique=24e7517",
             "/web/image/product.image/14839/image_128/Infinity%20mattress?unique=24e7517",
             "/web/image/product.image/14838/image_128/Infinity%20mattress?unique=24e7517"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -3242,6 +3677,9 @@
         "price": "5.0",
         "image_srcs": [
             "/web/image/product.product/3450/image_1024/%5B45003%5D%20Slatted%20bed%20base%20%2880x200x9cm%29?unique=a9430e8"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -3269,6 +3707,9 @@
             "/web/image/product.image/2348/image_128/Mahogany%20Boomerang%20coffee%20table?unique=93342f9",
             "/web/image/product.image/2349/image_128/Mahogany%20Boomerang%20coffee%20table?unique=93342f9",
             "/web/image/product.image/2429/image_128/Mahogany%20Boomerang%20coffee%20table?unique=acad003"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -3294,6 +3735,9 @@
             "/web/image/product.image/9288/image_128/Boomerang%20desk?unique=3641eb0",
             "/web/image/product.image/9289/image_128/Boomerang%20desk?unique=3641eb0",
             "/web/image/product.image/9290/image_128/Boomerang%20desk?unique=58988a0"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -3323,6 +3767,9 @@
             "/web/image/product.image/9297/image_128/Roller%20Max%20dining%20table?unique=f0b202e",
             "/web/image/product.image/9298/image_128/Roller%20Max%20dining%20table?unique=f0b202e",
             "/web/image/product.image/9299/image_128/Roller%20Max%20dining%20table?unique=f0b202e"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -3346,6 +3793,9 @@
             "/web/image/product.image/21/image_128/Oak%20Bok%20bench?unique=d013561",
             "/web/image/product.image/2440/image_128/Oak%20Bok%20bench?unique=e82bf92",
             "/web/image/product.image/2078/image_128/Oak%20Bok%20bench?unique=3d10d52"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -3369,6 +3819,9 @@
             "/web/image/product.image/21/image_128/Oak%20Bok%20bench?unique=d013561",
             "/web/image/product.image/2440/image_128/Oak%20Bok%20bench?unique=e82bf92",
             "/web/image/product.image/2078/image_128/Oak%20Bok%20bench?unique=3d10d52"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -3386,6 +3839,9 @@
             "/web/image/product.image/256/image_128/Oak%20Bok%20black%20dining%20table?unique=f8c6b93",
             "/web/image/product.image/2561/image_128/Oak%20Bok%20black%20dining%20table?unique=f8c6b93",
             "/web/image/product.image/257/image_128/Oak%20Bok%20black%20dining%20table?unique=f8c6b93"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -3404,6 +3860,10 @@
             "/web/image/product.image/1509/image_128/Oscar%20rack?unique=fb7468a",
             "/web/image/product.image/1879/image_128/Oscar%20rack?unique=fb7468a",
             "/web/image/product.image/1510/image_128/Oscar%20rack?unique=1c15ce2"
+        ],
+        "category": [
+            "living",
+            "office"
         ]
     },
     {
@@ -3426,6 +3886,9 @@
             "/web/image/product.image/1991/image_128/Oak%20Bok%20black%20extendable%20dining%20table?unique=39236f3",
             "/web/image/product.image/1993/image_128/Oak%20Bok%20black%20extendable%20dining%20table?unique=13e2552",
             "/web/image/product.image/2067/image_128/Oak%20Bok%20black%20extendable%20dining%20table?unique=f6f5937"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -3446,6 +3909,9 @@
             "/web/image/product.image/2847/image_128/Oak%20Bok%20brown%20dining%20table?unique=3100374",
             "/web/image/product.image/2848/image_128/Oak%20Bok%20brown%20dining%20table?unique=3100374",
             "/web/image/product.image/2849/image_128/Oak%20Bok%20brown%20dining%20table?unique=fada771"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -3474,6 +3940,9 @@
             "/web/image/product.image/19054/image_128/Oak%20Bok%20brown%20dining%20chair?unique=1c8cc1a",
             "/web/image/product.image/19055/image_128/Oak%20Bok%20brown%20dining%20chair?unique=1c8cc1a",
             "/web/image/product.image/2858/image_128/Oak%20Bok%20brown%20dining%20chair?unique=c813518"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -3502,6 +3971,9 @@
             "/web/image/product.image/19054/image_128/Oak%20Bok%20brown%20dining%20chair?unique=1c8cc1a",
             "/web/image/product.image/19055/image_128/Oak%20Bok%20brown%20dining%20chair?unique=1c8cc1a",
             "/web/image/product.image/2858/image_128/Oak%20Bok%20brown%20dining%20chair?unique=c813518"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -3520,6 +3992,9 @@
             "/web/image/product.image/1248/image_128/Luna%20coffee%20table%20-%20lava%20?unique=7e5af22",
             "/web/image/product.image/1249/image_128/Luna%20coffee%20table%20-%20lava%20?unique=7e5af22",
             "/web/image/product.image/2589/image_128/Luna%20coffee%20table%20-%20lava%20?unique=7e5af22"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -3538,6 +4013,9 @@
             "/web/image/product.image/3349/image_128/Blue%20Wabi%20Sabi%20glass%20tray%20-%20square?unique=f4c4169",
             "/web/image/product.image/3350/image_128/Blue%20Wabi%20Sabi%20glass%20tray%20-%20square?unique=f4c4169",
             "/web/image/product.image/3351/image_128/Blue%20Wabi%20Sabi%20glass%20tray%20-%20square?unique=b400d1e"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3556,6 +4034,9 @@
             "/web/image/product.image/3425/image_128/Checked%20kilim%20rug?unique=1f08ae2",
             "/web/image/product.image/3426/image_128/Checked%20kilim%20rug?unique=f024eb4",
             "/web/image/product.image/3427/image_128/Checked%20kilim%20rug?unique=fe6789c"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3576,6 +4057,9 @@
             "/web/image/product.image/3455/image_128/Dunes%20rug?unique=f801594",
             "/web/image/product.image/10214/image_128/Dunes%20cumin%20rug?unique=f801594",
             "/web/image/product.image/3456/image_128/Dunes%20rug?unique=f801594"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3596,6 +4080,9 @@
             "/web/image/product.image/3455/image_128/Dunes%20rug?unique=f801594",
             "/web/image/product.image/10214/image_128/Dunes%20cumin%20rug?unique=f801594",
             "/web/image/product.image/3456/image_128/Dunes%20rug?unique=f801594"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3613,6 +4100,9 @@
             "/web/image/product.image/167/image_128/Oak%20Circle%20dining%20table?unique=a6eea03",
             "/web/image/product.image/168/image_128/Oak%20Circle%20dining%20table?unique=a6eea03",
             "/web/image/product.image/169/image_128/Oak%20Circle%20dining%20table?unique=a6eea03"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -3631,6 +4121,9 @@
             "/web/image/product.image/1228/image_128/Nomad%20kilim%20rug?unique=e9d5aa3",
             "/web/image/product.image/1710/image_128/Nomad%20kilim%20rug?unique=21db7a9",
             "/web/image/product.image/2092/image_128/Nomad%20kilim%20rug?unique=0694063"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3649,6 +4142,9 @@
             "/web/image/product.image/1228/image_128/Nomad%20kilim%20rug?unique=e9d5aa3",
             "/web/image/product.image/1710/image_128/Nomad%20kilim%20rug?unique=21db7a9",
             "/web/image/product.image/2092/image_128/Nomad%20kilim%20rug?unique=0694063"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3667,6 +4163,9 @@
             "/web/image/product.image/1228/image_128/Nomad%20kilim%20rug?unique=e9d5aa3",
             "/web/image/product.image/1710/image_128/Nomad%20kilim%20rug?unique=21db7a9",
             "/web/image/product.image/2092/image_128/Nomad%20kilim%20rug?unique=0694063"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3685,6 +4184,9 @@
             "/web/image/product.image/1228/image_128/Nomad%20kilim%20rug?unique=e9d5aa3",
             "/web/image/product.image/1710/image_128/Nomad%20kilim%20rug?unique=21db7a9",
             "/web/image/product.image/2092/image_128/Nomad%20kilim%20rug?unique=0694063"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3701,6 +4203,9 @@
             "/web/image/product.product/4116/image_128/%5BL0311%2A%5D%20In%20The%20Sun%20table%20lamp?unique=a9430e8",
             "/web/image/product.image/14869/image_128/In%20The%20Sun%20table%20lamp?unique=194724a",
             "/web/image/product.image/1832/image_128/In%20the%20sun%20Table%20lamp?unique=194724a"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3719,6 +4224,9 @@
             "/web/image/product.image/322/image_128/Abstract%20Detail%20cushion?unique=6bdce84",
             "/web/image/product.image/323/image_128/Abstract%20Detail%20cushion?unique=6bdce84",
             "/web/image/product.image/324/image_128/Abstract%20Detail%20cushion?unique=6bdce84"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3739,6 +4247,9 @@
             "/web/image/product.image/1123/image_128/Chevron%20cushion%20-Square?unique=5eafe8c",
             "/web/image/product.image/1124/image_128/Chevron%20cushion%20-Square?unique=5eafe8c",
             "/web/image/product.image/1125/image_128/Chevron%20cushion%20-Square?unique=5eafe8c"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3759,6 +4270,9 @@
             "/web/image/product.image/2716/image_128/Orb%20cushion?unique=f6ba382",
             "/web/image/product.image/340/image_128/Orb%20cushion?unique=a519ba1",
             "/web/image/product.image/341/image_128/Orb%20cushion?unique=a519ba1"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3775,6 +4289,9 @@
             "/web/image/product.product/3567/image_128/%5B21061%2A%5D%20Dots%20cushion%20-%20lumbar%20%28White%29?unique=a9430e8",
             "/web/image/product.image/1178/image_128/White%20Dots%20cushion%20-%20lumbar?unique=a74f735",
             "/web/image/product.image/1179/image_128/White%20Dots%20cushion%20-%20lumbar?unique=a74f735"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3791,6 +4308,9 @@
             "/web/image/product.product/3567/image_128/%5B21061%2A%5D%20Dots%20cushion%20-%20lumbar%20%28White%29?unique=a9430e8",
             "/web/image/product.image/1178/image_128/White%20Dots%20cushion%20-%20lumbar?unique=a74f735",
             "/web/image/product.image/1179/image_128/White%20Dots%20cushion%20-%20lumbar?unique=a74f735"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3810,6 +4330,9 @@
             "/web/image/product.image/394/image_128/U%20desk?unique=4d33422",
             "/web/image/product.image/395/image_128/U%20desk?unique=4d33422",
             "/web/image/product.image/2646/image_128/Oak%20U%20desk?unique=7b23ae6"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -3834,6 +4357,9 @@
             "/web/image/product.image/1233/image_128/Abstract%20black%20column?unique=3bd482d",
             "/web/image/product.image/1234/image_128/Abstract%20black%20column?unique=e30106c",
             "/web/image/product.image/2084/image_128/Abstract%20black%20column?unique=d294bb2"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -3856,6 +4382,9 @@
             "/web/image/product.image/420/image_128/Cove%20side%20table?unique=9aefdc2",
             "/web/image/product.image/421/image_128/Cove%20side%20table?unique=9aefdc2",
             "/web/image/product.image/422/image_128/Cove%20side%20table?unique=9aefdc2"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -3878,6 +4407,9 @@
             "/web/image/product.image/313/image_128/Layered%20Dots%20cushion?unique=c5aec4e",
             "/web/image/product.image/314/image_128/Layered%20Dots%20cushion?unique=c5aec4e",
             "/web/image/product.image/315/image_128/Layered%20Dots%20cushion?unique=c5aec4e"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3898,6 +4430,9 @@
             "/web/image/product.image/327/image_128/Connected%20Dots%20cushion?unique=6b1be0c",
             "/web/image/product.image/328/image_128/Connected%20Dots%20cushion?unique=6b1be0c",
             "/web/image/product.image/329/image_128/Connected%20Dots%20cushion?unique=6b1be0c"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -3918,6 +4453,9 @@
             "/web/image/product.image/2620/image_128/Monolit%20TV%20cupboard?unique=0a0d137",
             "/web/image/product.image/1827/image_128/Monolit%20TV%20cupboard?unique=0a0d137",
             "/web/image/product.image/6495/image_128/Monolit%20TV%20cupboard?unique=d509cad"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -3938,6 +4476,9 @@
             "/web/image/product.image/2620/image_128/Monolit%20TV%20cupboard?unique=0a0d137",
             "/web/image/product.image/1827/image_128/Monolit%20TV%20cupboard?unique=0a0d137",
             "/web/image/product.image/6495/image_128/Monolit%20TV%20cupboard?unique=d509cad"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -3963,6 +4504,9 @@
             "/web/image/product.image/173/image_128/Oak%20Mikado%20dining%20table?unique=71b7a5f",
             "/web/image/product.image/175/image_128/Oak%20Mikado%20dining%20table?unique=71b7a5f",
             "/web/image/product.image/191/image_128/Oak%20Mikado%20dining%20table?unique=71b7a5f"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -3981,6 +4525,9 @@
             "/web/image/product.image/14870/image_128/Mantis%20BS1%20floor%20lamp?unique=e0c97b5",
             "/web/image/product.image/1838/image_128/Mantis%20BS1%20Floor%20lamp?unique=e0c97b5",
             "/web/image/product.image/1839/image_128/Mantis%20BS1%20Floor%20lamp?unique=e0c97b5"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -4003,6 +4550,9 @@
             "/web/image/product.image/1532/image_128/Grooves%20sideboard%20-%204%20doors?unique=ac2ecba",
             "/web/image/product.image/1533/image_128/Grooves%20sideboard%20-%204%20doors?unique=ac2ecba",
             "/web/image/product.image/1534/image_128/Grooves%20sideboard%20-%204%20doors?unique=ac2ecba"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -4019,6 +4569,9 @@
             "/web/image/product.product/3590/image_128/%5B21032%2A%5D%20Abstract%20cushion%20%28Avana%29?unique=7c92c4a",
             "/web/image/product.image/351/image_128/Abstract%20cushion?unique=beaa44f",
             "/web/image/product.image/352/image_128/Abstract%20cushion?unique=beaa44f"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -4035,6 +4588,9 @@
             "/web/image/product.product/3590/image_128/%5B21032%2A%5D%20Abstract%20cushion%20%28Avana%29?unique=7c92c4a",
             "/web/image/product.image/351/image_128/Abstract%20cushion?unique=beaa44f",
             "/web/image/product.image/352/image_128/Abstract%20cushion?unique=beaa44f"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -4053,6 +4609,9 @@
             "/web/image/product.image/3389/image_128/Frame%20desk%20-%202%20drawer%20?unique=95da10b",
             "/web/image/product.image/3390/image_128/Frame%20desk%20-%202%20drawer%20?unique=95da10b",
             "/web/image/product.image/3391/image_128/Frame%20desk%20-%202%20drawer%20?unique=95da10b"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -4071,6 +4630,9 @@
             "/web/image/product.image/2705/image_128/Monolit%20black%20bedside%20table%20-%201%20drawer%20-%20black%20metal%20?unique=a767861",
             "/web/image/product.image/2706/image_128/Monolit%20black%20bedside%20table%20-%201%20drawer%20-%20black%20metal%20?unique=a767861",
             "/web/image/product.image/2707/image_128/Monolit%20black%20bedside%20table%20-%201%20drawer%20-%20black%20metal%20?unique=ca37462"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -4090,6 +4652,9 @@
             "/web/image/product.image/161/image_128/Oak%20Nexus%20dining%20table%20?unique=2cd9bf9",
             "/web/image/product.image/162/image_128/Oak%20Nexus%20dining%20table%20?unique=2cd9bf9",
             "/web/image/product.image/163/image_128/Oak%20Nexus%20dining%20table%20?unique=2cd9bf9"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -4116,6 +4681,10 @@
             "/web/image/product.image/1598/image_128/Bird%20storage%20cupboard?unique=c815032",
             "/web/image/product.image/1599/image_128/Bird%20storage%20cupboard?unique=c815032",
             "/web/image/product.image/1600/image_128/Bird%20storage%20cupboard?unique=c815032"
+        ],
+        "category": [
+            "living",
+            "office"
         ]
     },
     {
@@ -4142,6 +4711,10 @@
             "/web/image/product.image/1598/image_128/Bird%20storage%20cupboard?unique=c815032",
             "/web/image/product.image/1599/image_128/Bird%20storage%20cupboard?unique=c815032",
             "/web/image/product.image/1600/image_128/Bird%20storage%20cupboard?unique=c815032"
+        ],
+        "category": [
+            "living",
+            "office"
         ]
     },
     {
@@ -4166,6 +4739,9 @@
             "/web/image/product.image/1903/image_128/Anders%20sideboard?unique=ab0355d",
             "/web/image/product.image/1761/image_128/Anders%20sideboard?unique=ab0355d",
             "/web/image/product.image/2535/image_128/Anders%20sideboard?unique=4218fc7"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -4184,6 +4760,9 @@
             "/web/image/product.image/489/image_128/Celeste%20side%20table%20-%20lava?unique=b991b5c",
             "/web/image/product.image/490/image_128/Celeste%20side%20table%20-%20lava?unique=b991b5c",
             "/web/image/product.image/491/image_128/Celeste%20side%20table%20-%20lava?unique=b991b5c"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -4208,6 +4787,9 @@
             "/web/image/product.image/6487/image_128/Monolit%20sideboard?unique=8077c4e",
             "/web/image/product.image/6488/image_128/Monolit%20sideboard?unique=8077c4e",
             "/web/image/product.image/6489/image_128/Monolit%20sideboard?unique=8077c4e"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -4232,6 +4814,9 @@
             "/web/image/product.image/6487/image_128/Monolit%20sideboard?unique=8077c4e",
             "/web/image/product.image/6488/image_128/Monolit%20sideboard?unique=8077c4e",
             "/web/image/product.image/6489/image_128/Monolit%20sideboard?unique=8077c4e"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -4256,6 +4841,9 @@
             "/web/image/product.image/1282/image_128/Monolit%20console?unique=1fc2b52",
             "/web/image/product.image/1283/image_128/Monolit%20console?unique=1fc2b52",
             "/web/image/product.image/1284/image_128/Monolit%20console?unique=1fc2b52"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -4280,6 +4868,9 @@
             "/web/image/product.image/1282/image_128/Monolit%20console?unique=1fc2b52",
             "/web/image/product.image/1283/image_128/Monolit%20console?unique=1fc2b52",
             "/web/image/product.image/1284/image_128/Monolit%20console?unique=1fc2b52"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -4296,6 +4887,10 @@
             "/web/image/product.product/3734/image_128/%5B45016%2A%5D%20Pirouette%20book%20rack%20-%204%20drawers%20?unique=a9430e8",
             "/web/image/product.image/6496/image_128/Pirouette%20book%20rack%20-%204%20drawers%20?unique=6d50814",
             "/web/image/product.image/1715/image_128/Pirouette%20book%20rack%20-%204%20drawers%20?unique=6d50814"
+        ],
+        "category": [
+            "living",
+            "office"
         ]
     },
     {
@@ -4321,6 +4916,10 @@
             "/web/image/product.image/6542/image_128/Anders%20storage%20cupboard?unique=8e6d8a0",
             "/web/image/product.image/6543/image_128/Anders%20storage%20cupboard?unique=8e6d8a0",
             "/web/image/product.image/6544/image_128/Anders%20storage%20cupboard?unique=8e6d8a0"
+        ],
+        "category": [
+            "living",
+            "office"
         ]
     },
     {
@@ -4339,6 +4938,9 @@
             "/web/image/product.image/14872/image_128/Knokke%20table%20lamp?unique=301d13e",
             "/web/image/product.image/1830/image_128/Knokke%20Table%20lamp?unique=301d13e",
             "/web/image/product.image/1831/image_128/Knokke%20Table%20lamp?unique=301d13e"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -4364,6 +4966,9 @@
             "/web/image/product.image/1630/image_128/Graphic%20sideboard?unique=58d7c83",
             "/web/image/product.image/14928/image_128/Graphic%20sideboard?unique=fbad34b",
             "/web/image/product.image/14929/image_128/Graphic%20sideboard?unique=fbad34b"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -4390,6 +4995,9 @@
             "/web/image/product.image/68/image_128/Graphic%20TV%20cupboard%20-%201%20flip-down%20door%20-%201%20drawer?unique=7799b30",
             "/web/image/product.image/69/image_128/Graphic%20TV%20cupboard%20-%201%20flip-down%20door%20-%201%20drawer?unique=15ed786",
             "/web/image/product.image/2076/image_128/Graphic%20TV%20cupboard%20-%201%20flip-down%20door%20-%201%20drawer?unique=fbe4922"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -4406,6 +5014,9 @@
             "/web/image/product.product/3547/image_128/%5B20746%2A%5D%20Console%20%28Charcoal%29?unique=a9430e8",
             "/web/image/product.image/1503/image_128/Console?unique=633f255",
             "/web/image/product.image/2616/image_128/Console?unique=a5767b4"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -4422,6 +5033,9 @@
             "/web/image/product.product/3547/image_128/%5B20746%2A%5D%20Console%20%28Charcoal%29?unique=a9430e8",
             "/web/image/product.image/1503/image_128/Console?unique=633f255",
             "/web/image/product.image/2616/image_128/Console?unique=a5767b4"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -4442,6 +5056,9 @@
             "/web/image/product.image/469/image_128/Nesting%20side%20table%20set?unique=6d4e6cc",
             "/web/image/product.image/470/image_128/Nesting%20side%20table%20set?unique=6d4e6cc",
             "/web/image/product.image/471/image_128/Nesting%20side%20table%20set?unique=6d4e6cc"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -4461,6 +5078,9 @@
             "/web/image/product.image/5007/image_128/Baretto%20bar%20stool?unique=641eb2e",
             "/web/image/product.image/1720/image_128/Baretto%20bar%20stool?unique=641eb2e",
             "/web/image/product.image/2504/image_128/Baretto%20bar%20stool?unique=641eb2e"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -4475,6 +5095,9 @@
             "/web/image/product.image/6508/image_1024/Nordic%20chest%20of%20drawers?unique=c2e2a92",
             "/web/image/product.product/3505/image_128/%5B51176%5D%20Nordic%20chest%20of%20drawers?unique=a9430e8",
             "/web/image/product.image/6508/image_128/Nordic%20chest%20of%20drawers?unique=c2e2a92"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -4493,6 +5116,9 @@
             "/web/image/product.image/14874/image_128/Mantis%20BS3%20desk%20lamp?unique=734069a",
             "/web/image/product.image/1840/image_128/Matis%20BS3%20Desk%20lamp?unique=734069a",
             "/web/image/product.image/1841/image_128/Matis%20BS3%20Desk%20lamp?unique=734069a"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -4520,6 +5146,9 @@
             "/web/image/product.image/3219/image_128/Oak%20Casale%20black%20dining%20chair?unique=51e5732",
             "/web/image/product.image/3220/image_128/Oak%20Casale%20black%20dining%20chair?unique=51e5732",
             "/web/image/product.image/3221/image_128/Oak%20Casale%20black%20dining%20chair?unique=51e5732"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -4541,6 +5170,9 @@
             "/web/image/product.image/3031/image_128/Yasuke%20table%20lamp?unique=833ff3b",
             "/web/image/product.image/3033/image_128/Yasuke%20table%20lamp?unique=833ff3b",
             "/web/image/product.image/3034/image_128/Yasuke%20table%20lamp?unique=833ff3b"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -4573,6 +5205,9 @@
             "/web/image/product.image/292/image_128/Oak%20Double%20extendable%20dining%20table?unique=4cb8409",
             "/web/image/product.image/293/image_128/Oak%20Double%20extendable%20dining%20table?unique=4cb8409",
             "/web/image/product.image/294/image_128/Oak%20Double%20extendable%20dining%20table?unique=4cb8409"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -4599,6 +5234,9 @@
             "/web/image/product.image/2137/image_128/Mosaic%20sideboard?unique=ac76f51",
             "/web/image/product.image/2138/image_128/Mosaic%20sideboard?unique=ac76f51",
             "/web/image/product.image/2417/image_128/Mosaic%20sideboard?unique=3f22d1d"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -4624,6 +5262,9 @@
             "/web/image/product.image/3211/image_128/Abstract%20coffee%20table?unique=f837cae",
             "/web/image/product.image/3212/image_128/Abstract%20coffee%20table?unique=f837cae",
             "/web/image/product.image/3213/image_128/Abstract%20coffee%20table?unique=f837cae"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -4650,6 +5291,9 @@
             "/web/image/product.image/2165/image_128/Mosaic%20TV%20cupboard?unique=4a927e3",
             "/web/image/product.image/2166/image_128/Mosaic%20TV%20cupboard?unique=4a927e3",
             "/web/image/product.image/2415/image_128/Mosaic%20TV%20cupboard?unique=5365c57"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -4676,6 +5320,9 @@
             "/web/image/product.image/1524/image_128/Grooves%20storage%20cupboard%20-%202%20doors%20-%202%20inside%20drawers?unique=469a80c",
             "/web/image/product.image/1525/image_128/Grooves%20storage%20cupboard%20-%202%20doors%20-%202%20inside%20drawers?unique=469a80c",
             "/web/image/product.image/1526/image_128/Grooves%20storage%20cupboard%20-%202%20doors%20-%202%20inside%20drawers?unique=469a80c"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -4700,6 +5347,9 @@
             "/web/image/product.image/1529/image_128/Grooves%20sideboard%20-%203%20doors%20?unique=e173ec2",
             "/web/image/product.image/1897/image_128/Grooves%20sideboard%20-%203%20doors%20?unique=e173ec2",
             "/web/image/product.image/1898/image_128/Grooves%20sideboard%20-%203%20doors%20?unique=e173ec2"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -4720,6 +5370,9 @@
             "/web/image/product.image/14879/image_128/Moroccan%20Frost%20mirror%20tray?unique=1ebefdd",
             "/web/image/product.image/777/image_128/Moroccan%20Frost%20mirror%20tray?unique=1ebefdd",
             "/web/image/product.image/778/image_128/Moroccan%20Frost%20mirror%20tray?unique=1ebefdd"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -4735,6 +5388,9 @@
             "/web/image/product.product/3933/image_128/%5B20301%2A%5D%20Clear%20mirror%20tray%20%2848x48x4cm%29?unique=7a41a59",
             "/web/image/product.image/767/image_128/Clear%20mirror%20tray?unique=25e9fa4",
             "/web/image/product.image/768/image_128/Clear%20mirror%20tray?unique=25e9fa4"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -4761,6 +5417,9 @@
             "/web/image/product.image/2013/image_128/Oak%20X%20dining%20table?unique=a775f2d",
             "/web/image/product.image/2014/image_128/Oak%20X%20dining%20table?unique=a775f2d",
             "/web/image/product.image/2071/image_128/Oak%20X%20dining%20table?unique=ba67354"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -4779,6 +5438,9 @@
             "/web/image/product.image/18469/image_128/Bau%20side%20table?unique=b321cb4",
             "/web/image/product.image/18470/image_128/Bau%20side%20table?unique=b321cb4",
             "/web/image/product.image/1615/image_128/Bau%20side%20table%2053-53-47?unique=adda366"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -4812,6 +5474,9 @@
             "/web/image/product.image/75/image_128/Graphic%20TV%20cupboard%20-%201%20flip-down%20door%20-%202%20drawers?unique=d2e7c02",
             "/web/image/product.image/76/image_128/Graphic%20TV%20cupboard%20-%201%20flip-down%20door%20-%202%20drawers?unique=d2e7c02",
             "/web/image/product.image/2075/image_128/Graphic%20TV%20cupboard%20-%201%20flip-down%20door%20-%202%20drawers?unique=d2e7c02"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -4830,6 +5495,9 @@
             "/web/image/product.image/1050/image_128/Ink%20Linear%20Squares%20glass%20valet%20tray%20-%20wooden%20rim%20-%20round?unique=75259d6",
             "/web/image/product.image/1051/image_128/Ink%20Linear%20Squares%20glass%20valet%20tray%20-%20wooden%20rim%20-%20round?unique=75259d6",
             "/web/image/product.image/1052/image_128/Ink%20Linear%20Squares%20glass%20valet%20tray%20-%20wooden%20rim%20-%20round?unique=75259d6"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -4854,6 +5522,10 @@
             "/web/image/product.image/6504/image_128/Ligna%20storage%20cupboard%20-%20black%20metal%20legs?unique=43ef7b0",
             "/web/image/product.image/1651/image_128/Ligna%20storage%20cupboard%20-%20black%20metal%20legs?unique=43ef7b0",
             "/web/image/product.image/1652/image_128/Ligna%20storage%20cupboard%20-%20black%20metal%20legs?unique=43ef7b0"
+        ],
+        "category": [
+            "living",
+            "office"
         ]
     },
     {
@@ -4871,6 +5543,9 @@
             "/web/image/product.image/2625/image_128/Nordic%20TV%20cupboard%20?unique=d584cc5",
             "/web/image/product.image/2626/image_128/Nordic%20TV%20cupboard%20?unique=c7f9497",
             "/web/image/product.image/6512/image_128/Nordic%20TV%20cupboard%20?unique=1cd8fe5"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -4889,6 +5564,9 @@
             "/web/image/product.image/14877/image_128/Lampe%20Gras%20411%20floor%20lamp?unique=f2a5d79",
             "/web/image/product.image/1836/image_128/Lampe%20gras%20411%20Floor%20lamp?unique=f2a5d79",
             "/web/image/product.image/1837/image_128/Lampe%20gras%20411%20Floor%20lamp?unique=f2a5d79"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -4910,6 +5588,9 @@
             "/web/image/product.image/2051/image_128/Oak%20black%20U%20desk?unique=ae9f39f",
             "/web/image/product.image/2052/image_128/Oak%20black%20U%20desk?unique=ae9f39f",
             "/web/image/product.image/2418/image_128/Oak%20black%20U%20desk?unique=20dab88"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -4937,6 +5618,9 @@
             "/web/image/product.image/2020/image_128/Oak%20Corto%20brown%20dining%20table?unique=6629143",
             "/web/image/product.image/2021/image_128/Oak%20Corto%20brown%20dining%20table?unique=6629143",
             "/web/image/product.image/2422/image_128/Oak%20Corto%20brown%20dining%20table?unique=4ca499c"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -4965,6 +5649,9 @@
             "/web/image/product.image/3543/image_128/Office%20chair%20Futu%20mesh%201100?unique=94e8fc4",
             "/web/image/product.image/3542/image_128/Office%20chair%20Futu%20mesh%201100?unique=94e8fc4",
             "/web/image/product.image/3544/image_128/Office%20chair%20Futu%20mesh%201100?unique=94e8fc4"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -4986,6 +5673,9 @@
             "/web/image/product.image/2121/image_128/Mahogany%20PI%20coffee%20table?unique=63be2aa",
             "/web/image/product.image/2122/image_128/Mahogany%20PI%20coffee%20table?unique=63be2aa",
             "/web/image/product.image/2416/image_128/Mahogany%20PI%20coffee%20table?unique=0dd0ce3"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -5008,6 +5698,9 @@
             "/web/image/product.image/1665/image_128/Spindle%20bedside%20table?unique=90811e8",
             "/web/image/product.image/1848/image_128/Spindle%20bedside%20table?unique=90811e8",
             "/web/image/product.image/1666/image_128/Spindle%20bedside%20table?unique=d8705a1"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -5030,6 +5723,9 @@
             "/web/image/product.image/1665/image_128/Spindle%20bedside%20table?unique=90811e8",
             "/web/image/product.image/1848/image_128/Spindle%20bedside%20table?unique=90811e8",
             "/web/image/product.image/1666/image_128/Spindle%20bedside%20table?unique=d8705a1"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -5052,6 +5748,9 @@
             "/web/image/product.image/1665/image_128/Spindle%20bedside%20table?unique=90811e8",
             "/web/image/product.image/1848/image_128/Spindle%20bedside%20table?unique=90811e8",
             "/web/image/product.image/1666/image_128/Spindle%20bedside%20table?unique=d8705a1"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -5077,6 +5776,9 @@
             "/web/image/product.image/1298/image_128/Spindle%20bench?unique=e3a6d84",
             "/web/image/product.image/1299/image_128/Spindle%20bench?unique=e3a6d84",
             "/web/image/product.image/2082/image_128/Spindle%20bench?unique=ddbfa91"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -5102,6 +5804,9 @@
             "/web/image/product.image/1298/image_128/Spindle%20bench?unique=e3a6d84",
             "/web/image/product.image/1299/image_128/Spindle%20bench?unique=e3a6d84",
             "/web/image/product.image/2082/image_128/Spindle%20bench?unique=ddbfa91"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -5127,6 +5832,9 @@
             "/web/image/product.image/1298/image_128/Spindle%20bench?unique=e3a6d84",
             "/web/image/product.image/1299/image_128/Spindle%20bench?unique=e3a6d84",
             "/web/image/product.image/2082/image_128/Spindle%20bench?unique=ddbfa91"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -5151,6 +5859,10 @@
             "/web/image/product.image/6467/image_128/Oak%20Burung%20black%20storage%20cupboard?unique=4fe2b72",
             "/web/image/product.image/6468/image_128/Oak%20Burung%20black%20storage%20cupboard?unique=4fe2b72",
             "/web/image/product.image/6469/image_128/Oak%20Burung%20black%20storage%20cupboard?unique=4fe2b72"
+        ],
+        "category": [
+            "living",
+            "office"
         ]
     },
     {
@@ -5171,6 +5883,9 @@
             "/web/image/product.image/2293/image_128/Black%20Chopped%20waste%20paper%20basket?unique=8f71402",
             "/web/image/product.image/2294/image_128/Black%20Chopped%20waste%20paper%20basket?unique=8f71402",
             "/web/image/product.image/2295/image_128/Black%20Chopped%20waste%20paper%20basket?unique=8f71402"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -5193,6 +5908,9 @@
             "/web/image/product.image/2273/image_128/Oak%20Arc%20black%20dining%20table?unique=ef9e622",
             "/web/image/product.image/2274/image_128/Oak%20Arc%20black%20dining%20table?unique=ef9e622",
             "/web/image/product.image/2275/image_128/Oak%20Arc%20black%20dining%20table?unique=ef9e622"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -5213,6 +5931,9 @@
             "/web/image/product.image/2719/image_128/Black%20Roller%20Max%20waste%20paper%20basket?unique=854c79c",
             "/web/image/product.image/2720/image_128/Black%20Roller%20Max%20waste%20paper%20basket?unique=854c79c",
             "/web/image/product.image/2721/image_128/Black%20Roller%20Max%20waste%20paper%20basket?unique=854c79c"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -5232,6 +5953,9 @@
             "/web/image/product.image/1310/image_128/Rise%20coffee%20table%20?unique=53ca4ce",
             "/web/image/product.image/1311/image_128/Rise%20coffee%20table%20?unique=53ca4ce",
             "/web/image/product.image/2590/image_128/Rise%20coffee%20table%20?unique=dab2eeb"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -5250,6 +5974,9 @@
             "/web/image/product.image/1312/image_128/Rise%20console%20?unique=1963848",
             "/web/image/product.image/1313/image_128/Rise%20console%20?unique=1963848",
             "/web/image/product.image/1314/image_128/Rise%20console%20?unique=1963848"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -5270,6 +5997,10 @@
             "/web/image/product.image/1979/image_128/Rise%20rack?unique=ff85651",
             "/web/image/product.image/2635/image_128/Rise%20rack?unique=e7c8369",
             "/web/image/product.image/1721/image_128/Rise%20rack?unique=ff85651"
+        ],
+        "category": [
+            "living",
+            "office"
         ]
     },
     {
@@ -5290,6 +6021,10 @@
             "/web/image/product.image/1979/image_128/Rise%20rack?unique=ff85651",
             "/web/image/product.image/2635/image_128/Rise%20rack?unique=e7c8369",
             "/web/image/product.image/1721/image_128/Rise%20rack?unique=ff85651"
+        ],
+        "category": [
+            "living",
+            "office"
         ]
     },
     {
@@ -5311,6 +6046,9 @@
             "/web/image/product.image/501/image_128/Rise%20side%20table?unique=76a46f1",
             "/web/image/product.image/502/image_128/Rise%20side%20table?unique=76a46f1",
             "/web/image/product.image/503/image_128/Rise%20side%20table?unique=ca9c789"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -5336,6 +6074,10 @@
             "/web/image/product.image/797/image_128/Round%20tray%20coffee%20table%20set?unique=8fc3a56",
             "/web/image/product.image/798/image_128/Round%20tray%20coffee%20table%20set?unique=8fc3a56",
             "/web/image/product.image/799/image_128/Round%20tray%20coffee%20table%20set?unique=8fc3a56"
+        ],
+        "category": [
+            "living",
+            "accessories"
         ]
     },
     {
@@ -5356,6 +6098,9 @@
             "/web/image/product.image/967/image_128/Sand%20Wabi%20Sabi%20glass%20tray%20-%20rectangular?unique=6a06d2d",
             "/web/image/product.image/968/image_128/Sand%20Wabi%20Sabi%20glass%20tray%20-%20rectangular?unique=6a06d2d",
             "/web/image/product.image/969/image_128/Sand%20Wabi%20Sabi%20glass%20tray%20-%20rectangular?unique=6a06d2d"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -5374,6 +6119,9 @@
             "/web/image/product.image/1483/image_128/%28Lin%29Sauvage%20cushion?unique=a9e8fe2",
             "/web/image/product.image/1484/image_128/%28Lin%29Sauvage%20cushion?unique=a9e8fe2",
             "/web/image/product.image/1485/image_128/%28Lin%29Sauvage%20cushion?unique=a9e8fe2"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -5392,6 +6140,9 @@
             "/web/image/product.image/1483/image_128/%28Lin%29Sauvage%20cushion?unique=a9e8fe2",
             "/web/image/product.image/1484/image_128/%28Lin%29Sauvage%20cushion?unique=a9e8fe2",
             "/web/image/product.image/1485/image_128/%28Lin%29Sauvage%20cushion?unique=a9e8fe2"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -5421,6 +6172,9 @@
             "/web/image/product.image/2812/image_128/Set%20of%20lumbar%20cushions%20for%20Trapeze%20sofa?unique=a36c603",
             "/web/image/product.image/2813/image_128/Set%20of%20lumbar%20cushions%20for%20Trapeze%20sofa?unique=a36c603",
             "/web/image/product.image/2814/image_128/Set%20of%20lumbar%20cushions%20for%20Trapeze%20sofa?unique=a36c603"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -5450,6 +6204,9 @@
             "/web/image/product.image/2812/image_128/Set%20of%20lumbar%20cushions%20for%20Trapeze%20sofa?unique=a36c603",
             "/web/image/product.image/2813/image_128/Set%20of%20lumbar%20cushions%20for%20Trapeze%20sofa?unique=a36c603",
             "/web/image/product.image/2814/image_128/Set%20of%20lumbar%20cushions%20for%20Trapeze%20sofa?unique=a36c603"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -5470,6 +6227,9 @@
             "/web/image/product.image/1745/image_128/Shadow%20dresser?unique=d290ce2",
             "/web/image/product.image/6509/image_128/Shadow%20dresser?unique=d290ce2",
             "/web/image/product.image/6510/image_128/Shadow%20dresser?unique=d290ce2"
+        ],
+        "category": [
+            "bedroom"
         ]
     },
     {
@@ -5512,6 +6272,9 @@
             "/web/image/product.image/2025/image_128/Stability%20coffee%20table?unique=8ac9c06",
             "/web/image/product.image/2070/image_128/Stability%20coffee%20table?unique=980b84d",
             "/web/image/product.image/2421/image_128/Stability%20coffee%20table?unique=6e17dc8"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -5529,6 +6292,9 @@
             "/web/image/product.image/1590/image_128/Whitebird%20sideboard?unique=493e6c4",
             "/web/image/product.image/6535/image_128/Whitebird%20sideboard?unique=368e1f1",
             "/web/image/product.image/6532/image_128/Whitebird%20sideboard?unique=368e1f1"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -5544,6 +6310,9 @@
             "/web/image/product.product/3796/image_128/%5B51438%2A%5D%20Nordic%20sideboard%20%28210x45x78cm%29?unique=a9430e8",
             "/web/image/product.image/1684/image_128/Nordic%20sideboard?unique=cad1b18",
             "/web/image/product.image/1685/image_128/Nordic%20sideboard?unique=cad1b18"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -5562,6 +6331,9 @@
             "/web/image/product.image/1411/image_128/Stairs%20column?unique=3c30b79",
             "/web/image/product.image/1412/image_128/Stairs%20column?unique=3c30b79",
             "/web/image/product.image/1413/image_128/Stairs%20column?unique=baf308c"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -5580,6 +6352,10 @@
             "/web/image/product.image/1415/image_128/Stairs%20rack?unique=78dcb9f",
             "/web/image/product.image/1416/image_128/Stairs%20rack?unique=78dcb9f",
             "/web/image/product.image/6499/image_128/Stairs%20rack?unique=78dcb9f"
+        ],
+        "category": [
+            "living",
+            "office"
         ]
     },
     {
@@ -5602,6 +6378,9 @@
             "/web/image/product.image/14932/image_128/Stairs%20sideboard%20-%203%20doors?unique=4ba61b8",
             "/web/image/product.image/2873/image_128/Stairs%20sideboard%20-%203%20doors?unique=4ba61b8",
             "/web/image/product.image/2874/image_128/Stairs%20sideboard%20-%203%20doors?unique=4ba61b8"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -5624,6 +6403,9 @@
             "/web/image/product.image/14932/image_128/Stairs%20sideboard%20-%203%20doors?unique=4ba61b8",
             "/web/image/product.image/2873/image_128/Stairs%20sideboard%20-%203%20doors?unique=4ba61b8",
             "/web/image/product.image/2874/image_128/Stairs%20sideboard%20-%203%20doors?unique=4ba61b8"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -5646,6 +6428,9 @@
             "/web/image/product.image/2514/image_128/Stairs%20sideboard%20-%204%20doors?unique=00e84e9",
             "/web/image/product.image/1740/image_128/Stairs%20sideboard%20-%204%20doors?unique=5b530b8",
             "/web/image/product.image/1580/image_128/Stairs%20sideboard%20-%204%20doors?unique=5b530b8"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -5668,6 +6453,9 @@
             "/web/image/product.image/2514/image_128/Stairs%20sideboard%20-%204%20doors?unique=00e84e9",
             "/web/image/product.image/1740/image_128/Stairs%20sideboard%20-%204%20doors?unique=5b530b8",
             "/web/image/product.image/1580/image_128/Stairs%20sideboard%20-%204%20doors?unique=5b530b8"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -5686,6 +6474,10 @@
             "/web/image/product.image/1515/image_128/Studio%20rack?unique=93abaa9",
             "/web/image/product.image/1516/image_128/Studio%20rack?unique=93abaa9",
             "/web/image/product.image/1518/image_128/Studio%20rack?unique=93abaa9"
+        ],
+        "category": [
+            "living",
+            "office"
         ]
     },
     {
@@ -5707,6 +6499,9 @@
             "/web/image/product.image/2365/image_128/Table%20top%20-%20for%20Bok%20adjustable%20desk?unique=2dce1e1",
             "/web/image/product.image/2366/image_128/Table%20top%20-%20for%20Bok%20adjustable%20desk?unique=2dce1e1",
             "/web/image/product.image/1608/image_128/Table%20top%20-%20for%20Bok%20adjustable%20desk?unique=68ac7d9"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -5728,6 +6523,9 @@
             "/web/image/product.image/2365/image_128/Table%20top%20-%20for%20Bok%20adjustable%20desk?unique=2dce1e1",
             "/web/image/product.image/2366/image_128/Table%20top%20-%20for%20Bok%20adjustable%20desk?unique=2dce1e1",
             "/web/image/product.image/1608/image_128/Table%20top%20-%20for%20Bok%20adjustable%20desk?unique=68ac7d9"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -5747,6 +6545,9 @@
             "/web/image/product.image/1768/image_128/Tabwa%20TV%20cupboard?unique=c49c636",
             "/web/image/product.image/1770/image_128/Tabwa%20TV%20cupboard?unique=c49c636",
             "/web/image/product.image/6462/image_128/Tabwa%20TV%20cupboard?unique=4363ea8"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -5766,6 +6567,9 @@
             "/web/image/product.image/1975/image_128/Tabwa%20sideboard?unique=93aaef1",
             "/web/image/product.image/1976/image_128/Tabwa%20sideboard?unique=93aaef1",
             "/web/image/product.image/2536/image_128/Tabwa%20sideboard?unique=93aaef1"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -5792,6 +6596,10 @@
             "/web/image/product.image/2604/image_128/Tabwa%20storage%20cupboard?unique=871c858",
             "/web/image/product.image/1636/image_128/Tabwa%20storage%20cupboard?unique=871c858",
             "/web/image/product.image/2605/image_128/Tabwa%20storage%20cupboard?unique=871c858"
+        ],
+        "category": [
+            "living",
+            "office"
         ]
     },
     {
@@ -5813,6 +6621,9 @@
             "/web/image/product.image/639/image_128/Teak%20Bok%20dining%20chair?unique=01cb2f4",
             "/web/image/product.image/640/image_128/Teak%20Bok%20dining%20chair?unique=01cb2f4",
             "/web/image/product.image/2463/image_128/Teak%20Bok%20dining%20chair?unique=01cb2f4"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -5840,6 +6651,9 @@
             "/web/image/product.image/2829/image_128/Trapeze%20sofa%20-%203%20seater?unique=b988f0b",
             "/web/image/product.image/2830/image_128/Trapeze%20sofa%20-%203%20seater?unique=b988f0b",
             "/web/image/product.image/2831/image_128/Trapeze%20sofa%20-%203%20seater?unique=b988f0b"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -5867,6 +6681,9 @@
             "/web/image/product.image/2829/image_128/Trapeze%20sofa%20-%203%20seater?unique=b988f0b",
             "/web/image/product.image/2830/image_128/Trapeze%20sofa%20-%203%20seater?unique=b988f0b",
             "/web/image/product.image/2831/image_128/Trapeze%20sofa%20-%203%20seater?unique=b988f0b"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -5891,6 +6708,9 @@
             "/web/image/product.image/2597/image_128/Triptic%20side%20table%20-%20lava?unique=8200dfa",
             "/web/image/product.image/2034/image_128/Triptic%20side%20table%20-%20lava?unique=758a806",
             "/web/image/product.image/2068/image_128/Triptic%20side%20table%20-%20lava?unique=267ee20"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -5915,6 +6735,9 @@
             "/web/image/product.image/2597/image_128/Triptic%20side%20table%20-%20lava?unique=8200dfa",
             "/web/image/product.image/2034/image_128/Triptic%20side%20table%20-%20lava?unique=758a806",
             "/web/image/product.image/2068/image_128/Triptic%20side%20table%20-%20lava?unique=267ee20"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -5935,6 +6758,9 @@
             "/web/image/product.image/1192/image_128/Tulum%20cushion%20-%20lumbar?unique=ce572b9",
             "/web/image/product.image/1193/image_128/Tulum%20cushion%20-%20lumbar?unique=ce572b9",
             "/web/image/product.image/1194/image_128/Tulum%20cushion%20-%20lumbar?unique=ce572b9"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -5955,6 +6781,9 @@
             "/web/image/product.image/1192/image_128/Tulum%20cushion%20-%20lumbar?unique=ce572b9",
             "/web/image/product.image/1193/image_128/Tulum%20cushion%20-%20lumbar?unique=ce572b9",
             "/web/image/product.image/1194/image_128/Tulum%20cushion%20-%20lumbar?unique=ce572b9"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -5973,6 +6802,9 @@
             "/web/image/product.image/362/image_128/Urban%20cushion-%20Lumbar?unique=46f70ce",
             "/web/image/product.image/363/image_128/Urban%20cushion-%20Lumbar?unique=46f70ce",
             "/web/image/product.image/364/image_128/Urban%20cushion-%20Lumbar?unique=46f70ce"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -5995,6 +6827,9 @@
             "/web/image/product.image/359/image_128/Urban%20cushion-%20Square?unique=2674194",
             "/web/image/product.image/360/image_128/Urban%20cushion-%20Square?unique=2674194",
             "/web/image/product.image/361/image_128/Urban%20cushion-%20Square?unique=2674194"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -6015,6 +6850,9 @@
             "/web/image/product.image/2937/image_128/Wall%20mirror?unique=aee87db",
             "/web/image/product.image/1790/image_128/Wall%20mirror?unique=aee87db",
             "/web/image/product.image/1791/image_128/Wall%20mirror?unique=aee87db"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -6035,6 +6873,9 @@
             "/web/image/product.image/2937/image_128/Wall%20mirror?unique=aee87db",
             "/web/image/product.image/1790/image_128/Wall%20mirror?unique=aee87db",
             "/web/image/product.image/1791/image_128/Wall%20mirror?unique=aee87db"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -6051,6 +6892,9 @@
             "/web/image/product.image/2093/image_128/Kilim%20rug?unique=7b5e533",
             "/web/image/product.image/2094/image_128/Kilim%20rug?unique=7b5e533",
             "/web/image/product.image/2091/image_128/Kilim%20rug?unique=60634a4"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -6067,6 +6911,9 @@
             "/web/image/product.image/2093/image_128/Kilim%20rug?unique=7b5e533",
             "/web/image/product.image/2094/image_128/Kilim%20rug?unique=7b5e533",
             "/web/image/product.image/2091/image_128/Kilim%20rug?unique=60634a4"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -6089,6 +6936,9 @@
             "/web/image/product.image/7431/image_128/Bok%20outdoor%20dining%20chair?unique=2b53dc6",
             "/web/image/product.image/7432/image_128/Bok%20outdoor%20dining%20chair?unique=2b53dc6",
             "/web/image/product.image/7433/image_128/Bok%20outdoor%20dining%20chair?unique=2b53dc6"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6108,6 +6958,9 @@
             "/web/image/product.image/7418/image_128/Bok%20outdoor%20dining%20table?unique=c3d212d",
             "/web/image/product.image/7419/image_128/Bok%20outdoor%20dining%20table?unique=c3d212d",
             "/web/image/product.image/7423/image_128/Bok%20outdoor%20dining%20table?unique=9c38190"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6126,6 +6979,9 @@
             "/web/image/product.image/7529/image_128/Jack%20outdoor%20lounge%20chair%20frame?unique=c82f8ba",
             "/web/image/product.image/7530/image_128/Jack%20outdoor%20lounge%20chair%20frame?unique=c82f8ba",
             "/web/image/product.image/7531/image_128/Jack%20outdoor%20lounge%20chair%20frame?unique=6d96b6d"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6146,6 +7002,9 @@
             "/web/image/product.image/7533/image_128/Jack%20outdoor%20sofa%20frame%20-%202%20seater?unique=2e55844",
             "/web/image/product.image/7534/image_128/Jack%20outdoor%20sofa%20frame%20-%202%20seater?unique=2e55844",
             "/web/image/product.image/7535/image_128/Jack%20outdoor%20sofa%20frame%20-%202%20seater?unique=2e55844"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6166,6 +7025,9 @@
             "/web/image/product.image/7537/image_128/Jack%20outdoor%20sofa%20frame%20-%203%20seater?unique=b2e9243",
             "/web/image/product.image/7538/image_128/Jack%20outdoor%20sofa%20frame%20-%203%20seater?unique=b2e9243",
             "/web/image/product.image/7539/image_128/Jack%20outdoor%20sofa%20frame%20-%203%20seater?unique=b2e9243"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6182,6 +7044,9 @@
             "/web/image/product.product/13216/image_128/%5B21264%5D%20Jack%20outdoor%20cushion%20set%20-%203%20seater%20%28Mocha%29?unique=a9430e8",
             "/web/image/product.image/7544/image_128/Jack%20outdoor%20cushion%20set%20-%203%20seater?unique=f407e91",
             "/web/image/product.image/7545/image_128/Jack%20outdoor%20cushion%20set%20-%203%20seater?unique=f407e91"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6198,6 +7063,9 @@
             "/web/image/product.product/13216/image_128/%5B21264%5D%20Jack%20outdoor%20cushion%20set%20-%203%20seater%20%28Mocha%29?unique=a9430e8",
             "/web/image/product.image/7544/image_128/Jack%20outdoor%20cushion%20set%20-%203%20seater?unique=f407e91",
             "/web/image/product.image/7545/image_128/Jack%20outdoor%20cushion%20set%20-%203%20seater?unique=f407e91"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6226,6 +7094,9 @@
             "/web/image/product.image/7482/image_128/Jack%20outdoor%20adjustable%20lounger%20frame?unique=0258645",
             "/web/image/product.image/7483/image_128/Jack%20outdoor%20adjustable%20lounger%20frame?unique=0258645",
             "/web/image/product.image/7484/image_128/Jack%20outdoor%20adjustable%20lounger%20frame?unique=0258645"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6242,6 +7113,9 @@
             "/web/image/product.product/5875/image_128/%5B21099%5D%20Jack%20outdoor%20adjustable%20lounger%20cushion%20%28Mocha%29?unique=a9430e8",
             "/web/image/product.image/7493/image_128/Jack%20outdoor%20adjustable%20lounger%20cushion?unique=3e5754a",
             "/web/image/product.image/7494/image_128/Jack%20outdoor%20adjustable%20lounger%20cushion?unique=3e5754a"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6258,6 +7132,9 @@
             "/web/image/product.product/5875/image_128/%5B21099%5D%20Jack%20outdoor%20adjustable%20lounger%20cushion%20%28Mocha%29?unique=a9430e8",
             "/web/image/product.image/7493/image_128/Jack%20outdoor%20adjustable%20lounger%20cushion?unique=3e5754a",
             "/web/image/product.image/7494/image_128/Jack%20outdoor%20adjustable%20lounger%20cushion?unique=3e5754a"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6274,6 +7151,9 @@
             "/web/image/product.product/13197/image_128/%5B70264%5D%20Jack%20outdoor%20footstool%20frame?unique=a9430e8",
             "/web/image/product.image/7463/image_128/Jack%20outdoor%20footstool%20frame?unique=b2a5fea",
             "/web/image/product.image/7464/image_128/Jack%20outdoor%20footstool%20frame?unique=b2a5fea"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6292,6 +7172,9 @@
             "/web/image/product.image/7526/image_128/Jack%20outdoor%20side%20table?unique=659787e",
             "/web/image/product.image/7527/image_128/Jack%20outdoor%20side%20table?unique=659787e",
             "/web/image/product.image/7528/image_128/Jack%20outdoor%20side%20table?unique=659787e"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6315,6 +7198,9 @@
             "/web/image/product.image/7506/image_128/Quatro%20outdoor%20coffee%20table?unique=a88495b",
             "/web/image/product.image/7507/image_128/Quatro%20outdoor%20coffee%20table?unique=a88495b",
             "/web/image/product.image/7514/image_128/Quatro%20outdoor%20coffee%20table?unique=f23aaed"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6326,6 +7212,9 @@
         "dimension": "180x90x73cm",
         "image_srcs": [
             "/web/image/product.product/5720/image_1024/%5B19971%5D%20Raincover%20Jack%20outdoor%20sofa%20-%202%20seater%20%28180cm%29?unique=a9430e8"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6337,6 +7226,9 @@
         "dimension": "265x90x77cm",
         "image_srcs": [
             "/web/image/product.product/5725/image_1024/%5B19972%5D%20Raincover%20Jack%20outdoor%20sofa%20-%203%20seater%20%28265%20cm%29?unique=a9430e8"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6348,6 +7240,9 @@
         "dimension": "76x90x77cm",
         "image_srcs": [
             "/web/image/product.product/5718/image_1024/%5B19970%5D%20Raincover%20Jack%20outdoor%20sofa-lounge%20chair?unique=a9430e8"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6359,6 +7254,9 @@
         "dimension": "71x54x41cm",
         "image_srcs": [
             "/web/image/product.product/5719/image_1024/%5B19973%5D%20Raincover%20Jack%20outdoor%20footstool?unique=a9430e8"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6369,6 +7267,9 @@
         "price": "7.5",
         "image_srcs": [
             "/web/image/product.product/5692/image_1024/%5B19976%5D%20Raincover%20for%20rectangular%20outdoor%20dining%20table%20%28254x155x76cm%29?unique=a9430e8"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6380,6 +7281,9 @@
         "dimension": "216x84x34cm",
         "image_srcs": [
             "/web/image/product.product/5874/image_1024/%5B19974%5D%20Raincover%20for%20Jack%20outdoor%20adjustable%20lounger?unique=a9430e8"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6406,6 +7310,9 @@
             "/web/image/product.image/3323/image_128/Cinnamon%20Overlapping%20Dots%20glass%20tray?unique=5f04cbe",
             "/web/image/product.image/3324/image_128/Cinnamon%20Overlapping%20Dots%20glass%20tray?unique=5f04cbe",
             "/web/image/product.image/3325/image_128/Cinnamon%20Overlapping%20Dots%20glass%20tray?unique=5f04cbe"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -6428,6 +7335,9 @@
             "/web/image/product.image/199/image_128/Oak%20Mikado%20round%20dining%20table?unique=cfcea59",
             "/web/image/product.image/200/image_128/Oak%20Mikado%20round%20dining%20table?unique=cfcea59",
             "/web/image/product.image/201/image_128/Oak%20Mikado%20round%20dining%20table?unique=cfcea59"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -6446,6 +7356,9 @@
             "/web/image/product.image/1060/image_128/Cream%20Circles%20glass%20valet%20tray%20-%20wooden%20rim%20?unique=5c48ddd",
             "/web/image/product.image/1061/image_128/Cream%20Circles%20glass%20valet%20tray%20-%20wooden%20rim%20?unique=5c48ddd",
             "/web/image/product.image/1062/image_128/Cream%20Circles%20glass%20valet%20tray%20-%20wooden%20rim%20?unique=5c48ddd"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -6460,6 +7373,9 @@
             "/web/image/product.image/1829/image_1024/Light%20Frame%20floor%20mirror?unique=d4bba67",
             "/web/image/product.product/3683/image_128/%5B51299%5D%20Light%20Frame%20floor%20mirror%20%28Oak%29?unique=a9430e8",
             "/web/image/product.image/1829/image_128/Light%20Frame%20floor%20mirror?unique=d4bba67"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -6476,6 +7392,9 @@
             "/web/image/product.product/4119/image_128/%5BL0215%2A%5D%20Lampe%20Gras%20215%20floor%20lamp?unique=a9430e8",
             "/web/image/product.image/14878/image_128/Lampe%20Gras%20215%20floor%20lamp?unique=d84b148",
             "/web/image/product.image/1835/image_128/Lampe%20gras%20215%20Floor%20lamp?unique=d84b148"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -6502,6 +7421,9 @@
             "/web/image/product.image/2922/image_128/Bok%20Cowork%20desk?unique=bb69acb",
             "/web/image/product.image/2923/image_128/Bok%20Cowork%20desk?unique=bb69acb",
             "/web/image/product.image/1605/image_128/Bok%20Cowork%20desk?unique=77e9f93"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -6530,6 +7452,9 @@
             "/web/image/product.image/2414/image_128/Billy%20black%20drawer%20unit?unique=7997155",
             "/web/image/product.image/1387/image_128/Billy%20black%20drawer%20unit?unique=a1a9f76",
             "/web/image/product.image/1388/image_128/Billy%20black%20drawer%20unit?unique=a1a9f76"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -6546,6 +7471,9 @@
             "/web/image/product.product/3847/image_128/%5B21049%2A%5D%20Nomad%20throw%20%28Blue%29?unique=7a4b65e",
             "/web/image/product.image/1153/image_128/Nomad%20throw?unique=ba1548a",
             "/web/image/product.image/1154/image_128/Nomad%20throw?unique=ba1548a"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -6562,6 +7490,9 @@
             "/web/image/product.product/3847/image_128/%5B21049%2A%5D%20Nomad%20throw%20%28Blue%29?unique=7a4b65e",
             "/web/image/product.image/1153/image_128/Nomad%20throw?unique=ba1548a",
             "/web/image/product.image/1154/image_128/Nomad%20throw?unique=ba1548a"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -6578,6 +7509,9 @@
             "/web/image/product.product/3847/image_128/%5B21049%2A%5D%20Nomad%20throw%20%28Blue%29?unique=7a4b65e",
             "/web/image/product.image/1153/image_128/Nomad%20throw?unique=ba1548a",
             "/web/image/product.image/1154/image_128/Nomad%20throw?unique=ba1548a"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -6594,6 +7528,9 @@
             "/web/image/product.product/3847/image_128/%5B21049%2A%5D%20Nomad%20throw%20%28Blue%29?unique=7a4b65e",
             "/web/image/product.image/1153/image_128/Nomad%20throw?unique=ba1548a",
             "/web/image/product.image/1154/image_128/Nomad%20throw?unique=ba1548a"
+        ],
+        "category": [
+            "accessories"
         ]
     },
     {
@@ -6614,6 +7551,9 @@
             "/web/image/product.image/9403/image_128/Seat%20cushion%20Teak%20Bok%20outdoor%20dining%20chair?unique=f545978",
             "/web/image/product.image/3248/image_128/Seat%20cushion%20Teak%20Bok%20outdoor%20dining%20chair?unique=f545978",
             "/web/image/product.image/9404/image_128/Seat%20cushion%20Teak%20Bok%20outdoor%20dining%20chair?unique=f545978"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6634,6 +7574,9 @@
             "/web/image/product.image/9403/image_128/Seat%20cushion%20Teak%20Bok%20outdoor%20dining%20chair?unique=f545978",
             "/web/image/product.image/3248/image_128/Seat%20cushion%20Teak%20Bok%20outdoor%20dining%20chair?unique=f545978",
             "/web/image/product.image/9404/image_128/Seat%20cushion%20Teak%20Bok%20outdoor%20dining%20chair?unique=f545978"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6654,6 +7597,9 @@
             "/web/image/product.image/9403/image_128/Seat%20cushion%20Teak%20Bok%20outdoor%20dining%20chair?unique=f545978",
             "/web/image/product.image/3248/image_128/Seat%20cushion%20Teak%20Bok%20outdoor%20dining%20chair?unique=f545978",
             "/web/image/product.image/9404/image_128/Seat%20cushion%20Teak%20Bok%20outdoor%20dining%20chair?unique=f545978"
+        ],
+        "category": [
+            "outdoor"
         ]
     },
     {
@@ -6674,6 +7620,9 @@
             "/web/image/product.image/3152/image_128/Cosmos%20coffee%20table%20-%20lava?unique=b32f8dd",
             "/web/image/product.image/3153/image_128/Cosmos%20coffee%20table%20-%20lava?unique=b32f8dd",
             "/web/image/product.image/3154/image_128/Cosmos%20coffee%20table%20-%20lava?unique=b32f8dd"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -6689,6 +7638,9 @@
             "/web/image/product.product/3876/image_128/%5B51375%2A%5D%20Shadow%20TV%20cupboard%20%28140x46x42cm%29?unique=a9430e8",
             "/web/image/product.image/1672/image_128/Shadow%20TV%20cupboard?unique=285ac79",
             "/web/image/product.image/1673/image_128/Shadow%20TV%20cupboard?unique=285ac79"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -6727,6 +7679,9 @@
             "/web/image/product.image/3170/image_128/Anders%20Nesting%20side%20table%20set?unique=357c73a",
             "/web/image/product.image/3171/image_128/Anders%20Nesting%20side%20table%20set?unique=357c73a",
             "/web/image/product.image/3172/image_128/Anders%20Nesting%20side%20table%20set?unique=357c73a"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -6750,6 +7705,9 @@
             "/web/image/product.image/6463/image_128/Grooves%20TV%20cupboard%20-%201%20flip-down%20door%20%20?unique=afb889d",
             "/web/image/product.image/6464/image_128/Grooves%20TV%20cupboard%20-%201%20flip-down%20door%20%20?unique=afb889d",
             "/web/image/product.image/6465/image_128/Grooves%20TV%20cupboard%20-%201%20flip-down%20door%20%20?unique=afb889d"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -6772,6 +7730,9 @@
             "/web/image/product.image/2048/image_128/Stability%20console?unique=a341e6d",
             "/web/image/product.image/2069/image_128/Stability%20console?unique=b6fc45f",
             "/web/image/product.image/2419/image_128/Stability%20console?unique=65765ea"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -6795,6 +7756,10 @@
             "/web/image/product.image/16914/image_128/Nomad%20indoor-%20outdoor%20cushion?unique=6160dc6",
             "/web/image/product.image/16915/image_128/Nomad%20indoor-%20outdoor%20cushion?unique=6160dc6",
             "/web/image/product.image/16916/image_128/Nomad%20indoor-%20outdoor%20cushion?unique=6160dc6"
+        ],
+        "category": [
+            "accessories",
+            "outdoor"
         ]
     },
     {
@@ -6818,6 +7783,10 @@
             "/web/image/product.image/16914/image_128/Nomad%20indoor-%20outdoor%20cushion?unique=6160dc6",
             "/web/image/product.image/16915/image_128/Nomad%20indoor-%20outdoor%20cushion?unique=6160dc6",
             "/web/image/product.image/16916/image_128/Nomad%20indoor-%20outdoor%20cushion?unique=6160dc6"
+        ],
+        "category": [
+            "accessories",
+            "outdoor"
         ]
     },
     {
@@ -6837,6 +7806,9 @@
             "/web/image/product.image/14746/image_128/Oak%20brown%20Bok%20bench?unique=ae666fa",
             "/web/image/product.image/14747/image_128/Oak%20brown%20Bok%20bench?unique=ae666fa",
             "/web/image/product.image/14739/image_128/Oak%20brown%20Bok%20bench?unique=ae666fa"
+        ],
+        "category": [
+            "dining"
         ]
     },
     {
@@ -6850,6 +7822,9 @@
             "/web/image/product.product/17176/image_1024/%5B25930%5D%20Slice%20coffee%20table?unique=a9430e8",
             "/web/image/product.product/17176/image_128/%5B25930%5D%20Slice%20coffee%20table?unique=a9430e8",
             "/web/image/product.image/20667/image_128/Sphere%20coffee%20table%20?unique=2c08161"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -6874,6 +7849,9 @@
             "/web/image/product.image/22500/image_128/Billy%20drawer%20unit%20with%20keylock?unique=d9dd2bd",
             "/web/image/product.image/22501/image_128/Billy%20drawer%20unit%20with%20keylock?unique=d9dd2bd",
             "/web/image/product.image/22502/image_128/Billy%20drawer%20unit%20with%20keylock?unique=d9dd2bd"
+        ],
+        "category": [
+            "office"
         ]
     },
     {
@@ -6898,6 +7876,9 @@
             "/web/image/product.image/28163/image_128/Geometric%20sofa%20console?unique=32c5316",
             "/web/image/product.image/28164/image_128/Geometric%20sofa%20console?unique=32c5316",
             "/web/image/product.image/28165/image_128/Geometric%20sofa%20console?unique=dc20a96"
+        ],
+        "category": [
+            "living"
         ]
     },
     {
@@ -6922,6 +7903,9 @@
             "/web/image/product.image/29734/image_128/Billy%20black%20drawer%20unit%20with%20keylock?unique=942f28a",
             "/web/image/product.image/29764/image_128/Billy%20black%20drawer%20unit%20with%20keylock?unique=a2cbb22",
             "/web/image/product.image/29765/image_128/Billy%20black%20drawer%20unit%20with%20keylock?unique=a2cbb22"
+        ],
+        "category": [
+            "office"
         ]
     }
 ]

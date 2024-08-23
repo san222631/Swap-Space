@@ -40,6 +40,16 @@ document.addEventListener('DOMContentLoaded', function(){
         window.location.href = '/wishlist';
     });
 
+    //點擊分類房間
+    // Category click handler
+    document.querySelectorAll('.grid-content div').forEach(div => {
+        div.addEventListener('click', function() {
+            const selectedCategory = this.getAttribute('value'); // Get the category value
+            sessionStorage.setItem('selectedCategory', selectedCategory); // Store the category in sessionStorage
+            window.location.href = '/shop'; // Redirect to the shop page
+        });
+    });
+
     //點擊Member，看會員彈出視窗
     //處理登入
     const modal = document.getElementById('modal');
@@ -261,6 +271,4 @@ document.getElementById('logout').addEventListener('click', function(){
     //登出後重整頁面
     location.reload();
 })
-
-
 

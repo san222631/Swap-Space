@@ -187,8 +187,29 @@ nav {
     row-gap: 30px;
     padding: 15px;
 }
-.p1 {
+.p1-living {
     background-color: rgba(233, 238, 240, 0.274);
+    background-image: url('living.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.p1-dining {
+    background-color: rgba(233, 238, 240, 0.274);
+    background-image: url('dining.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.p1-office {
+    background-color: rgba(233, 238, 240, 0.274);
+    background-image: url('office.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.p1-bed {
+    background-color: rgba(233, 238, 240, 0.274);
+    background-image: url('bedroom.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 /*footer*/

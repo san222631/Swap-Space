@@ -1592,3 +1592,75 @@ async def check_order(request: Request):
             cursor.close()
         if conn:
             conn.close()
+
+
+
+#根據目錄，取得商品資料
+def fetch_CAT_data(page: int, keyword: str):
+	conn = None
+	cursor = None
+	try:
+		conn = mysql.connector.connect(**DB_CONFIG)
+		cursor = conn.cursor(dictionary=True)
+		cursor.execute("SET SESSION group_concat_max_len = 1000000;")
+		
+		query = """
+		SELECT furnitures.*, GROUP_CONCAT(images.url SEPARATOR ' ') AS image_urls
+        FROM furnitures
+        LEFT JOIN images ON images.product_id = furnitures.Product_id
+        WHERE Category LIKE %s
+        GROUP BY furnitures.Product_id
+        LIMIT %s, 20
+		"""
+
+		params = []
+		like_keyword = f'%{keyword}%'
+		params.extend([like_keyword])
+		params.append(page * 20)
+
+		cursor.execute(query, params)
+		results = cursor.fetchall()
+		return results
+	except Exception as e:
+		print(f"Internal Server Error: {e}") 
+		raise HTTPException(
+			status_code=500,
+			detail={
+				"error": True,
+				"message":"伺服器內部錯誤"
+				})  
+	finally:
+		if cursor is not None:  
+			cursor.close()
+		if conn is not None:
+			conn.close()
+
+
+@app.get("/api/category")
+def get_CAT_products(page: int = 0, keyword: str = Query(None)):
+    data = fetch_CAT_data(page, keyword)
+    if not data:
+        return {
+            "nextPage": None,
+            "data": []
+        }
+    print(data)
+    print(len(data))
+    # Determine if there's a next page
+    next_page = page + 1 if len(data) == 20 else None
+    
+    # Format response
+    response = {
+        "nextPage": next_page,
+        "data": [{
+            "product_id": item['Product_id'],
+            "name": item['Name'],
+            "category": item['Category'],
+            "description": item['Description'],
+            "price": item['Price'],
+            "link": item['Page_link'],
+            "dimension": item['Dimension'],
+            "images": item['image_urls'].split(' ')
+        } for item in data]
+    }
+    return response

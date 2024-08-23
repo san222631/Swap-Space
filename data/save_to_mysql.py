@@ -18,16 +18,15 @@ def save_json_to_mysql():
             print(data[2])
         
         query = """
-            INSERT INTO furnitures (Product_id, Name, Price, Image_url, Page_link, Description, Dimension)
-            VALUES (%s, %s, %s, %s, %s, %s, %s);
+            UPDATE furnitures 
+            SET Category = %s
+            WHERE Product_id = %s;
             """
-        columns = ['id', 'name', 'price', 'image_srcs', 'href', 'description', 'dimension']
         for item in data:
-            values = tuple(
-                json.dumps(item.get('image_srcs')) if key == 'image_srcs' else item.get(key) 
-                for key in columns
-            )
-            cursor.execute(query, values)
+            product_id = item.get('id')
+            categories = item.get('category', [])
+            category_str = ",".join(categories) 
+            cursor.execute(query, (category_str, product_id))
 
         conn.commit()
         print("成功儲存資料")
