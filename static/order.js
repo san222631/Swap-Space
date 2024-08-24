@@ -550,10 +550,10 @@ function addBooking(data_booking) {
         productContainer.appendChild(quantityElement);
 
         //送出新的數量
-        const updateButton = document.createElement('div');
-        updateButton.id = `update-button-${product.id}`;
-        updateButton.className = 'update-button';
-        productContainer.appendChild(updateButton);
+        //const updateButton = document.createElement('div');
+        //updateButton.id = `update-button-${product.id}`;
+        //updateButton.className = 'update-button';
+        //productContainer.appendChild(updateButton);
 
         // 刪除按鈕
         const deleteButton = document.createElement('div');
@@ -571,7 +571,7 @@ function addBooking(data_booking) {
         });
 
         //更新數量
-        updateButton.addEventListener('click', function () {
+        quantityElement.addEventListener('input', function () {
             const newQuantity = parseInt(quantityElement.value, 10);
             
             if (newQuantity < 1) {

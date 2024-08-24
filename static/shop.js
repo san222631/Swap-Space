@@ -76,6 +76,9 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('search-button').addEventListener('click', function () {
         const keyword = document.getElementById('search-input').value;
         if (keyword) {
+            categoryMode = false;
+            // Set the corresponding radio button
+            document.querySelector(`input[name="category"][value="all products"]`).checked = true;
             searchProducts(keyword);
             fetchUserInfo()
         } else {
@@ -477,6 +480,7 @@ function fetchCategoryDataOnClick() {
         currentPage = 0;  // Reset to the first page
         fetchProducts(currentPage);  // Fetch all products
     } else {
+        document.getElementById('search-input').value = '';
         categoryMode = true;  // Enable category mode
         currentPage = 0;  // Reset to the first page
         fetchCategoryData(currentPage);

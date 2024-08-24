@@ -143,10 +143,10 @@ def fetch_data_by_id(productId: str):
         WHERE furnitures.Product_id = %s
         GROUP BY furnitures.Product_id;
         """
-        print("This is ID query", productId) #找錯誤
+        #print("This is ID query", productId) #找錯誤
         cursor.execute(query, (productId,))
         result = cursor.fetchone()
-        print("找到的結果", result)
+        #print("找到的結果", result)
         return result
     except Error as e:
         print(f"Error fetching data: {e}")
@@ -353,7 +353,7 @@ class verified_user(BaseModel):
 async def authenticate(request: Request):
     #從前端送過來的headers get"Authorization"然後decode
     auth_header = request.headers.get("Authorization")
-    print(auth_header)
+    #print(auth_header)
     if auth_header is None or not auth_header.startswith("Bearer "):
         return None
 
@@ -370,13 +370,13 @@ async def authenticate(request: Request):
         conn = mysql.connector.connect(**DB_CONFIG)
         cursor = conn.cursor(dictionary=True)
         user_email = payload.get("email")
-        print(user_email)
+        #print(user_email)
         cursor.execute(
             "SELECT id, name, email FROM member WHERE email = %s",
             (user_email,)
         )
         verified_user = cursor.fetchone()
-        print(verified_user)
+        #print(verified_user)
         if not verified_user:
             return None
         return {"data": verified_user}    
@@ -500,7 +500,7 @@ async def save_booking_in_mysql(request: Request, booking_info: BookingInfo, res
         if to_update:            
             new_quantity = to_update["quantity"] + booking_quantity
             new_total_price = to_update["price"] * new_quantity
-            print(new_total_price)
+            #print(new_total_price)
             update_query = """
             UPDATE shopping_cart
             SET quantity = %s, total_price = %s
@@ -648,14 +648,14 @@ async def check_order(request: Request):
     token = request.headers.get('Authorization')
     session_id = request.headers.get("X-Session-ID")
     user_id = None
-    print(token)
+    #print(token)
 
     if token and token != "Bearer null":
         extracted_token = token[len("Bearer "):]
         print("extracted token:", extracted_token)
         try:
             payload = jwt.decode(extracted_token, SECRET_KEY, algorithms=[ALGORITHM])
-            print(payload)
+            #print(payload)
             user_id = payload.get("id")
         except PyJWTError:
             return JSONResponse(
@@ -689,7 +689,7 @@ async def check_order(request: Request):
             cursor.execute("SELECT product_id, quantity, price FROM shopping_cart WHERE session_id = %s", (session_id,))
         
         cart_items = cursor.fetchall()
-        print(cart_items)
+        #print(cart_items)
 
         if (cart_items):
             # Prepare a list to hold the product details
@@ -708,7 +708,7 @@ async def check_order(request: Request):
                 """
                 cursor.execute(product_query, (booked_item_id,))
                 product_details = cursor.fetchone()
-                print(product_details)
+                #print(product_details)
 
                 if product_details:
                     adjusted_response = {
@@ -855,7 +855,7 @@ async def update_cart(request: Request, update_info: UpdateInfo, response: Respo
 
         if to_update:            
             new_total_price = to_update["price"] * booking_quantity
-            print(new_total_price)
+            #print(new_total_price)
             update_query = """
             UPDATE shopping_cart
             SET quantity = %s, total_price = %s
@@ -913,7 +913,7 @@ class WishInfo(BaseModel):
 @app.post("/api/wishlist/add")
 async def add_to_wishlist(request: Request, wishlist: WishInfo):
     product_id = wishlist.product_id
-    print(product_id)
+    #print(product_id)
     #檢查是否有token或session
     token = request.headers.get('Authorization')
     conn = None
@@ -923,7 +923,7 @@ async def add_to_wishlist(request: Request, wishlist: WishInfo):
     if not token or not token.startswith("Bearer "):
         #檢查是否有session_id
         session_id = request.headers.get("X-Session-ID")
-        print(session_id)
+        #print(session_id)
         #如果沒有session_id
         if not session_id:
             session_id = str(uuid.uuid4())  # Generate a new session_id
@@ -945,7 +945,7 @@ async def add_to_wishlist(request: Request, wishlist: WishInfo):
             #檢查是否重複加
             cursor.execute("SELECT * FROM wishlist WHERE product_id = %s AND session_id = %s", (product_id, session_id))
             double_entry = cursor.fetchone()
-            print(double_entry)
+            #print(double_entry)
             if double_entry:
                 response = JSONResponse(
                 status_code=200,
@@ -1033,7 +1033,7 @@ async def get_wishlist(request: Request):
     # If token is present, decode the JWT to get the user_id
     if token and token != "Bearer null":
         extracted_token = token[len("Bearer "):]
-        print("extracted token:", extracted_token)
+        #print("extracted token:", extracted_token)
         try:
             payload = jwt.decode(extracted_token, SECRET_KEY, algorithms=[ALGORITHM])
             user_id = payload.get("id")
@@ -1066,7 +1066,7 @@ async def get_wishlist(request: Request):
 
         # Convert any Decimal fields to float
         wishlist_items = [serialize_item(item) for item in wishlist_items]
-        print(wishlist_items)
+        #print(wishlist_items)
 
         if (wishlist_items):
             products_with_images = []
@@ -1083,7 +1083,7 @@ async def get_wishlist(request: Request):
                 """
                 cursor.execute(product_query, (booked_item_id,))
                 product_details = cursor.fetchone()
-                print(product_details)
+                #print(product_details)
 
                 if product_details:
                     adjusted_response = {
@@ -1254,10 +1254,10 @@ async def create_order(request: Request):
     period = int(subscription_info.get("subscription_period"))
     start_date = subscription_info.get("start_date")
     end_date = subscription_info.get("end_date")
-    print('這是body:', body)
-    print('這是order_info:', order_info)
-    print('這是contact_info:', contact_info)
-    print('這是subscription:', subscription_info)
+    #print('這是body:', body)
+    #print('這是order_info:', order_info)
+    #print('這是contact_info:', contact_info)
+    #print('這是subscription:', subscription_info)
     if not prime:
         return JSONResponse(
             status_code=400,
@@ -1292,7 +1292,7 @@ async def create_order(request: Request):
         )
     
     order_number = str(uuid.uuid4())
-    print(order_number)
+    #print(order_number)
     
     conn = None
     cursor = None
@@ -1331,7 +1331,7 @@ async def create_order(request: Request):
         #TAPPAY_API_URL = "https://sandbox.tappaysdk.com/tpc/payment/pay-by-prime"
         TAPPAY_API_URL = "https://sandbox.tappaysdk.com/tpc/card/bind"
         PARTNER_KEY = "partner_jmg7WOPdhPJ3GcEZ89MYDcIsx0OCR0drYRwgnQNpmr727zbqrximL3S1"
-        MERCHANT_ID = "san222631_CTBC_Union_Pay"
+        MERCHANT_ID = "san222631_GP_POS_1"
         payment_payload = {
             "prime": prime,
             "partner_key": PARTNER_KEY,
@@ -1360,12 +1360,12 @@ async def create_order(request: Request):
         #從這裡開始檢查!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         if payment_result["status"] == 0:
             # Payment succeeded
-            print(payment_result)
+            #print(payment_result)
             order_status = "PAID"
             payment_status = payment_result["status"]
             C_token = payment_result["card_secret"]["card_token"]
             C_key = payment_result["card_secret"]["card_key"]
-            print(period)
+            #print(period)
 
             # Calculate last_payment_date (current time) and next_payment_date (based on the period)
             last_payment_date = datetime.now()
@@ -1516,14 +1516,14 @@ async def check_order(request: Request):
     #檢查是否有token，此get非彼@app.get
     token = request.headers.get('Authorization')
     user_id = None
-    print(token)
+    #print(token)
 
     if token and token != "Bearer null":
         extracted_token = token[len("Bearer "):]
-        print("extracted token:", extracted_token)
+        #print("extracted token:", extracted_token)
         try:
             payload = jwt.decode(extracted_token, SECRET_KEY, algorithms=[ALGORITHM])
-            print(payload)
+            #print(payload)
             user_id = payload.get("id")
         except PyJWTError:
             return JSONResponse(
@@ -1547,7 +1547,7 @@ async def check_order(request: Request):
         #確認有沒有一樣的email已經在booking資料庫
         
         all_orders = cursor.fetchall()
-        print(all_orders)
+        #print(all_orders)
 
         if (all_orders):
             # Prepare a list to hold the order details
@@ -1644,8 +1644,7 @@ def get_CAT_products(page: int = 0, keyword: str = Query(None)):
             "nextPage": None,
             "data": []
         }
-    print(data)
-    print(len(data))
+    
     # Determine if there's a next page
     next_page = page + 1 if len(data) == 20 else None
     
