@@ -38,10 +38,13 @@ document.addEventListener('DOMContentLoaded', async() => {
         window.location.href = '/';
     });
 
-    //會員中心看訂單
-    document.getElementById('member').addEventListener('click', function(){
-        window.location.href = '/member';
-    })
+    //會員中心看訂單或帳號更改
+    document.getElementById('account').addEventListener('click', function(){
+        window.location.href = '/account';  // Redirect to the Account page
+    });
+    document.getElementById('order-list').addEventListener('click', function(){
+        window.location.href = '/member';  // Redirect to the Order List page
+    });
 
     //點擊products，想看所有商品
     //尚未加使用者驗證

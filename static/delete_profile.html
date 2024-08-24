@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Swap Space</title>
-  <link rel="stylesheet" href="/static/wishlist.css">
+  <link rel="stylesheet" href="/static/delete_profile.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body>  
     <div id="all-container" class="wrapper">
         <!--Navigator-->
         <nav>
@@ -51,17 +51,34 @@
 
         <div class="seperator_1"></div>
 
-        <!--最愛清單內容-->
+        <!--刪除帳戶-->
         <div class="grid-container" id="grid-container">
             <!--問好-->
             <div class="greeting" id="greeting"></div>
             <div id="no-booking" class="no-booking"></div>
             <div id="booking-found-1" class="booking-found">
                 <div class="first-part" id="cart-items">
+                    <!-- Delete profile Form -->
+                    <div id="delete-profile-container" class="delete-profile-container">
+                        <form id="delete-profile-form">
+                            <!-- Password -->
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="form-group">
+                                <button type="button" id="save-button">Delete</button>
+                                <button type="button" id="cancel-button">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <!--訂購人資訊-->
         <div id="booking-found-2" class="booking-found">
             <div class="seperator-2"></div>
         </div>
@@ -72,7 +89,7 @@
         </footer>
 
 
-        <!-- 登入 Modal -->
+        <!-- 登入 Modal --> 
         <div id="modal" class="modal">
             <div class="modal-content">
                 <div class="decorator-bar"></div>
@@ -120,6 +137,6 @@
         </div>
     </div>
 
-    <script type="application/javascript" src="/static/wishlist.js"></script>
+    <script type="application/javascript" src="/static/delete_profile.js"></script>
 </body>
 </html>

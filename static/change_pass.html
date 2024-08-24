@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Swap Space</title>
-  <link rel="stylesheet" href="/static/wishlist.css">
+  <link rel="stylesheet" href="/static/change_pass.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body>  
     <div id="all-container" class="wrapper">
         <!--Navigator-->
         <nav>
@@ -51,17 +51,46 @@
 
         <div class="seperator_1"></div>
 
-        <!--最愛清單內容-->
+        <!--更改密碼-->
         <div class="grid-container" id="grid-container">
             <!--問好-->
             <div class="greeting" id="greeting"></div>
             <div id="no-booking" class="no-booking"></div>
             <div id="booking-found-1" class="booking-found">
                 <div class="first-part" id="cart-items">
+                    <!-- Change Password Form -->
+                    <div id="change-password-container" class="change-password-container">
+                        <form id="change-password-form">
+                            <!-- Old Password -->
+                            <div class="form-group">
+                                <label for="old-password">Old Password:</label>
+                                <input type="password" id="old-password" name="old-password" required>
+                            </div>
+
+                            <!-- New Password -->
+                            <div class="form-group">
+                                <label for="new-password">New Password:</label>
+                                <input type="password" id="new-password" name="new-password" required>
+                            </div>
+
+                            <!-- Confirm New Password -->
+                            <div class="form-group">
+                                <label for="confirm-new-password">Confirm New Password:</label>
+                                <input type="password" id="confirm-new-password" name="confirm-new-password" required>
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="form-group">
+                                <button type="button" id="save-button">Save</button>
+                                <button type="button" id="cancel-button">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <!--訂購人資訊-->
         <div id="booking-found-2" class="booking-found">
             <div class="seperator-2"></div>
         </div>
@@ -72,7 +101,7 @@
         </footer>
 
 
-        <!-- 登入 Modal -->
+        <!-- 登入 Modal --> 
         <div id="modal" class="modal">
             <div class="modal-content">
                 <div class="decorator-bar"></div>
@@ -120,6 +149,6 @@
         </div>
     </div>
 
-    <script type="application/javascript" src="/static/wishlist.js"></script>
+    <script type="application/javascript" src="/static/change_pass.js"></script>
 </body>
 </html>

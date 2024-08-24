@@ -95,10 +95,66 @@ nav {
     height: 24px;
     width: 24px;
 }
+/*會員中心-訂單或帳號設定*/
 .member {
     height: 24px;
     width: 24px;
 }
+#member {
+    position: relative;
+}
+#member-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: -10px;
+    width: 240px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#member-dropdown li {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+#member-dropdown li:hover {
+    background-color: #f1f1f1;
+}
+/* Show the dropdown on hover */
+#member:hover #member-dropdown {
+    display: block;
+}
+/* Create the triangle pointing to the "member" */
+#member-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -10px; /* Adjust to position the triangle */
+    right: 20px; /* Align with the dropdown box */
+    border-width: 0 10px 10px 10px; /* Triangle shape */
+    border-style: solid;
+    border-color: transparent transparent white transparent; /* Triangle color */
+    width: 0;
+    height: 0;
+    z-index: 2;
+}
+/* Add a small shadow to the triangle for consistency */
+#member-dropdown::after {
+    content: '';
+    position: absolute;
+    top: -12px; /* Slightly above the triangle */
+    right: 19px; /* Slightly offset from the triangle */
+    border-width: 0 11px 11px 11px; /* Slightly larger than the triangle */
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent; /* Shadow color */
+    width: 0;
+    height: 0;
+    z-index: 1;
+}
+
 .only-occupy-1space {
     width: 92px;
 }

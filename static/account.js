@@ -1,19 +1,41 @@
-let currentPage = 0;
-document.addEventListener('DOMContentLoaded', async() => {
-    const userInfo = await fetchUserInfo();
+document.addEventListener('DOMContentLoaded', async() => {    
+    //其他資料
+    const userInfo = await fetchUserInfo();    
 
     if (userInfo) {
-        //加入會換名字的問候語
+        //加入會換名字跟訂單編號的感謝語
         console.log(userInfo)
+        personal_id = userInfo.id
+        personal_name = userInfo.name
+        personal_email = userInfo.email
         const greeting = document.getElementById('greeting');
-        greeting.textContent = `您好，${userInfo.name}，最愛清單內容如下:`;
-        fetchBookingDetails();
+        greeting.textContent = `Hallo ${personal_name}, this is your Swap Space-account`;
+        //有預定行程在資料庫，因此顯示預定行程
+        const bookingFound1 = document.getElementById('booking-found-1');
+        const bookingFound2 = document.getElementById('booking-found-2');
+        const noBooking = document.getElementById('no-booking');
+        bookingFound1.classList.add('visible');
+        bookingFound2.classList.add('visible');
+        noBooking.classList.remove('visible');
+        // 取得放置資料的容器
+        const cartItemsContainer = document.getElementById('cart-items');
+        cartItemsContainer.innerHTML = '';  // 清空容器內容
+
+        const productContainer = document.createElement('div');
+        productContainer.className = 'product-container';
+
+        const nameElement = document.createElement('div');
+        nameElement.textContent = `Name: ${personal_name}`;
+        nameElement.className = 'main-info';
+        productContainer.appendChild(nameElement);
+        const emailElement = document.createElement('div');
+        emailElement.textContent = `E-mail: ${personal_email}`;
+        emailElement.className = 'main-info';
+        productContainer.appendChild(emailElement);
+        cartItemsContainer.appendChild(productContainer);
     } else {
-        //window.location.href = '/';
-        const greeting = document.getElementById('greeting');
-        greeting.textContent = `您好，guest，最愛清單內容如下:`;
-        fetchBookingDetails();
-    }
+        window.location.href = '/';
+    }  
 
     //按回首頁
     const goIndex = document.getElementById('go-index');
@@ -55,6 +77,19 @@ document.addEventListener('DOMContentLoaded', async() => {
     //進入最愛清單
     document.getElementById('go-to-wishlist').addEventListener('click', function() {
         window.location.href = '/wishlist';
+    });
+
+    //修改密碼
+    document.getElementById('change-password').addEventListener('click', function() {
+        window.location.href = '/account/change-password';
+    });
+    //修改名字跟信箱
+    document.getElementById('edit-profile').addEventListener('click', function() {
+        window.location.href = '/account/edit-profile';
+    });
+    //刪除帳號
+    document.getElementById('delete-profile').addEventListener('click', function() {
+        window.location.href = '/account/delete-profile';
     });
 
     //點擊Member，看會員彈出視窗
@@ -108,38 +143,38 @@ document.addEventListener('DOMContentLoaded', async() => {
         });
         })
         .then(data => {
-        if (data.token){
-            // Remove the session_id from session storage
-            sessionStorage.removeItem('session_id');
-            localStorage.setItem('received_Token', data.token);
-            console.log(data);
-            modal.style.display = 'none';
-            errorMessage.textContent = '';
-            renderLogout()
-            if (userInfo) {
-                //加入會換名字的問候語
-                console.log(userInfo)
-                const greeting = document.getElementById('greeting');
-                greeting.textContent = `您好，${userInfo.name}，購物車內容如下:`;
-                fetchBookingDetails();
+            if (data.token){
+                // Remove the session_id from session storage
+                sessionStorage.removeItem('session_id');
+                localStorage.setItem('received_Token', data.token);
+                console.log(data);
+                modal.style.display = 'none';
+                errorMessage.textContent = '';
+                renderLogout()
+                if (userInfo) {
+                    //加入會換名字的問候語
+                    console.log(userInfo)
+                    const greeting = document.getElementById('greeting');
+                    greeting.textContent = `您好，${userInfo.name}，購物車內容如下:`;
+                    fetchBookingDetails();
+                } else {
+                    //window.location.href = '/';
+                    const greeting = document.getElementById('greeting');
+                    greeting.textContent = `您好，guest，購物車內容如下:`;
+                    fetchBookingDetails();
+                }
             } else {
-                //window.location.href = '/';
-                const greeting = document.getElementById('greeting');
-                greeting.textContent = `您好，guest，購物車內容如下:`;
-                fetchBookingDetails();
+                throw new Error('無效的token response');
             }
-        } else {
-            throw new Error('無效的token response');
-        }
         })
         .catch(error => {
-        if (error.data) {
-            errorMessage.textContent = error.data.message;
-            console.error(error.data); // Log the entire detail object
-        } else {
-            errorMessage.textContent = error.message;
-            console.error('Error是:', error.message || error); 
-        }
+            if (error.data) {
+                errorMessage.textContent = error.data.message;
+                console.error(error.data); // Log the entire detail object
+            } else {
+                errorMessage.textContent = error.message;
+                console.error('Error是:', error.message || error); 
+            }
         });
     });
 
@@ -204,7 +239,6 @@ document.addEventListener('DOMContentLoaded', async() => {
             if (data.ok){
                 // Remove the session_id from session storage
                 sessionStorage.removeItem('session_id');
-                
                 console.log(data);
                 R_errorMessage.textContent = '註冊成功';
             } else {
@@ -226,148 +260,6 @@ document.addEventListener('DOMContentLoaded', async() => {
 
 
 let fetching = false;
-//去資料庫拿特定user的購物車的資料
-async function fetchBookingDetails() {
-    const token = localStorage.getItem('received_Token');
-    const sessionId = sessionStorage.getItem('session_id');
-
-    const headers = {
-        'Content-Type': 'application/json'
-    };
-
-    if (token) {
-        headers['Authorization'] = `Bearer ${token}`;
-    } else if (sessionId) {
-        headers['X-Session-ID'] = sessionId;
-    }
-
-    try {
-        const response = await fetch('/api/wishlist', {
-            method: 'GET',
-            headers: headers
-        });
-        console.log(response)
-        if (!response.ok) {
-            throw new Error(`/api/wishlist的response有錯誤: ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        //加入各種細節或是出現"目前沒有最愛清單"
-        console.log(data)
-        if (data.length > 0) {
-            addBooking(data);            
-        } else {
-            //沒有預定行程在資料庫，因此隱藏預定行程，顯示無行程
-            const bookingFound1 = document.getElementById('booking-found-1');
-            const bookingFound2 = document.getElementById('booking-found-2');
-            const noBooking = document.getElementById('no-booking');
-            bookingFound1.classList.remove('visible');
-            bookingFound2.classList.remove('visible');
-            noBooking.classList.add('visible');
-            document.getElementById('no-booking').textContent = '目前沒有任何最愛清單';
-        }
-        
-    } catch (error) {
-        console.error('收到最愛清單的response前有錯誤:', error);
-    }
-}
-    
-//在HTML加入各種資料
-function addBooking(data_booking) {
-    //有預定行程在資料庫，因此顯示預定行程
-    const bookingFound1 = document.getElementById('booking-found-1');
-    const bookingFound2 = document.getElementById('booking-found-2');
-    const noBooking = document.getElementById('no-booking');
-    bookingFound1.classList.add('visible');
-    bookingFound2.classList.add('visible');
-    noBooking.classList.remove('visible');
-
-    // 取得放置商品的容器 (假設你有一個 id 為 cart-items 的 div 來放置商品)
-    const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = '';  // 清空容器內容
-
-    // 迭代每個購物車中的商品，並將其加入到HTML
-    data_booking.forEach(item => {
-        const product = item.product;
-
-        // 創建商品的容器
-        const productContainer = document.createElement('div');
-        productContainer.className = 'product-container';
-
-        // 加入圖片
-        const imageElement = document.createElement('img');
-        imageElement.src = product.image;
-        imageElement.alt = product.name;
-        imageElement.className = 'product-image';
-        productContainer.appendChild(imageElement);
-
-        // 加入名稱
-        const nameElement = document.createElement('h3');
-        nameElement.textContent = product.name;
-        productContainer.appendChild(nameElement);
-        nameElement.addEventListener('click', function(){
-            window.location.href = `/product/${product.id}`;
-        });
-
-        // 加入描述
-        const descriptionElement = document.createElement('p');
-        descriptionElement.textContent = product.description;
-        descriptionElement.className = 'product-description';
-        productContainer.appendChild(descriptionElement);
-
-        // 加入價格
-        const priceElement = document.createElement('p');
-        priceElement.textContent = `Price: ${product.price} EURO`;
-        priceElement.className = 'product-price';
-        productContainer.appendChild(priceElement);
-
-        // 刪除按鈕
-        const deleteButton = document.createElement('div');
-        deleteButton.id = 'delete-booking';
-        deleteButton.className = 'delete-booking';
-        deleteButton.dataset.product_id = product.id;
-        productContainer.appendChild(deleteButton);
-
-        // 將商品容器加入到購物車項目容器中
-        cartItemsContainer.appendChild(productContainer);
-
-        //加入刪除按鈕
-        deleteButton.addEventListener('click', async function(){
-            deleteBooking(product.id);
-        });    
-    });  
-}
-
-//刪除booking資料庫
-async function deleteBooking(productId) {
-    const token = localStorage.getItem('received_Token');
-
-    try {
-        const response = await fetch(`/api/wishlist`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body:JSON.stringify({ product_id: productId})
-        });
-        if (!response.ok) {
-            throw new Error(`/api/wishlist的response有錯誤: ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        if (data.ok) {
-            //刪除成功的話，refresh page載入資料
-            await fetchBookingDetails();
-        } else {
-            throw new Error('刪除行程失敗');
-        }
-    } catch (error) {
-        console.error('刪除行程時發生錯誤:', error);
-        alert('刪除行程時發生錯誤');
-    }
-}
-
 //每次重新整理頁面，都檢查一次使用者的TOKEN
 function fetchUserInfo() {
     const token = localStorage.getItem('received_Token');
@@ -433,10 +325,4 @@ document.getElementById('logout').addEventListener('click', function(){
     //登出後重整頁面
     location.reload();
 })
-
-
-
-
-
-
 
