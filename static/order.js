@@ -591,8 +591,9 @@ function addBooking(data_booking) {
     // 計算並顯示總價
     const totalPriceElement = document.getElementById('total-price');
     const totalPrice = data_booking.reduce((sum, item) => sum + (item.product.price * item.product.quantity), 0);
-    console.log(totalPrice)
-    totalPriceElement.textContent = `Recurring price/month: ${totalPrice} €`;
+    const roundedTotalPrice = totalPrice.toFixed(2); // Round to two decimal places
+    console.log(roundedTotalPrice)
+    totalPriceElement.textContent = `Recurring price/month: ${roundedTotalPrice} €`;
 }
 
 //刪除booking資料庫

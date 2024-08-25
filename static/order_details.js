@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', async() => {    
     //其他資料
-    const userInfo = await fetchUserInfo();    
+    const userInfo = await fetchUserInfo();
+    const orderNumber = window.location.pathname.split('/').pop();    
 
     if (userInfo) {
         //加入會換名字跟訂單編號的感謝語
         console.log(userInfo)
         const greeting = document.getElementById('greeting');
-        greeting.textContent = `您好，${userInfo.name}，您目前的訂單:`;
-        fetchOrderDetails();
+        greeting.textContent = `您好，${userInfo.name}，您的訂單號碼: ${orderNumber}`;
+        fetchOrderDetails(orderNumber);
     } else {
         window.location.href = '/';
     }  
@@ -223,7 +224,7 @@ document.addEventListener('DOMContentLoaded', async() => {
 
 let fetching = false;
 //去資料庫拿特定user的購物車的資料
-async function fetchOrderDetails() {
+async function fetchOrderDetails(order_number) {
     const token = localStorage.getItem('received_Token');
 
     // Setup headers for the fetch request
@@ -237,21 +238,21 @@ async function fetchOrderDetails() {
     }
 
     try {
-        const response = await fetch(`/api/orders`, {
+        const response = await fetch(`/api/member/${order_number}`, {
             method: 'GET',
             headers: headers
         });
         console.log(response)
         if (!response.ok) {
-            throw new Error(`/api/orders的response有錯誤: ${response.statusText}`);
+            throw new Error(`/api/member/orderNumeber的response有錯誤: ${response.statusText}`);
         }
 
         const data = await response.json();
         //加入各種booking細節或是出現"目前沒有預定行程"
         console.log(data)
-        if (data && data.length > 0) {
+        if (data && data.data) {
             addOrders(data);
-            console.log('/api/orders收到的response:', data);
+            console.log('/api/member/orderNumber收到的response:', data);
             return data
         } else {
             //沒有預定行程在資料庫，因此隱藏預定行程，顯示無行程
@@ -261,7 +262,7 @@ async function fetchOrderDetails() {
             bookingFound1.classList.remove('visible');
             bookingFound2.classList.remove('visible');
             noBooking.classList.add('visible');
-            document.getElementById('no-booking').textContent = '目前沒有任何訂單';
+            document.getElementById('no-booking').textContent = '沒有這個訂單';
             return null;
         }
         
@@ -285,79 +286,84 @@ function addOrders(data_booking) {
     const cartItemsContainer = document.getElementById('cart-items');
     cartItemsContainer.innerHTML = '';  // 清空容器內容
 
-    // 迭代每個購物車中的商品，並將其加入到HTML
-    data_booking.forEach(item => {
-        const product = item;
+    // 加入訂購時間
+    const orderDateElement = document.createElement('div');
+    orderDateElement.textContent = `Order date: ${data_booking.data.order_date}`;
+    orderDateElement.className = 'order-date';
+    cartItemsContainer.appendChild(orderDateElement);
 
+    // 加入訂閱多久
+    const sub_period = document.createElement('div');
+    sub_period.textContent = `Period: ${data_booking.data.subscription_period} months`;
+    sub_period.className = 'sub_period';
+    cartItemsContainer.appendChild(sub_period);
+
+    // 加入起始日期
+    const start_date = document.createElement('div');
+    start_date.textContent = `Start from: ${data_booking.data.start_date}`;
+    start_date.className = 'start_date';
+    cartItemsContainer.appendChild(start_date);
+    const end_date = document.createElement('div');
+    end_date.textContent = `End in: ${data_booking.data.end_date}`;
+    end_date.className = 'end_date';
+    cartItemsContainer.appendChild(end_date);
+
+    // 加入價格
+    const priceElement = document.createElement('div');
+    priceElement.textContent = `Total price: ${data_booking.data.total_price} €/month`;
+    priceElement.className = 'product-price';
+    priceElement.dataset.product_price = data_booking.data.total_price;
+    cartItemsContainer.appendChild(priceElement);
+
+    // 加入付款狀態
+    const pay_or_not = document.createElement('div');
+    pay_or_not.textContent = `Order status: ${data_booking.data.order_status}`;
+    pay_or_not.className = 'pay_or_not';
+    cartItemsContainer.appendChild(pay_or_not);
+
+    // 加入下次付款日
+    const next_payment = document.createElement('div');
+    next_payment.textContent = `Next payment: ${data_booking.data.next_payment_date}`;
+    next_payment.className = 'next-payment-date';
+    cartItemsContainer.appendChild(next_payment);
+
+    let products_in_order = JSON.parse(data_booking.data.order_info);
+    // 迭代每個購物車中的商品，並將其加入到HTML
+    products_in_order.forEach(item => {
         // 創建商品的容器
         const productContainer = document.createElement('div');
         productContainer.className = 'product-container';
 
         // 加入圖片
-        //const imageElement = document.createElement('img');
-        //imageElement.src = product.image;
-        //imageElement.alt = product.name;
-        //imageElement.className = 'product-image';
-        //productContainer.appendChild(imageElement);
+        const imageItem = document.createElement('img');
+        imageItem.src = item.product.image;
+        imageItem.alt = item.product.name;
+        imageItem.className = 'product-image';
+        productContainer.appendChild(imageItem);
 
         // 加入名稱
-        const nameElement = document.createElement('h3');
-        nameElement.textContent = `Order number: ${product.order_number}`;
-        productContainer.appendChild(nameElement);
-        nameElement.addEventListener('click', function(){
-            window.location.href = `/member/${product.order_number}`;
-        });
+        const nameItem = document.createElement('div');
+        nameItem.textContent = `${item.product.name}`;
+        productContainer.appendChild(nameItem);
 
-        // 加入訂購時間
-        const descriptionElement = document.createElement('p');
-        descriptionElement.textContent = `Order date: ${product.order_date}`;
-        descriptionElement.className = 'order-date';
-        productContainer.appendChild(descriptionElement);
+        // 加入家具編號
+        const idItem = document.createElement('div');
+        idItem.textContent = `Product id: ${item.product.id}`;
+        productContainer.appendChild(idItem);
 
-        // 加入訂閱多久
-        const sub_period = document.createElement('p');
-        sub_period.textContent = `Period: ${product.subscription_period} months`;
-        sub_period.className = 'sub_period';
-        productContainer.appendChild(sub_period);
+        // 加入價錢
+        const priceItem = document.createElement('div');
+        priceItem.textContent = `${item.product.price} €/month`;
+        productContainer.appendChild(priceItem);
 
-        // 加入起始日期
-        const start_date = document.createElement('p');
-        start_date.textContent = `Start from: ${product.start_date}`;
-        start_date.className = 'start_date';
-        productContainer.appendChild(start_date);
-        const end_date = document.createElement('p');
-        end_date.textContent = `End in: ${product.end_date}`;
-        end_date.className = 'end_date';
-        productContainer.appendChild(end_date);
-
-        // 加入價格
-        const priceElement = document.createElement('p');
-        priceElement.textContent = `Price: ${product.total_price} €/month`;
-        priceElement.className = 'product-price';
-        priceElement.dataset.product_price = product.total_price;
-        productContainer.appendChild(priceElement);
-
-        // 加入付款狀態
-        const pay_or_not = document.createElement('p');
-        pay_or_not.textContent = `Order status: ${product.order_status}`;
-        pay_or_not.className = 'pay_or_not';
-        productContainer.appendChild(pay_or_not);
-
-        // 刪除按鈕
-        const deleteButton = document.createElement('div');
-        deleteButton.id = 'delete-booking';
-        deleteButton.className = 'delete-booking';
-        deleteButton.dataset.product_id = product.order_number;
-        productContainer.appendChild(deleteButton);
+        // 加入數量
+        const quantityItem = document.createElement('div');
+        quantityItem.textContent = `${item.product.quantity} piece`;
+        productContainer.appendChild(quantityItem);
 
         // 將商品容器加入到購物車項目容器中
         cartItemsContainer.appendChild(productContainer);
-
-        //加入刪除按鈕
-        deleteButton.addEventListener('click', function(){
-            deleteBooking(product.order_number);
-        });
-    }); 
+    })
 }
 
 //每次重新整理頁面，都檢查一次使用者的TOKEN

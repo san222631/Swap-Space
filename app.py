@@ -17,6 +17,7 @@ import uuid
 
 from decimal import Decimal
 from datetime import datetime, timedelta
+from dateutil.relativedelta import relativedelta
 
 import json 
 import httpx
@@ -25,6 +26,7 @@ import schedule
 import time
 
 import asyncio
+
 
 
 app = FastAPI()
@@ -49,6 +51,9 @@ async def wishlist(request: Request):
 @app.get("/member", include_in_schema=False)
 async def member(request: Request):
 	return FileResponse("./static/member.html", media_type="text/html")
+@app.get("/member/{orderNumber}", include_in_schema=False)
+async def member(request: Request):
+	return FileResponse("./static/order_details.html", media_type="text/html")
 @app.get("/account", include_in_schema=False)
 async def member(request: Request):
 	return FileResponse("./static/account.html", media_type="text/html")
@@ -1381,10 +1386,11 @@ async def create_order(request: Request):
 
             # Calculate last_payment_date (current time) and next_payment_date (based on the period)
             last_payment_date = datetime.now()
-            if period == 12:
-                next_payment_date = last_payment_date + timedelta(days=365)
-            elif period == 24:
-                next_payment_date = last_payment_date + timedelta(days=730)
+            months_paid = 1 # assuming the first payment has just been made
+            if months_paid < period:
+                next_payment_date = last_payment_date + relativedelta(months=1)
+            else:
+                next_payment_date = None # All payments are completed
 
             cursor.execute("""
                 UPDATE orders
@@ -1555,7 +1561,21 @@ async def check_order(request: Request):
         cursor = conn.cursor(dictionary=True)
 
         if user_id:
-            cursor.execute("SELECT order_number, order_date, total_price, subscription_period, start_date, end_date, order_status FROM orders WHERE member_id = %s", (user_id,))
+            cursor.execute("""
+                SELECT 
+                    order_number, 
+                    order_date, 
+                    total_price, 
+                    subscription_period,
+                    start_date, end_date, 
+                    order_status 
+                FROM
+                    orders 
+                WHERE 
+                    member_id = %s
+                ORDER BY
+                    order_date DESC
+            """, (user_id,))
         #確認有沒有一樣的email已經在booking資料庫
         
         all_orders = cursor.fetchall()
@@ -1978,3 +1998,78 @@ async def update_password(request: Request, delete_profile: deleteProfile, respo
             cursor.close()
         if conn:
             conn.close()
+
+
+#取特定的訂單資料
+#for /api/member/{orderNumber} 根據訂單編號
+def fetch_order_by_number(orderNumber: str):
+    print(orderNumber)
+    conn = None
+    cursor = None
+    try:
+        conn = mysql.connector.connect(**DB_CONFIG)
+        cursor = conn.cursor(dictionary=True)
+
+        query = """
+        SELECT 
+            order_number, 
+            order_date, 
+            total_price, 
+            subscription_period, 
+            start_date, 
+            end_date, 
+            order_info, 
+            contact, 
+            order_status, 
+            next_payment_date, 
+            last_payment_date
+        FROM
+            orders
+        WHERE
+            order_number = %s
+        """
+        #print("This is ID query", productId) #找錯誤
+        cursor.execute(query, (orderNumber,))
+        result = cursor.fetchone()
+        #print("找到的結果", result)
+        return result
+    except mysql.connector.Error as err:
+        print(f"Database connection error: {err}")
+        return None
+    except  Exception as e:
+        print(f"Error fetching data: {e}")
+        return None
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()   
+
+@app.get("/api/member/{orderNumber}")
+def get_order_by_number(orderNumber: str):
+    order_details = fetch_order_by_number(orderNumber)
+    if not order_details:
+         return JSONResponse(
+            status_code=400,
+            content={
+                "error": True,
+                "message": "Order not found"
+            }
+        )
+    # Format response
+    response = {
+        "data": {
+            "order_number": order_details['order_number'],
+            "order_date": order_details['order_date'].date().isoformat(),
+            "total_price": float(order_details['total_price']),
+            "subscription_period": order_details['subscription_period'],
+            "start_date": order_details['start_date'].isoformat(),
+            "end_date": order_details['end_date'].isoformat(),
+            "order_info": order_details['order_info'],
+            "contact": order_details['contact'],
+            "order_status": order_details['order_status'],
+            "next_payment_date": order_details['next_payment_date'].isoformat() if order_details['next_payment_date'] else None,
+            "last_payment_date": order_details['last_payment_date'].isoformat() if order_details['last_payment_date'] else None
+        }
+    }
+    return response
