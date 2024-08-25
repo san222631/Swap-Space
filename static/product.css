@@ -26,7 +26,7 @@ nav {
 .nav-container {
     width: 100%;
     max-width: 1200px;
-    height: 54px;
+    height: 70px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;/**/
@@ -44,11 +44,11 @@ nav {
   
 .menu-left {
     text-align: left;
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 25px;
-    font-weight: 100;
+    font-weight: 600;
+    font-style: bold;
     line-height: 34px;
-    color: grey;
     padding: 10px;
 }
 .menu-right-container {
@@ -77,12 +77,12 @@ nav {
 }
 .menu-right-search input{
     margin-right: 5px;
-    width: 150px;
+    width: 280px;
+    height: 30px;
 }
 .search {
-    height: 24px;
-    width: 24px;
-    background-color: #d9dcddab;
+    height: 30px;
+    width: 30px;
     border-radius: 5px;
 }
 .cart {
@@ -158,11 +158,11 @@ nav {
 }
 .menu-right-login {
     text-align: center;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 16px;
-    font-weight: 100;
-    line-height: 13.3px;
-    color: #666666;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    color: #3c3932;
     padding: 10px;
 
     display: block;
@@ -170,11 +170,11 @@ nav {
 }
 .menu-right-logout {
     text-align: center;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 16px;
-    font-weight: 100;
-    line-height: 13.3px;
-    color: #666666;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    color: #3c3932;
     padding: 10px;  
 
     display: none;
@@ -187,14 +187,22 @@ nav {
 .seperator_1 {
     height: 1px;
     background-color: #E8E8E8;
-    margin-top: 60px;
+    margin-top: 70px;
+    z-index: 3;
 }
 
 .seperator_2 {
     height: 1px;
     background-color: #E8E8E8;
     margin-bottom: 40px;
+    margin-top: 40px;
 }
+.seperator_3 {
+    height: 1px;
+    background-color: #E8E8E8;
+    margin-bottom: 40px;
+}
+
 
 
 /*top menu*/
@@ -207,9 +215,11 @@ nav {
 .t_m_1 {
     padding-left: 30px;
     padding-right: 30px;
-    color: #423e3e;
-    font-size: 20px;
-    font-family: 'Noto Sans TC';
+    color: #3c3932;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /*第一大格-圖片加資訊*/
@@ -259,10 +269,6 @@ nav {
     object-fit: cover;
     flex-shrink: 0;
 }
-
-
-
-
 
 /*左右點的按鍵*/
 .scroll-button {
@@ -321,6 +327,93 @@ nav {
 
 .circle.active {
     background-color: black;
+}
+/*右邊文字框*/
+.name {
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    padding: 5px 0 5px 0;
+}
+.description {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    padding: 5px 0 5px 0;
+}
+.cost {
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: normal;
+    padding: 5px 0 5px 0;
+}
+.tax {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    font-style: italic;
+}
+.booking-form {
+    position: relative;
+    padding: 5px 0 5px 0;
+}
+.reserve-box {
+    display: flex;
+    height: 45px;
+}
+.amount input[type="number"] {
+    height: 100%;
+    width: 100px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    outline: none;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+button {
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 0 ;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+}
+#reserve {
+    background-color: #474747;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    width: 100%;
+    color: #FFFFFF;
+}
+.add-to-wishlist {
+    height: 30px;
+    width: 30px;
+    right: 0;
+    position: absolute;
+    top: -35px;
+}
+.dimension {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+}
+.product_id {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
 }
 
 

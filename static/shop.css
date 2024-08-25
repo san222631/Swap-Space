@@ -26,7 +26,7 @@ nav {
 .nav-container {
     width: 100%;
     max-width: 1200px;
-    height: 54px;
+    height: 70px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;/**/
@@ -44,11 +44,11 @@ nav {
   
 .menu-left {
     text-align: left;
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 25px;
-    font-weight: 100;
+    font-weight: 600;
+    font-style: bold;
     line-height: 34px;
-    color: grey;
     padding: 10px;
 }
 
@@ -79,12 +79,12 @@ nav {
 }
 .menu-right-search input{
     margin-right: 5px;
-    width: 150px;
+    width: 280px;
+    height: 30px;
 }
 .search {
-    height: 24px;
-    width: 24px;
-    background-color: #d9dcddab;
+    height: 30px;
+    width: 30px;
     border-radius: 5px;
 }
 .cart {
@@ -160,11 +160,11 @@ nav {
 }
 .menu-right-login {
     text-align: center;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 16px;
-    font-weight: 100;
-    line-height: 13.3px;
-    color: #666666;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    color: #3c3932;
     padding: 10px;
 
     display: block;
@@ -172,11 +172,11 @@ nav {
 }
 .menu-right-logout {
     text-align: center;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 16px;
-    font-weight: 100;
-    line-height: 13.3px;
-    color: #666666;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    color: #3c3932;
     padding: 10px;  
 
     display: none;
@@ -189,7 +189,8 @@ nav {
 .seperator_1 {
     height: 1px;
     background-color: #E8E8E8;
-    margin-top: 60px;
+    margin-top: 70px;
+    z-index: 3;
 }
 
 .seperator_2 {
@@ -209,25 +210,32 @@ nav {
 .t_m_1 {
     padding-left: 30px;
     padding-right: 30px;
-    color: #423e3e;
-    font-size: 20px;
-    font-family: 'Noto Sans TC';
+    color: #3c3932;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /*grid of category and product*/
 .cat_product_container {
     display: grid;
     justify-content: center;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 5fr;
     width: 1200px;
     margin: 0 auto;
 }
 .CAT_grid {
-    background-color: beige;
 
 }
 .CAT {
-
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #3c3932;
 }
 .product-grid {
     
@@ -235,7 +243,7 @@ nav {
 .inside-product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 240px;
+    grid-template-rows: 320px;
     column-gap: 10px;
     row-gap: 10px;
 }
@@ -243,11 +251,32 @@ nav {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    height: 242px;
-    border: 1px solid #E8E8E8;
-    border-radius: 5px;
+    justify-content: flex-start;
+    height: 320px;
+
+
     overflow: hidden; /*邊框底部圓弧消失了! 應該是被其他的child element蓋到，這時候用這個解決溢出的東西!*/
+}
+.title-wrapper {
+}
+.product-name {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    padding: 5px 5px 5px 5px;
+
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.product-price {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    padding: 10px 5px 0 5px;
 }
 
 

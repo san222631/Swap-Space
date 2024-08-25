@@ -360,6 +360,9 @@ function createProductCard(product) {
     image.alt = product.name;
     image.className = 'product-image';
 
+    const title_wrapper = document.createElement('div');
+    title_wrapper.className = 'title-wrapper';
+
     const name = document.createElement('div');
     name.textContent = product.name;
     name.className = 'product-name';
@@ -368,14 +371,10 @@ function createProductCard(product) {
     price.textContent = `${product.price} €/month`;
     price.className = 'product-price';
 
-    const mrt = document.createElement('div');
-    mrt.textContent = product.mrt;
-    mrt.className = 'attraction-mrt';
-
     card.appendChild(image);
-    card.appendChild(name);
-    card.appendChild(price);
-    card.appendChild(mrt);
+    title_wrapper.appendChild(name);
+    title_wrapper.appendChild(price);
+    card.appendChild(title_wrapper)
 
     return card;
 }
