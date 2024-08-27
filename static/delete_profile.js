@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         personal_name = userInfo.name
         personal_email = userInfo.email
         const greeting = document.getElementById('greeting');
-        greeting.textContent = `Hallo ${personal_name}`;
+        greeting.textContent = `Hallo ${personal_name}! Are you sure to delet your account?`;
         //有預定行程在資料庫，因此顯示預定行程
         const bookingFound1 = document.getElementById('booking-found-1');
         const bookingFound2 = document.getElementById('booking-found-2');

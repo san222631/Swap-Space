@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         //加入會換名字跟訂單編號的感謝語
         console.log(userInfo)
         const greeting = document.getElementById('greeting');
-        greeting.textContent = `您好，${userInfo.name}，您的訂單號碼: ${orderNumber}`;
+        greeting.textContent = `${userInfo.name} , order number: ${orderNumber}`;
         fetchOrderDetails(orderNumber);
     } else {
         window.location.href = '/';
@@ -283,50 +283,49 @@ function addOrders(data_booking) {
     noBooking.classList.remove('visible');
 
     // 取得放置商品的容器 (假設你有一個 id 為 cart-items 的 div 來放置商品)
+    const tableBody = document.querySelector('#orders-table tbody');
+    tableBody.innerHTML = '';  // 清空容器內容
+
+    // Create a new table row
+    const row = document.createElement('tr');
+    // Order Date
+    const orderDateCell = document.createElement('td');
+    orderDateCell.textContent = data_booking.data.order_date;
+    row.appendChild(orderDateCell);
+    // Subscription Period
+    const subPeriodCell = document.createElement('td');
+    subPeriodCell.textContent = `${data_booking.data.subscription_period} months`;
+    row.appendChild(subPeriodCell);
+    // Start Date
+    const startDateCell = document.createElement('td');
+    startDateCell.textContent = data_booking.data.start_date;
+    row.appendChild(startDateCell);
+
+    // End Date
+    const endDateCell = document.createElement('td');
+    endDateCell.textContent = data_booking.data.end_date;
+    row.appendChild(endDateCell);
+
+    // Total Price
+    const priceCell = document.createElement('td');
+    priceCell.textContent = `${data_booking.data.total_price} €/month`;
+    row.appendChild(priceCell);
+
+    // Order Status
+    const statusCell = document.createElement('td');
+    statusCell.textContent = data_booking.data.order_status;
+    row.appendChild(statusCell);
+    // Order Status
+    const nextPaymentCell = document.createElement('td');
+    nextPaymentCell.textContent = data_booking.data.next_payment_date;
+    row.appendChild(nextPaymentCell);
+
+    // Append the row to the table body
+    tableBody.appendChild(row);
+
+    // 取得放置商品的容器 (假設你有一個 id 為 cart-items 的 div 來放置商品)
     const cartItemsContainer = document.getElementById('cart-items');
     cartItemsContainer.innerHTML = '';  // 清空容器內容
-
-    // 加入訂購時間
-    const orderDateElement = document.createElement('div');
-    orderDateElement.textContent = `Order date: ${data_booking.data.order_date}`;
-    orderDateElement.className = 'order-date';
-    cartItemsContainer.appendChild(orderDateElement);
-
-    // 加入訂閱多久
-    const sub_period = document.createElement('div');
-    sub_period.textContent = `Period: ${data_booking.data.subscription_period} months`;
-    sub_period.className = 'sub_period';
-    cartItemsContainer.appendChild(sub_period);
-
-    // 加入起始日期
-    const start_date = document.createElement('div');
-    start_date.textContent = `Start from: ${data_booking.data.start_date}`;
-    start_date.className = 'start_date';
-    cartItemsContainer.appendChild(start_date);
-    const end_date = document.createElement('div');
-    end_date.textContent = `End in: ${data_booking.data.end_date}`;
-    end_date.className = 'end_date';
-    cartItemsContainer.appendChild(end_date);
-
-    // 加入價格
-    const priceElement = document.createElement('div');
-    priceElement.textContent = `Total price: ${data_booking.data.total_price} €/month`;
-    priceElement.className = 'product-price';
-    priceElement.dataset.product_price = data_booking.data.total_price;
-    cartItemsContainer.appendChild(priceElement);
-
-    // 加入付款狀態
-    const pay_or_not = document.createElement('div');
-    pay_or_not.textContent = `Order status: ${data_booking.data.order_status}`;
-    pay_or_not.className = 'pay_or_not';
-    cartItemsContainer.appendChild(pay_or_not);
-
-    // 加入下次付款日
-    const next_payment = document.createElement('div');
-    next_payment.textContent = `Next payment: ${data_booking.data.next_payment_date}`;
-    next_payment.className = 'next-payment-date';
-    cartItemsContainer.appendChild(next_payment);
-
     let products_in_order = JSON.parse(data_booking.data.order_info);
     // 迭代每個購物車中的商品，並將其加入到HTML
     products_in_order.forEach(item => {
@@ -341,28 +340,52 @@ function addOrders(data_booking) {
         imageItem.className = 'product-image';
         productContainer.appendChild(imageItem);
 
+        // 創建文字的容器
+        const textContainer = document.createElement('div');
+        textContainer.className = 'text-container';
         // 加入名稱
-        const nameItem = document.createElement('div');
-        nameItem.textContent = `${item.product.name}`;
-        productContainer.appendChild(nameItem);
-
-        // 加入家具編號
-        const idItem = document.createElement('div');
-        idItem.textContent = `Product id: ${item.product.id}`;
-        productContainer.appendChild(idItem);
-
-        // 加入價錢
-        const priceItem = document.createElement('div');
-        priceItem.textContent = `${item.product.price} €/month`;
-        productContainer.appendChild(priceItem);
+        const nameElement = document.createElement('div');
+        nameElement.textContent = item.product.name;
+        nameElement.className = 'product-name';
+        textContainer.appendChild(nameElement);
+        nameElement.addEventListener('click', function(){
+            window.location.href = `/product/${item.product.id}`;
+        });
+        // 加入商品id
+        const idElement = document.createElement('div');
+        idElement.textContent = `Product id: ${item.product.id}`;
+        idElement.className = 'product-id';
+        textContainer.appendChild(idElement);
+        // 加入價格
+        const priceElement = document.createElement('div');
+        priceElement.textContent = `${item.product.price} €/month`;
+        priceElement.className = 'product-price';
+        priceElement.dataset.product_price = item.product.price;
+        textContainer.appendChild(priceElement);
 
         // 加入數量
         const quantityItem = document.createElement('div');
         quantityItem.textContent = `${item.product.quantity} piece`;
-        productContainer.appendChild(quantityItem);
+        quantityItem.className = 'product-quantity';
+        quantityItem.id = `order-amount-${item.product.id}`;
+        textContainer.appendChild(quantityItem);
+
+        productContainer.appendChild(textContainer);
+
+        //每個家具總價
+        const subPrice = document.createElement('div');
+        subTotal = item.product.price*item.product.quantity;
+        subPrice.textContent = `${subTotal.toFixed(2)} €`;
+        subPrice.className = 'sub-price';
+        productContainer.appendChild(subPrice);
 
         // 將商品容器加入到購物車項目容器中
         cartItemsContainer.appendChild(productContainer);
+
+        const seperatorElement = document.createElement('div');
+        seperatorElement.className = 'product-seperator';
+        cartItemsContainer.appendChild(seperatorElement);
+
     })
 }
 

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         //加入會換名字跟訂單編號的感謝語
         console.log(userInfo)
         const greeting = document.getElementById('greeting');
-        greeting.textContent = `您好，${userInfo.name}，您目前的訂單:`;
+        greeting.textContent = `Hallo, ${userInfo.name} ! Your current order`;
         fetchOrderDetails();
     } else {
         window.location.href = '/';
@@ -282,81 +282,55 @@ function addOrders(data_booking) {
     noBooking.classList.remove('visible');
 
     // 取得放置商品的容器 (假設你有一個 id 為 cart-items 的 div 來放置商品)
-    const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = '';  // 清空容器內容
+    const tableBody = document.querySelector('#orders-table tbody');
+    tableBody.innerHTML = '';  // 清空容器內容
 
     // 迭代每個購物車中的商品，並將其加入到HTML
-    data_booking.forEach(item => {
-        const product = item;
+    data_booking.forEach(product => {
+        // Create a new table row
+        const row = document.createElement('tr');
 
-        // 創建商品的容器
-        const productContainer = document.createElement('div');
-        productContainer.className = 'product-container';
-
-        // 加入圖片
-        //const imageElement = document.createElement('img');
-        //imageElement.src = product.image;
-        //imageElement.alt = product.name;
-        //imageElement.className = 'product-image';
-        //productContainer.appendChild(imageElement);
-
-        // 加入名稱
-        const nameElement = document.createElement('h3');
-        nameElement.textContent = `Order number: ${product.order_number}`;
-        productContainer.appendChild(nameElement);
-        nameElement.addEventListener('click', function(){
+        // Order Number
+        const orderNumberCell = document.createElement('td');
+        orderNumberCell.textContent = product.order_number;
+        orderNumberCell.style.cursor = 'pointer';
+        row.appendChild(orderNumberCell);
+        orderNumberCell.addEventListener('click', function() {
             window.location.href = `/member/${product.order_number}`;
-        });
+        })
 
-        // 加入訂購時間
-        const descriptionElement = document.createElement('p');
-        descriptionElement.textContent = `Order date: ${product.order_date}`;
-        descriptionElement.className = 'order-date';
-        productContainer.appendChild(descriptionElement);
+        // Order Date
+        const orderDateCell = document.createElement('td');
+        orderDateCell.textContent = product.order_date;
+        row.appendChild(orderDateCell);
 
-        // 加入訂閱多久
-        const sub_period = document.createElement('p');
-        sub_period.textContent = `Period: ${product.subscription_period} months`;
-        sub_period.className = 'sub_period';
-        productContainer.appendChild(sub_period);
+        // Subscription Period
+        const subPeriodCell = document.createElement('td');
+        subPeriodCell.textContent = `${product.subscription_period} months`;
+        row.appendChild(subPeriodCell);
 
-        // 加入起始日期
-        const start_date = document.createElement('p');
-        start_date.textContent = `Start from: ${product.start_date}`;
-        start_date.className = 'start_date';
-        productContainer.appendChild(start_date);
-        const end_date = document.createElement('p');
-        end_date.textContent = `End in: ${product.end_date}`;
-        end_date.className = 'end_date';
-        productContainer.appendChild(end_date);
+        // Start Date
+        const startDateCell = document.createElement('td');
+        startDateCell.textContent = product.start_date;
+        row.appendChild(startDateCell);
 
-        // 加入價格
-        const priceElement = document.createElement('p');
-        priceElement.textContent = `Price: ${product.total_price} €/month`;
-        priceElement.className = 'product-price';
-        priceElement.dataset.product_price = product.total_price;
-        productContainer.appendChild(priceElement);
+        // End Date
+        const endDateCell = document.createElement('td');
+        endDateCell.textContent = product.end_date;
+        row.appendChild(endDateCell);
 
-        // 加入付款狀態
-        const pay_or_not = document.createElement('p');
-        pay_or_not.textContent = `Order status: ${product.order_status}`;
-        pay_or_not.className = 'pay_or_not';
-        productContainer.appendChild(pay_or_not);
+        // Total Price
+        const priceCell = document.createElement('td');
+        priceCell.textContent = `${product.total_price} €/month`;
+        row.appendChild(priceCell);
 
-        // 刪除按鈕
-        const deleteButton = document.createElement('div');
-        deleteButton.id = 'delete-booking';
-        deleteButton.className = 'delete-booking';
-        deleteButton.dataset.product_id = product.order_number;
-        productContainer.appendChild(deleteButton);
+        // Order Status
+        const statusCell = document.createElement('td');
+        statusCell.textContent = product.order_status;
+        row.appendChild(statusCell);
 
-        // 將商品容器加入到購物車項目容器中
-        cartItemsContainer.appendChild(productContainer);
-
-        //加入刪除按鈕
-        deleteButton.addEventListener('click', function(){
-            deleteBooking(product.order_number);
-        });
+        // Append the row to the table body
+        tableBody.appendChild(row);
     }); 
 }
 

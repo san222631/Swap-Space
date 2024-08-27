@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', async() => {
         //加入會換名字的問候語
         console.log(userInfo)
         const greeting = document.getElementById('greeting');
-        greeting.textContent = `您好，${userInfo.name}，最愛清單內容如下:`;
+        greeting.textContent = `Wishlist of ${userInfo.name}`;
         fetchBookingDetails();
     } else {
         //window.location.href = '/';
         const greeting = document.getElementById('greeting');
-        greeting.textContent = `您好，guest，最愛清單內容如下:`;
+        greeting.textContent = `Hallo，guest，your wishlist`;
         fetchBookingDetails();
     }
 
@@ -301,32 +301,44 @@ function addBooking(data_booking) {
         imageElement.className = 'product-image';
         productContainer.appendChild(imageElement);
 
+        // 創建文字的容器
+        const textContainer = document.createElement('div');
+        textContainer.className = 'text-container';
+
         // 加入名稱
-        const nameElement = document.createElement('h3');
+        const nameElement = document.createElement('div');
         nameElement.textContent = product.name;
-        productContainer.appendChild(nameElement);
+        nameElement.className = 'product-name';
+        textContainer.appendChild(nameElement);
         nameElement.addEventListener('click', function(){
             window.location.href = `/product/${product.id}`;
         });
 
         // 加入描述
-        const descriptionElement = document.createElement('p');
+        const descriptionElement = document.createElement('div');
         descriptionElement.textContent = product.description;
         descriptionElement.className = 'product-description';
-        productContainer.appendChild(descriptionElement);
+        textContainer.appendChild(descriptionElement);
 
-        // 加入價格
-        const priceElement = document.createElement('p');
-        priceElement.textContent = `Price: ${product.price} EURO`;
-        priceElement.className = 'product-price';
-        productContainer.appendChild(priceElement);
+        productContainer.appendChild(textContainer);
+
+        // 創建刪除按鈕跟總價的容器
+        const endContainer = document.createElement('div');
+        endContainer.className = 'end-container';
 
         // 刪除按鈕
         const deleteButton = document.createElement('div');
         deleteButton.id = 'delete-booking';
         deleteButton.className = 'delete-booking';
         deleteButton.dataset.product_id = product.id;
-        productContainer.appendChild(deleteButton);
+        endContainer.appendChild(deleteButton);
+        productContainer.appendChild(endContainer)
+
+        // 加入價格
+        const priceElement = document.createElement('div');
+        priceElement.textContent = `${product.price} €/month`;
+        priceElement.className = 'product-price';
+        endContainer.appendChild(priceElement);
 
         // 將商品容器加入到購物車項目容器中
         cartItemsContainer.appendChild(productContainer);

@@ -19,14 +19,14 @@ nav {
     position: fixed; /* Fix the nav at the top */
     top: 0; /* Align it to the top of the viewport */
     width: 100%; /* Ensure it spans the full width */
-    z-index: 2; /* Make sure it stays above other elements */
+    z-index: 5; /* Make sure it stays above other elements */
     background-color: white; /* Optional: Set a background color to prevent transparency issues */
 }
 
 .nav-container {
     width: 100%;
     max-width: 1200px;
-    height: 54px;
+    height: 70px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;/**/
@@ -44,11 +44,11 @@ nav {
   
 .menu-left {
     text-align: left;
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 25px;
-    font-weight: 100;
+    font-weight: 600;
+    font-style: bold;
     line-height: 34px;
-    color: grey;
     padding: 10px;
 }
 
@@ -79,12 +79,12 @@ nav {
 }
 .menu-right-search input{
     margin-right: 5px;
-    width: 150px;
+    width: 280px;
+    height: 30px;
 }
 .search {
-    height: 24px;
-    width: 24px;
-    background-color: #d9dcddab;
+    height: 30px;
+    width: 30px;
     border-radius: 5px;
 }
 .cart {
@@ -160,11 +160,11 @@ nav {
 }
 .menu-right-login {
     text-align: center;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 16px;
-    font-weight: 100;
-    line-height: 13.3px;
-    color: #666666;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    color: #3c3932;
     padding: 10px;
 
     display: block;
@@ -172,11 +172,11 @@ nav {
 }
 .menu-right-logout {
     text-align: center;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 16px;
-    font-weight: 100;
-    line-height: 13.3px;
-    color: #666666;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    color: #3c3932;
     padding: 10px;  
 
     display: none;
@@ -189,7 +189,8 @@ nav {
 .seperator_1 {
     height: 1px;
     background-color: #E8E8E8;
-    margin-top: 60px;
+    margin-top: 70px;
+    z-index: 2;
 }
 
 .seperator_2 {
@@ -197,7 +198,6 @@ nav {
     background-color: #E8E8E8;
     margin-bottom: 40px;
 }
-
 
 /*top menu*/
 .top_menu {
@@ -209,11 +209,12 @@ nav {
 .t_m_1 {
     padding-left: 30px;
     padding-right: 30px;
-    color: #423e3e;
-    font-size: 20px;
-    font-family: 'Noto Sans TC';
+    color: #3c3932;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
 }
-
 
 /*   第一部分   */
 .grid-container {
@@ -223,25 +224,31 @@ nav {
 }
 
 .greeting {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 19px;
-    font-weight: 700;
-    color: #666666;
-    width: 1000px;
+    font-weight: 400;
+    width: 100%;
     margin: 0 auto;
     margin-bottom: 30px;
+    text-align: center;
 }
 .booking-found {
     display: none;
-
 }
 .first-part {
     display: grid;
-    width: 980px;
+    width: 840px;
     height: 100%;
     grid-template-columns: repeat(1, 1fr);
     column-gap: 30px;
     margin: 0 auto;
+}
+.second-part {
+    width: 360px;
+    height: 100%;
+    padding: 20px;
+    background-color: #f7f6f4;
+    margin-left: 20px;
 }
 
 .no-booking {
@@ -258,7 +265,9 @@ nav {
     display: block;
 }
 .booking-found.visible {
-    display: grid;
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
 }
 
 
@@ -283,6 +292,65 @@ nav {
 }
 
 /*放右邊grid的文字*/
+.product-container {
+    display: flex;
+}
+.text-container {
+    width: 100%;
+    padding-left: 20px;
+}
+.product-name {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+}
+.product-id {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    font-style: normal;
+}
+.product-price {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    font-style: normal;
+}
+.text-container input[type="number"] {
+    height: 30%;
+    width: 70px;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    font-style: normal;
+    outline: none;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+.product-quantity {
+    margin-top: 12px;
+}
+.end-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100px;
+}
+.sub-price {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+}
+.product-seperator {
+    height: 1px;
+    background-color: #E8E8E8;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    z-index: 3;
+}
 .profile {
     position: relative;
 }
@@ -306,7 +374,7 @@ nav {
     height: 30px;
     /*position: absolute;*/
     right: 0;
-    top: -5px;
+
 }
 .update-button {
     background-image: url('refresh.png');
@@ -316,26 +384,42 @@ nav {
   
 /*填全部個人資料+信用卡*/
 /*信用卡設定*/
+#subscription-period {
+    height: 30px;
+    width: 200px;
+    background-color: transparent;
+    border-radius: 5px;
+    border-color: #c9c7c7;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #050404;
+    padding-left: 5px;
+}
+#subscription-period option {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #050404;
+}
 .tpfield {
-    height: 38px;
+    height: 30px;
     width: 200px;
     border: 1px solid gray;
-    margin: 0 0 15px 5px;
+    margin: 5px 0;
     padding: 5px;
 
     border-radius: 5px;
     border-width: 1px;
-    border-color: #E8E8E8;
+    border-color: #c9c7c7;
 }
-
 .contact-info {
     margin: 0 auto;
-    width: 1200px;
-
+    flex: 1;
 }
 .extra-1 {
-    width: 980px;
-    margin: 0 auto;
+
 }
 .seperator-2 {
     height: 1px;
@@ -346,52 +430,60 @@ nav {
     margin-top: 40px;
     margin-bottom: 40px;
 }
+.seperator-4 {
+    height: 1px;
+    background-color: #E8E8E8;
+    margin: 20px auto;
+}
 .form-topic {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 19px;
-    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
     color: #050404;
     margin-bottom: 20px;
 }
 .contact-title {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
     color: #666666;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .contact-title input {
-    height: 38px;
+    height: 30px;
     width: 200px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    margin-left: 5px;
-
-    border-width: 1px;
-    border-color: #E8E8E8;
+    border-radius: 5px;    
     padding-left: 10px;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
     color: #000000;
+    margin: 5px 0;
+    background-color: transparent;
 }
-
-
+input {
+    border: 1px solid;
+    outline: none;
+    border-color: #c9c7c7;
+}
 .contact-title-card {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
     color: #666666;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .contact-title-card label {
     margin-top: 5px;
 }
 .contact-title-card input {
-    height: 38px;
+    height: 30px;
     width: 200px;
     border-radius: 5px;
-    margin-bottom: 15px;
     margin-left: 5px;
 
     border-width: 1px;
@@ -405,55 +497,33 @@ nav {
 
 /*確認訂購並付款*/
 .extra-2 {
-    width: 980px;
+    width: 100%;
     height: 100px;
     margin: 0 auto;
     text-align: right;
 }
 .total-price {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: #666666;
     margin-bottom: 20px;
 }
 .extra-2 button {
-    width: 173px;
-    height: 36px;
+    width: 100%;
+    height: 45px;
     border-radius: 5px;
-    background-color: #448899;
+    background-color: #474747;
     border: none;
     padding: 10px 20px 10px 20px;
 
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 19px;
     color: #FFFFFF;
     display: flex;
     align-items: center;
-
-    margin-left: auto;
-}
-
-.footer {
-    width: 100%;
-    height: 100vh;
-    min-height: 100px;
-    background-color: #757575;
-    color: #FFFFFF;
-    display: flex;
     justify-content: center;
-    align-items: center;
-
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-
-    margin-top: 40px;
-    bottom: 0;
 }
-
-
 
 /*footer*/
 .footer {
@@ -470,9 +540,6 @@ nav {
     text-align: center;
     margin-top: 40px;
 }
-
-
-
 
 /*登入/註冊的彈出視窗*/
 /* Add this CSS for the 登入 modal */

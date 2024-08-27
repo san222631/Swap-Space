@@ -53,8 +53,6 @@
             <div class="t_m_1">How it works</div>
         </div>
 
-        <div class="seperator_1"></div>
-
         <!--購物車內容-->
         <div class="grid-container" id="grid-container">
             <!--問好-->
@@ -63,79 +61,79 @@
             <div id="booking-found-1" class="booking-found">
                 <div class="first-part" id="cart-items">
                 </div>
-            </div>
-        </div>
 
-        <!--訂購人資訊-->
-        <div id="booking-found-2" class="booking-found">
-            <div class="seperator-2"></div>
+                <!--訂閱時間+訂購人資訊-->
+                <div class="second-part">
+                    <!--時間-->
+                    <div class="contact-title">
+                        <label for="subscription-period">Subscription:</label>
+                        <select id="subscription-period" name="subscription-period" required>
+                            <option value="12">12 months</option>
+                            <option value="24">24 months</option>
+                        </select>
+                    </div>
+                    <div class="contact-title">
+                        <label for="start-date">Start Date:</label>
+                        <input type="date" id="start-date" name="start-date" required>
+                    </div>
+                    <div class="contact-title">
+                        <label for="end-date">End Date:</label>
+                        <input type="text" id="end-date" name="end-date" readonly>
+                    </div>                    
+                    <!--訂購人資訊-->
+                    <div id="booking-found-2" class="credit-details">
+                        <div class="seperator-4"></div>
+                    
+                        <div class="contact-info" id="contact-info">
+                            <form id="order-form">
+                                <div class="extra-1">
+                                <div class="form-topic">Contact Info</div>
+                                <div class="contact-title">
+                                    <label for="O-name">Name:</label>
+                                    <input type="text" id="O-name" name="O-name">
+                                </div>
+                                <div class="contact-title">
+                                    <label for="O-email">Email:</label>
+                                    <input type="email" id="O-email" name="O-email">
+                                </div>
+                                <div class="contact-title">
+                                    <label for="O-phone">Phone:</label>
+                                    <input type="text" id="O-phone" name="O-phone">
+                                </div>
+                                <div class="contact-title" id="reminder"></div>
+                                </div>
+                                <div class="seperator-4"></div>
+                        
+                                <div class="extra-1">
+                                    <div class="form-topic">Payment Info</div>
+                                    <div class="contact-title-card">
+                                        <label for="card-number">Card Number:</label>
+                                        <div type="text" id="card-number" class="tpfield" name="card-number">
+                                        </div>
+                                    </div>
+                                    <div class="contact-title-card">
+                                        <label for="card-expiration-date">Expire time:</label>
+                                        <div type="text" id="card-expiration-date" class="tpfield" name="exp-date">
+                                        </div>
+                                    </div>
+                                    <div class="contact-title-card">
+                                        <label for="card-ccv">CVV:</label>
+                                        <div type="text" id="card-ccv" class="tpfield" name="ccv">
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="seperator-4"></div>
+                        
+                                <div class="extra-2">
+                                    <div class="total-price" id="total-price"></div>
+                                    <button type="submit" id="O-button">Checkout</button>
+                                </div>                        
+                            </form>
+                        </div>
+                    </div>
 
-            <!--訂閱時間-->
-            <div class="extra-1">
-                <div class="contact-title">
-                    <label for="subscription-period">Choose Subscription Period:</label>
-                    <select id="subscription-period" name="subscription-period" required>
-                        <option value="12">12 months</option>
-                        <option value="24">24 months</option>
-                    </select>
                 </div>
-                <div class="contact-title">
-                    <label for="start-date">Start Date:</label>
-                    <input type="date" id="start-date" name="start-date" required>
-                </div>
-                <div class="contact-title">
-                    <label for="end-date">End Date:</label>
-                    <input type="text" id="end-date" name="end-date" readonly>
-                </div>
-            </div>
-        
-            <div class="contact-info" id="contact-info">
-                <form id="order-form">
-                    <div class="extra-1">
-                    <div class="form-topic">Contact Info</div>
-                    <div class="contact-title">
-                        <label for="O-name">Name:</label>
-                        <input type="text" id="O-name" name="O-name">
-                    </div>
-                    <div class="contact-title">
-                        <label for="O-email">Email:</label>
-                        <input type="email" id="O-email" name="O-email">
-                    </div>
-                    <div class="contact-title">
-                        <label for="O-phone">Phone:</label>
-                        <input type="text" id="O-phone" name="O-phone">
-                    </div>
-                    <div class="contact-title" id="reminder"></div>
-                    </div>
-                    <div class="seperator-2"></div>
-            
-                    <div class="extra-1">
-                        <div class="form-topic">Payment Info</div>
-                        <div class="contact-title-card">
-                            <label for="card-number">Card Number:</label>
-                            <div type="text" id="card-number" class="tpfield" name="card-number">
-                            </div>
-                        </div>
-                        <div class="contact-title-card">
-                            <label for="card-expiration-date">Expire time:</label>
-                            <div type="text" id="card-expiration-date" class="tpfield" name="exp-date">
-                            </div>
-                        </div>
-                        <div class="contact-title-card">
-                            <label for="card-ccv">CVV:</label>
-                            <div type="text" id="card-ccv" class="tpfield" name="ccv">
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="seperator-2"></div>
-            
-                    <div class="extra-2">
-                        <div class="total-price" id="total-price"></div>
-                        <button type="submit" id="O-button">Checkout</button>
-                    </div>
-            
-                </form>
             </div>
         </div>
 

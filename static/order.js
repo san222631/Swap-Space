@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         //加入會換名字的問候語
         console.log(userInfo)
         const greeting = document.getElementById('greeting');
-        greeting.textContent = `您好，${userInfo.name}，購物車內容如下:`;
+        greeting.textContent = `${userInfo.name}'s shopping cart`;
         fetchBookingDetails();
     } else {
         window.location.href = '/';
@@ -520,26 +520,31 @@ function addBooking(data_booking) {
         imageElement.className = 'product-image';
         productContainer.appendChild(imageElement);
 
+        // 創建文字的容器
+        const textContainer = document.createElement('div');
+        textContainer.className = 'text-container';
+
         // 加入名稱
-        const nameElement = document.createElement('h3');
+        const nameElement = document.createElement('div');
         nameElement.textContent = product.name;
-        productContainer.appendChild(nameElement);
+        nameElement.className = 'product-name';
+        textContainer.appendChild(nameElement);
         nameElement.addEventListener('click', function(){
             window.location.href = `/product/${product.id}`;
         });
 
-        // 加入描述
-        const descriptionElement = document.createElement('p');
-        descriptionElement.textContent = product.description;
-        descriptionElement.className = 'product-description';
-        productContainer.appendChild(descriptionElement);
+        // 加入商品id
+        const idElement = document.createElement('div');
+        idElement.textContent = `Product id: ${product.id}`;
+        idElement.className = 'product-id';
+        textContainer.appendChild(idElement);
 
         // 加入價格
-        const priceElement = document.createElement('p');
-        priceElement.textContent = `Price: ${product.price} €/month`;
+        const priceElement = document.createElement('div');
+        priceElement.textContent = `${product.price} €/month`;
         priceElement.className = 'product-price';
         priceElement.dataset.product_price = product.price;
-        productContainer.appendChild(priceElement);
+        textContainer.appendChild(priceElement);
 
         // 加入數量
         const quantityElement = document.createElement('input');
@@ -550,20 +555,21 @@ function addBooking(data_booking) {
         quantityElement.value = product.quantity;
         quantityElement.min = 1;
         quantityElement.className = 'product-quantity';
-        productContainer.appendChild(quantityElement);
+        textContainer.appendChild(quantityElement);
 
-        //送出新的數量
-        //const updateButton = document.createElement('div');
-        //updateButton.id = `update-button-${product.id}`;
-        //updateButton.className = 'update-button';
-        //productContainer.appendChild(updateButton);
+        productContainer.appendChild(textContainer);
+
+        // 創建刪除按鈕跟總價的容器
+        const endContainer = document.createElement('div');
+        endContainer.className = 'end-container';
 
         // 刪除按鈕
         const deleteButton = document.createElement('div');
         deleteButton.id = 'delete-booking';
         deleteButton.className = 'delete-booking';
         deleteButton.dataset.product_id = product.id;
-        productContainer.appendChild(deleteButton);
+        endContainer.appendChild(deleteButton);
+        productContainer.appendChild(endContainer)
 
         // 將商品容器加入到購物車項目容器中
         cartItemsContainer.appendChild(productContainer);
@@ -572,6 +578,17 @@ function addBooking(data_booking) {
         deleteButton.addEventListener('click', function(){
             deleteBooking(product.id);
         });
+
+        //每個家具總價
+        const subPrice = document.createElement('div');
+        subTotal = product.price*product.quantity;
+        subPrice.textContent = `${subTotal.toFixed(2)} €`;
+        subPrice.className = 'sub-price';
+        endContainer.appendChild(subPrice);
+
+        const seperatorElement = document.createElement('div');
+        seperatorElement.className = 'product-seperator';
+        cartItemsContainer.appendChild(seperatorElement);
 
         //更新數量
         quantityElement.addEventListener('input', function () {
@@ -593,7 +610,7 @@ function addBooking(data_booking) {
     const totalPrice = data_booking.reduce((sum, item) => sum + (item.product.price * item.product.quantity), 0);
     const roundedTotalPrice = totalPrice.toFixed(2); // Round to two decimal places
     console.log(roundedTotalPrice)
-    totalPriceElement.textContent = `Recurring price/month: ${roundedTotalPrice} €`;
+    totalPriceElement.textContent = `Total: ${roundedTotalPrice} €/month`;
 }
 
 //刪除booking資料庫

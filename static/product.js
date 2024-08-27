@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', async() => {
         productData = data;
 
         addDetails(data);
+
+        //給相關推薦
+        fetchRelevantProducts(data.data.category, specialId);
   
     } catch (error) {
         console.error('收到response前有錯誤:', error);
@@ -484,5 +487,63 @@ function addToWishlist() {
     })
     .catch(error => {
         console.error('Error adding product to wishlist:', error);
+    });
+}
+
+//推薦相關商品
+async function fetchRelevantProducts(category, currentProductId) {
+    try {
+        const response = await fetch(`/api/products/related?category=${encodeURIComponent(category)}&exclude_id=${currentProductId}`);
+        if (!response.ok) {
+            throw new Error(`Error fetching related products: ${response.statusText}`);
+        }
+
+        const relatedProductsData = await response.json();
+        console.log(relatedProductsData)
+        displayRelevantProducts(relatedProductsData.data);
+    } catch (error) {
+        console.error('Error fetching related products:', error);
+    }
+}
+
+function displayRelevantProducts(products) {
+    const relevantContainer = document.getElementById('relevant-container');
+    
+    if (products.length === 0) {
+        relevantContainer.textContent = 'No related products found.';
+        return;
+    }
+
+    products.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'relevant-product';
+        productDiv.innerHTML = '';
+        // 加入圖片
+        const reImageElement = document.createElement('img');
+        reImageElement.src = product.image_url;
+        reImageElement.alt = product.Name;
+        reImageElement.className = 're-product-image';
+        reImageElement.addEventListener('click', function(){
+            window.location.href = `/product/${product.Product_id}`;
+        });
+        productDiv.appendChild(reImageElement);
+
+        // 加入名稱
+        const reNameElement = document.createElement('div');
+        reNameElement.textContent = product.Name;
+        reNameElement.className = 're-product-name';
+        productDiv.appendChild(reNameElement);
+        reNameElement.addEventListener('click', function(){
+            window.location.href = `/product/${product.Product_id}`;
+        });
+
+        // 加入價格
+        const rePriceElement = document.createElement('div');
+        rePriceElement.textContent = `${product.Price} €/month`;
+        rePriceElement.className = 're-product-price';
+        rePriceElement.dataset.product_price = product.Price;
+        productDiv.appendChild(rePriceElement);
+
+        relevantContainer.appendChild(productDiv);
     });
 }

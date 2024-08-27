@@ -26,6 +26,7 @@ import schedule
 import time
 
 import asyncio
+import random
 
 
 
@@ -202,6 +203,61 @@ def get_product_by_id(productId: str):
     }
     return response
 
+#推薦相關商品
+def fetch_related_products(categories: str, current_product_id: str):
+    conn = None
+    cursor = None
+    try:
+        conn = mysql.connector.connect(**DB_CONFIG)
+        cursor = conn.cursor(dictionary=True)
+
+        # Split the categories into a list
+        category_list = categories.split(',')
+        print(category_list)
+
+        # Randomly select one category
+        selected_category = random.choice(category_list).strip()
+        print(f"Selected Category: {selected_category}")
+        
+        query = """
+        SELECT Product_id, Name, Price, 
+        (SELECT url FROM images WHERE images.product_id = furnitures.Product_id LIMIT 1) AS image_url
+        FROM furnitures
+        WHERE Category LIKE %s AND Product_id != %s
+        ORDER BY RAND()
+        LIMIT 4;
+        """
+        # Prepare parameters for the query
+        params = (f"%{selected_category}%", current_product_id)
+
+        cursor.execute(query, params)
+        related_products = cursor.fetchall()
+        return related_products
+    except Error as e:
+        print(f"Error fetching related products: {e}")
+        return []
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
+
+@app.get("/api/products/related")
+def get_related_products(category: str, exclude_id: str):
+    related_products = fetch_related_products(category, exclude_id)
+    
+    if not related_products:
+         return JSONResponse(
+            status_code=404,
+            content={
+                "error": True,
+                "message": "找不到相關產品"
+            }
+        )
+
+    return {
+        "data": related_products
+    }
 
 
 #加密密碼
