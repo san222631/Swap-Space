@@ -8,7 +8,7 @@ from mysql.connector import Error
 
 from passlib.context import CryptContext
 from pydantic import BaseModel
-import jwt
+from jose import jwt
 from jwt import PyJWTError
 from datetime import datetime, timedelta, timezone
 
@@ -33,7 +33,7 @@ load_dotenv()
 CLOUDFRONT_DOMAIN = os.getenv('CLOUDFRONT_DOMAIN')
 # Database Configuration
 DB_HOST = os.getenv('DB_HOST')
-DB_PORT = int(os.getenv('DB_PORT'))
+DB_PORT = os.getenv('DB_PORT')
 DB_USER = os.getenv('DB_USER')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
 DB_NAME = os.getenv('DB_NAME')
