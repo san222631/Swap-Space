@@ -10,21 +10,6 @@ services:
     depends_on:
       - db
     command: ["sh", "-c", "${UVICORN_CMD:-uvicorn main:app --host 0.0.0.0 --port 8000}"]  # Define the command to run
-
-  db:  # MySQL database service
-    image: mysql:8.0  # Use MySQL version 5.7 image
-    restart: always
-    env_file:
-      - .env  # Load MySQL environment variables from .env file
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    ports:
-      - "3306:3306"  # Expose MySQL port
-    volumes:
-      - mysql_data:/var/lib/mysql  # Persistent storage for MySQL data
       
 volumes:
   mysql_data:  # Make sure this volume is defined
