@@ -15,7 +15,7 @@ EXPOSE 8000
 
 # Define environment variable
 # ENV NAME=World 可能不需要
-ENV UVICORN_CMD="uvicorn app:app --host 0.0.0.0 --port 8000"
+ENV UVICORN_CMD="uvicorn main:app --host 0.0.0.0 --port 8000"
 
 # Run app.py when the container launches
 CMD ["sh", "-c", "$UVICORN_CMD"]
