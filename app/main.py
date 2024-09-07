@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from routes import category_routes, static_pages, product_routes, user_routes, cart_routes, wishlist_routes, order_routes, profile_routes
+from app.routes import category_routes, static_pages, product_routes, user_routes, cart_routes, wishlist_routes, order_routes, profile_routes
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
