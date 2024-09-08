@@ -111,6 +111,9 @@ def get_related_products(category: str, exclude_id: str, request: Request):
         keyword_history = redis_client.zrevrange(f"user:{user_id}:searches", 0, -1)
 
         if keyword_history:
+            # Log the keyword history
+            print(f"Keyword history for user {user_id}: {keyword_history}")      
+
             # Search the keyword in "Name" in the database
             conn = None
             cursor = None

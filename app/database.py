@@ -103,7 +103,8 @@ def fetch_related_products(categories: str, current_product_id: str, limit: int 
         LIMIT 4;
         """
         # Prepare parameters for the query
-        params = (f"%{selected_category}%", current_product_id, limit)
+        params = (f"%{selected_category}%", current_product_id)
+        print(f"會帶入的參數: {params}")
 
         cursor.execute(query, params)
         related_products = cursor.fetchall()
