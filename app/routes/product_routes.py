@@ -1,7 +1,7 @@
 from fastapi import *
 from fastapi import APIRouter, Query, HTTPException
 from typing import Optional
-from ..database import fetch_data, fetch_data_by_id, fetch_related_products
+from app.database import fetch_data, fetch_data_by_id, fetch_related_products
 from app.config import DB_CONFIG, SECRET_KEY, ALGORITHM
 
 import mysql.connector
