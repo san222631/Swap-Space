@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # JWT Secret & Algorithm
-SECRET_KEY = os.getenv("SECRET_KEY")
-ALGORITHM = os.getenv("ALGORITHM", "HS256")
+SECRET_KEY="whatsup"
+ALGORITHM="HS256"
 
 # Database Configuration
 DB_HOST = os.getenv('DB_HOST')
