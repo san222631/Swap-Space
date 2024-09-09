@@ -4,7 +4,6 @@ import mysql.connector
 from app.config import DB_CONFIG, SECRET_KEY, ALGORITHM
 from fastapi import *
 
-import redis
 
 def serialize_item(item):
     """Convert all Decimal and datetime fields in a dictionary to JSON-serializable formats."""
@@ -60,7 +59,7 @@ def fetch_order_by_number(orderNumber: str):
         if conn:
             conn.close()   
 
- 
+
 #根據目錄，取得商品資料
 def fetch_CAT_data(page: int, keyword: str):
 	conn = None
@@ -100,10 +99,3 @@ def fetch_CAT_data(page: int, keyword: str):
 			cursor.close()
 		if conn is not None:
 			conn.close()
-               
-
-#推薦商品
-def get_redis_client():
-    # Initialize Redis client
-    redis_client = redis.Redis(host='localhost', port=6379, db=0)
-    return redis_client

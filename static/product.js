@@ -492,23 +492,8 @@ function addToWishlist() {
 
 //推薦相關商品
 async function fetchRelevantProducts(category, currentProductId) {
-    // Check for token in localStorage
-    const token = localStorage.getItem('received_Token');
-
-    // Set up headers
-    const headers = {
-        'Content-Type': 'application/json',
-    };
-
-    if (token) {
-        headers['Authorization'] = `Bearer ${token}`;
-    }
-
     try {
-        const response = await fetch(`/api/products/related?category=${encodeURIComponent(category)}&exclude_id=${currentProductId}`, {
-            method: 'GET',
-            headers: headers,
-        });
+        const response = await fetch(`/api/products/related?category=${encodeURIComponent(category)}&exclude_id=${currentProductId}`);
         if (!response.ok) {
             throw new Error(`Error fetching related products: ${response.statusText}`);
         }
