@@ -299,7 +299,22 @@ function fetchProducts(page, keyword = '') {
     if (fetching) return Promise.resolve();
     fetching = true;
     console.log(`Fetching products for page ${page} with keyword '${keyword}'`); //EXTRA
-    return fetch(`/api/products/?page=${page}&keyword=${encodeURIComponent(keyword)}`)
+
+    // Prepare headers
+    const headers = {
+        'Content-Type': 'application/json',
+    };
+
+    // Get the token from localStorage and include it in the headers if it exists
+    const token = localStorage.getItem('received_Token');
+    if (token) {
+        headers['Authorization'] = `Bearer ${token}`;
+    }
+    
+    return fetch(`/api/products/?page=${page}&keyword=${encodeURIComponent(keyword)}`, {
+            method: 'GET',
+            headers: headers,        
+        })
         .then(response => {
             if (!response.ok) {
                 if (response.status == 404) {
