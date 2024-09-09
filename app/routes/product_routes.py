@@ -32,9 +32,12 @@ def get_products(request: Request, page: int = 0, keyword: Optional[str] = Query
             user_id = None
 
     if user_id and keyword:
+        print(f"有user_id也有keyword，存進redis:", {user_id})
         # Track the search keyword with timestamp if the user is logged in
         timestamp = datetime.now().timestamp()
         redis_client.zadd(f"user:{user_id}:searches", {keyword: timestamp})
+        print(timestamp)
+        print(redis_client)
 
     #不管有沒有登入都要顯示商品    
     data = fetch_data(page, keyword)
