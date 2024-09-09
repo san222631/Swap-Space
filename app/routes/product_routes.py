@@ -18,13 +18,16 @@ router = APIRouter()
 @router.get("/api/products/")
 def get_products(request: Request, page: int = 0, keyword: Optional[str] = Query(None)):
     redis_client = get_redis_client()  # Get the Redis client
-
+    print(f"redis有嗎?", redis_client)
     # Check if the user is logged in
     token = request.headers.get('Authorization')
     user_id = None
+    print(token)
+    print(user_id)
 
     if token:
         extracted_token = token[len("Bearer "):]
+        print(extracted_token)
         try:
             payload = jwt.decode(extracted_token, SECRET_KEY, algorithms=[ALGORITHM])
             user_id = payload.get("id")
@@ -108,7 +111,8 @@ def get_related_products(category: str, exclude_id: str, request: Request):
             user_id = None
 
     related_products = []
-
+    print(related_products)
+    print(token)
     if user_id:
         # Check for keyword history in Redis
         keyword_history = redis_client.zrevrange(f"user:{user_id}:searches", 0, -1)

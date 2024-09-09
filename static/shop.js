@@ -307,6 +307,7 @@ function fetchProducts(page, keyword = '') {
 
     // Get the token from localStorage and include it in the headers if it exists
     const token = localStorage.getItem('received_Token');
+    console.log(token)
     if (token) {
         headers['Authorization'] = `Bearer ${token}`;
     }
