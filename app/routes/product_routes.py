@@ -34,7 +34,8 @@ def get_products(request: Request, page: int = 0, keyword: Optional[str] = Query
             print(payload)
             user_id = payload.get("id")
             print(f"解碼後的id:", user_id)
-        except jwt.PyJWTError:
+        except jwt.PyJWTError as e:
+            print(f"JWT decoding failed: {e}")
             user_id = None
 
         if user_id and keyword:
