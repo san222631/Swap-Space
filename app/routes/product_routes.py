@@ -24,6 +24,7 @@ def get_products(request: Request, page: int = 0, keyword: Optional[str] = Query
     user_id = None
     print(token)
     print(user_id)
+    print(keyword)
 
     if token:
         extracted_token = token[len("Bearer "):]
