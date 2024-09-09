@@ -79,7 +79,7 @@ def fetch_data_by_id(productId: str):
             conn.close()   
 			
 #推薦相關商品
-def fetch_related_products(categories: str, current_product_id: str):
+def fetch_related_products(categories: str, current_product_id: str, limit: int = 4):
     conn = None
     cursor = None
     try:
@@ -104,6 +104,7 @@ def fetch_related_products(categories: str, current_product_id: str):
         """
         # Prepare parameters for the query
         params = (f"%{selected_category}%", current_product_id)
+        print(f"會帶入的參數: {params}")
 
         cursor.execute(query, params)
         related_products = cursor.fetchall()
