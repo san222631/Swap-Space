@@ -32,6 +32,7 @@ def get_products(request: Request, page: int = 0, keyword: Optional[str] = Query
         try:
             payload = jwt.decode(extracted_token, SECRET_KEY, algorithms=[ALGORITHM])
             user_id = payload.get("id")
+            print(f"解碼後的id:", user_id)
         except jwt.PyJWTError:
             user_id = None
 
